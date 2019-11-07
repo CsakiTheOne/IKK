@@ -33,7 +33,7 @@ namespace IKK
                     viewContainer1.SetView(new IKK_controls.View());
                     break;
                 case "Művek":
-                    viewContainer1.SetView(new IKK_controls.View());
+                    viewContainer1.SetView(new ViewProjects());
                     break;
             }
         }

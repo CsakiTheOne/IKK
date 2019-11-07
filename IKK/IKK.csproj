@@ -103,6 +103,12 @@
     <Compile Include="ViewMain.Designer.cs">
       <DependentUpon>ViewMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewProjects.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewProjects.Designer.cs">
+      <DependentUpon>ViewProjects.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewProfile.resx">
       <DependentUpon>ViewProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProjects.resx">
+      <DependentUpon>ViewProjects.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
