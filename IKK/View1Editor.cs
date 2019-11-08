@@ -22,9 +22,20 @@ namespace IKK
         {
             if (split.SplitterDistance < 200) split.SplitterDistance = 250;
 
-            switch (navMenu1.SelectedItem)
+            switch (navMenu.SelectedItem)
             {
                 case "Kilépés":
+                    if (
+                        new MsgBox(
+                        "Kilépés",
+                        "Minden nem mentett változtatás el fog veszni! Folytatod?",
+                        new MsgBoxButton[] { new MsgBoxButton("Igen", true, DialogResult.Yes), new MsgBoxButton("Nem", true, DialogResult.No) }
+                        ).ShowDialog() == DialogResult.No
+                    )
+                    {
+                        navMenu.SelectedItem = "Szerkesztés";
+                        return;
+                    }
                     Storage.MainContainer.SetView(new View1Main());
                     break;
                 case "Szerkesztés":
@@ -39,10 +50,40 @@ namespace IKK
         public override void UpdateTheme()
         {
             base.UpdateTheme();
-            richTextBox1.BackColor = Theme.ColorBackground;
-            richTextBox1.ForeColor = Theme.ColorText;
-            menuStrip1.BackColor = Theme.ColorPrimary;
-            menuStrip1.ForeColor = Theme.ColorText;
+            rtb.BackColor = Theme.ColorBackground;
+            rtb.ForeColor = Theme.ColorText;
+            menuStrip.BackColor = Theme.ColorPrimary;
+            menuStrip.ForeColor = Theme.ColorText;
+        }
+
+        #region ToolStripMenu
+        private void újToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (
+                new MsgBox(
+                "Új projekt",
+                "Minden nem mentett változtatás el fog veszni! Folytatod?",
+                new MsgBoxButton[] { new MsgBoxButton("Igen", true, DialogResult.Yes), new MsgBoxButton("Nem", true, DialogResult.No) }
+                ).ShowDialog() == DialogResult.No
+            ) return;
+
+            Storage.MainContainer.SetView(new View1Editor());
+        }
+
+        private void megnyitásToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mentésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        private void rtb_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

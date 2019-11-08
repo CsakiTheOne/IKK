@@ -1,4 +1,5 @@
 ﻿using IKK_controls;
+using IKK_database;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +29,16 @@ namespace IKK
         private void Form1_Load(object sender, EventArgs e)
         {
             Storage.MainContainer = viewContainerMain;
-            viewContainerMain.SetView(new View1Login());
+
+            if (Storage.TestConnection())
+            {
+                viewContainerMain.SetView(new View1Login());
+            }
+            else
+            {
+                Storage.LocalUser = new Profile("nincs", "Offline felhasználó", "Nincs netem vagy a szerver nem elérhető.");
+                viewContainerMain.SetView(new View1Main());
+            }
         }
     }
 }

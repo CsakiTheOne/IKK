@@ -5,12 +5,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Data.SqlTypes;
 
 namespace IKK_database
 {
     public static class Database
     {
         public static string DB { get => "Server=localhost;User ID=root;Password=rootroot;Database=IKK"; }
+
+        public static bool Test()
+        {
+            try
+            {
+                GetData("SELECT id FROM user;");
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         public static DataTable GetData(string sql)
         {
@@ -59,6 +73,23 @@ namespace IKK_database
             Database.GetData(sql);
 
             return "Sikeres regisztrálás! Jelentkezz be!";
+        }
+
+        public static string Login(string email, string pass)
+        {
+            // Check empty strings
+            if (email.Trim().Length < 1)
+            {
+                return "Minden mezőt ki kell tölteni!";
+            }
+            // Search for user
+            DataTable foundUser = Database.GetData($"SELECT email, name, about FROM user WHERE email LIKE '{email}' AND password LIKE '{pass}'");
+            if (foundUser == null || foundUser.Rows.Count < 1)
+            {
+                return "E-mail vagy jelszó hibás!";
+            }
+
+            return $"PROFILE;{foundUser.Rows[0].Field<string>("email")};{foundUser.Rows[0].Field<string>("name")};{foundUser.Rows[0].Field<string>("about")}";
         }
     }
 }

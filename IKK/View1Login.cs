@@ -23,27 +23,22 @@ namespace IKK
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // Check empty strings
-            if (tbEmail.Text.Trim().Length < 1 || tbPass.Text.Length < 1)
+            if (tbPass.Text.Length < 1) new MsgBox("Regisztrálás", "Minden mezőt ki kell tölteni!").ShowDialog();
+            else
             {
-                new MsgBox("Bejelentkezés", "Minden mezőt ki kell tölteni!").ShowDialog();
-                return;
+                string result = Database.Login(tbEmail.Text, Secret.Encrypt(tbPass.Text));
+                if (result.Contains("PROFILE"))
+                {
+                    Storage.LocalUser = new Profile(result.Split(';')[1], result.Split(';')[2], result.Split(';')[3]);
+                    Storage.MainContainer.SetView(new View1Main());
+                }
+                else new MsgBox("Bejelentkezés", result);
             }
-            // Search for user
-            DataTable foundUser = Database.GetData($"SELECT email, name, about FROM user WHERE email LIKE '{tbEmail.Text}' AND password LIKE '{Secret.Encrypt(tbPass.Text)}'");
-            if (foundUser == null || foundUser.Rows.Count < 1)
-            {
-                new MsgBox("Bejelentkezés", "E-mail vagy jelszó hibás!").ShowDialog();
-                return;
-            }
-            // Log in
-            Storage.LocalUser = new Profile(foundUser.Rows[0].Field<string>("email"), foundUser.Rows[0].Field<string>("name"), foundUser.Rows[0].Field<string>("about"));
-            ((ViewContainer)Parent).SetView(new View1Main());
         }
 
         private void btnReg_Click(object sender, EventArgs e)
         {
-            if (tbPass.Text.Length < 6) new MsgBox("Regisztrálás", "A jelszó túl rövid! (twss xddd)").ShowDialog();
+            if (tbPass.Text.Length < 1) new MsgBox("Regisztrálás", "Minden mezőt ki kell tölteni!").ShowDialog();
             else new MsgBox("Regisztrálás", Database.Register(tbEmail.Text, Secret.Encrypt(tbPass.Text))).ShowDialog();
         }
 

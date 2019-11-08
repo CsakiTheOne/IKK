@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View1Editor));
-            this.navMenu1 = new IKK_controls.NavMenu();
+            this.navMenu = new IKK_controls.NavMenu();
             this.ilMenu = new System.Windows.Forms.ImageList(this.components);
             this.split = new System.Windows.Forms.SplitContainer();
             this.viewContainer1 = new IKK_controls.ViewContainer();
             this.view3Edit1 = new IKK.View3Edit();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.rtb = new System.Windows.Forms.RichTextBox();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fájlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.újToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.megnyitásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,22 +46,22 @@
             this.split.Panel2.SuspendLayout();
             this.split.SuspendLayout();
             this.viewContainer1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // navMenu1
+            // navMenu
             // 
-            this.navMenu1.AllowCollapse = false;
-            this.navMenu1.Collapsed = true;
-            this.navMenu1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.navMenu1.ItemIcons = this.ilMenu;
-            this.navMenu1.Items = "Kilépés;Szerkesztés;Eszközök";
-            this.navMenu1.Location = new System.Drawing.Point(0, 24);
-            this.navMenu1.Name = "navMenu1";
-            this.navMenu1.SelectedItem = "Szerkesztés";
-            this.navMenu1.Size = new System.Drawing.Size(60, 476);
-            this.navMenu1.TabIndex = 0;
-            this.navMenu1.SelectedItemChanged += new System.EventHandler(this.navMenu1_SelectedItemChanged);
+            this.navMenu.AllowCollapse = false;
+            this.navMenu.Collapsed = true;
+            this.navMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.navMenu.ItemIcons = this.ilMenu;
+            this.navMenu.Items = "Kilépés;Szerkesztés;Eszközök";
+            this.navMenu.Location = new System.Drawing.Point(0, 24);
+            this.navMenu.Name = "navMenu";
+            this.navMenu.SelectedItem = "Szerkesztés";
+            this.navMenu.Size = new System.Drawing.Size(60, 476);
+            this.navMenu.TabIndex = 0;
+            this.navMenu.SelectedItemChanged += new System.EventHandler(this.navMenu1_SelectedItemChanged);
             // 
             // ilMenu
             // 
@@ -84,7 +84,7 @@
             // 
             // split.Panel2
             // 
-            this.split.Panel2.Controls.Add(this.richTextBox1);
+            this.split.Panel2.Controls.Add(this.rtb);
             this.split.Panel2MinSize = 0;
             this.split.Size = new System.Drawing.Size(840, 476);
             this.split.SplitterDistance = 150;
@@ -110,26 +110,27 @@
             this.view3Edit1.Size = new System.Drawing.Size(150, 476);
             this.view3Edit1.TabIndex = 0;
             // 
-            // richTextBox1
+            // rtb
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(686, 476);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "A rózsa vörös,\nAz ibolya kék...";
+            this.rtb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.rtb.Location = new System.Drawing.Point(0, 0);
+            this.rtb.Name = "rtb";
+            this.rtb.Size = new System.Drawing.Size(686, 476);
+            this.rtb.TabIndex = 0;
+            this.rtb.Text = "A rózsa vörös,\nAz ibolya kék...";
+            this.rtb.TextChanged += new System.EventHandler(this.rtb_TextChanged);
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fájlToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(900, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(900, 24);
+            this.menuStrip.TabIndex = 2;
+            this.menuStrip.Text = "menuStrip1";
             // 
             // fájlToolStripMenuItem
             // 
@@ -146,26 +147,29 @@
             this.újToolStripMenuItem.Name = "újToolStripMenuItem";
             this.újToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.újToolStripMenuItem.Text = "Új";
+            this.újToolStripMenuItem.Click += new System.EventHandler(this.újToolStripMenuItem_Click);
             // 
             // megnyitásToolStripMenuItem
             // 
             this.megnyitásToolStripMenuItem.Name = "megnyitásToolStripMenuItem";
             this.megnyitásToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.megnyitásToolStripMenuItem.Text = "Megnyitás";
+            this.megnyitásToolStripMenuItem.Click += new System.EventHandler(this.megnyitásToolStripMenuItem_Click);
             // 
             // mentésToolStripMenuItem
             // 
             this.mentésToolStripMenuItem.Name = "mentésToolStripMenuItem";
             this.mentésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mentésToolStripMenuItem.Text = "Mentés";
+            this.mentésToolStripMenuItem.Click += new System.EventHandler(this.mentésToolStripMenuItem_Click);
             // 
             // View1Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.split);
-            this.Controls.Add(this.navMenu1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.navMenu);
+            this.Controls.Add(this.menuStrip);
             this.Name = "View1Editor";
             this.Padding = new System.Windows.Forms.Padding(0);
             this.split.Panel1.ResumeLayout(false);
@@ -173,8 +177,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.split)).EndInit();
             this.split.ResumeLayout(false);
             this.viewContainer1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,13 +186,13 @@
 
         #endregion
 
-        private IKK_controls.NavMenu navMenu1;
+        private IKK_controls.NavMenu navMenu;
         private System.Windows.Forms.ImageList ilMenu;
         private System.Windows.Forms.SplitContainer split;
         private IKK_controls.ViewContainer viewContainer1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtb;
         private View3Edit view3Edit1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fájlToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem újToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem megnyitásToolStripMenuItem;
