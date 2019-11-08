@@ -20,6 +20,8 @@ namespace IKK
 
         private void navMenu1_SelectedItemChanged(object sender, EventArgs e)
         {
+            if (split.SplitterDistance < 200) split.SplitterDistance = 250;
+
             switch (navMenu1.SelectedItem)
             {
                 case "Kilépés":
@@ -39,6 +41,8 @@ namespace IKK
             base.UpdateTheme();
             richTextBox1.BackColor = Theme.ColorBackground;
             richTextBox1.ForeColor = Theme.ColorText;
+            menuStrip1.BackColor = Theme.ColorPrimary;
+            menuStrip1.ForeColor = Theme.ColorText;
         }
     }
 }
