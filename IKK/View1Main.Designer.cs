@@ -1,6 +1,6 @@
 ﻿namespace IKK
 {
-    partial class ViewMain
+    partial class View1Main
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,14 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View1Main));
             this.navMenu1 = new IKK_controls.NavMenu();
             this.ilMenu = new System.Windows.Forms.ImageList(this.components);
             this.viewContainer1 = new IKK_controls.ViewContainer();
+            this.view2Front1 = new IKK.View2Front();
+            this.viewContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // navMenu1
             // 
+            this.navMenu1.AllowCollapse = true;
             this.navMenu1.Collapsed = false;
             this.navMenu1.Dock = System.Windows.Forms.DockStyle.Left;
             this.navMenu1.ItemIcons = this.ilMenu;
@@ -59,20 +62,32 @@
             // 
             // viewContainer1
             // 
+            this.viewContainer1.Controls.Add(this.view2Front1);
             this.viewContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.viewContainer1.Location = new System.Drawing.Point(250, 0);
             this.viewContainer1.Name = "viewContainer1";
             this.viewContainer1.Size = new System.Drawing.Size(650, 500);
             this.viewContainer1.TabIndex = 4;
             // 
-            // ViewMain
+            // view2Front1
+            // 
+            this.view2Front1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.view2Front1.Location = new System.Drawing.Point(0, 0);
+            this.view2Front1.Margin = new System.Windows.Forms.Padding(0);
+            this.view2Front1.Name = "view2Front1";
+            this.view2Front1.Padding = new System.Windows.Forms.Padding(8);
+            this.view2Front1.Size = new System.Drawing.Size(650, 500);
+            this.view2Front1.TabIndex = 0;
+            // 
+            // View1Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.viewContainer1);
             this.Controls.Add(this.navMenu1);
-            this.Name = "ViewMain";
+            this.Name = "View1Main";
             this.Padding = new System.Windows.Forms.Padding(0);
+            this.viewContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -81,5 +96,6 @@
         private IKK_controls.NavMenu navMenu1;
         private System.Windows.Forms.ImageList ilMenu;
         private IKK_controls.ViewContainer viewContainer1;
+        private View2Front view2Front1;
     }
 }

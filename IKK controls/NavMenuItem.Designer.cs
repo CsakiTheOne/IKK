@@ -28,7 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.ttText = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
+            // 
+            // ttText
+            // 
+            this.ttText.AutomaticDelay = 0;
+            this.ttText.AutoPopDelay = 5000;
+            this.ttText.InitialDelay = 0;
+            this.ttText.ReshowDelay = 0;
             // 
             // NavMenuItem
             // 
@@ -42,5 +51,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.ToolTip ttText;
     }
 }

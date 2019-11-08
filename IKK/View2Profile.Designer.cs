@@ -1,6 +1,6 @@
 ﻿namespace IKK
 {
-    partial class ViewProfile
+    partial class View2Profile
     {
         /// <summary> 
         /// Required designer variable.

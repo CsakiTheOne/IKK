@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using IKK_database;
 using IKK_controls;
+using System.Diagnostics;
 
 namespace IKK
 {
-    public partial class ViewLogin : IKK_controls.View
+    public partial class View1Login : IKK_controls.View
     {
-        public ViewLogin()
+        public View1Login()
         {
             InitializeComponent();
             lblTitle.Text = Storage.ProgramName;
@@ -37,37 +38,22 @@ namespace IKK
             }
             // Log in
             Storage.LocalUser = new Profile(foundUser.Rows[0].Field<string>("email"), foundUser.Rows[0].Field<string>("name"), foundUser.Rows[0].Field<string>("about"));
-            ((ViewContainer)Parent).SetView(new ViewMain());
+            ((ViewContainer)Parent).SetView(new View1Main());
         }
 
         private void btnReg_Click(object sender, EventArgs e)
         {
-            // No empty strings!
-            if (tbEmail.Text.Trim().Length < 1 || tbPass.Text.Length < 1)
-            {
-                new MsgBox("Regisztrálás", "Írd be az e-mail címed és jelszavad!").ShowDialog();
-                return;
-            }
-            // Valid email check
-            if (!tbEmail.Text.Contains('@'))
-            {
-                new MsgBox("Regisztrálás", "Írj be egy helyes e-mail címet!").ShowDialog();
-                return;
-            }
-            // Check for duplicated email
-            if (Database.GetData($"SELECT id FROM user WHERE email LIKE '{tbEmail.Text}'").Rows.Count > 0)
-            {
-                new MsgBox("Regisztrálás", "Ez az e-mail már foglalt!").ShowDialog();
-                return;
-            }
-            // Add user to table
-            string sql = $"INSERT INTO `user` (`id`, `email`, `password`, `name`, `about`, `lastquote`, `projects`, `posts`) VALUES (NULL, '{tbEmail.Text}', '{Secret.Encrypt(tbPass.Text)}', {tbEmail.Text.Remove(tbEmail.Text.IndexOf('@'))}, NULL, NULL, NULL, NULL)";
-            new MsgBox("Sikeres regisztrálás!", "Jelentkezz be!").ShowDialog();
+            if (tbPass.Text.Length < 6) new MsgBox("Regisztrálás", "A jelszó túl rövid! (twss xddd)").ShowDialog();
+            else new MsgBox("Regisztrálás", Database.Register(tbEmail.Text, Secret.Encrypt(tbPass.Text))).ShowDialog();
         }
 
         private void btnPass_Click(object sender, EventArgs e)
         {
-            new MsgBox("This is so sad", "Alexa, play Despasito").ShowDialog();
+            MsgBoxButton[] buttons = { new MsgBoxButton("Ok", true, DialogResult.OK), new MsgBoxButton(":(", false, DialogResult.Yes) };
+            if (new MsgBox("This is so sad", "Alexa, play Despasito", buttons).ShowDialog() == DialogResult.Yes)
+            {
+                Process.Start("https://www.youtube.com/watch?v=kJQP7kiw5Fk");
+            }
         }
     }
 }

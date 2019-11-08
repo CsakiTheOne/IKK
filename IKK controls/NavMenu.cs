@@ -12,17 +12,22 @@ namespace IKK_controls
 {
     public partial class NavMenu : UserControl
     {
+        public bool AllowCollapse { get => nmiMenuTitle.Visible; set => nmiMenuTitle.Visible = value; }
         public bool Collapsed { get => collapsed; set { collapsed = value; Width = collapsed ? nmiMenuTitle.Height : 250; } }
         public ImageList ItemIcons { get => itemIcons; set { itemIcons = value; RefreshItems(); } }
         public string Items { get => items; set { items = value; RefreshItems(); } }
         public string SelectedItem
         {
-            get => flp.Controls.Cast<NavMenuItem>().First(r => r.Selected).Text;
+            get
+            {
+                if (flp.Controls.Count < 1 || flp.Controls.Cast<NavMenuItem>().Where(r => r.Selected).Count() < 1) return "";
+                return flp.Controls.Cast<NavMenuItem>().First(r => r.Selected).Text;
+            }
             set
             {
                 if (flp.Controls.Cast<NavMenuItem>().Count(r => r.Text == value) < 1) return;
 
-                ClickItem(flp.Controls.Cast<NavMenuItem>().First(r => r.Text == value), new EventArgs());
+                SelectItem(flp.Controls.Cast<NavMenuItem>().First(r => r.Text == value), new EventArgs());
             }
         }
 
@@ -49,7 +54,7 @@ namespace IKK_controls
             }
         }
 
-        void ClickItem(object sender, EventArgs e)
+        void SelectItem(object sender, EventArgs e)
         {
             foreach (NavMenuItem item in flp.Controls)
             {
@@ -73,16 +78,17 @@ namespace IKK_controls
             {
                 nextItem = new NavMenuItem(items.Split(';')[i]);
                 if (itemIcons.Images.Count > i) nextItem.Icon = itemIcons.Images[i];
-                nextItem.Click += ClickItem;
+                nextItem.Click += SelectItem;
                 flp.Controls.Add(nextItem);
             }
-
-            ((NavMenuItem)flp.Controls[0]).Selected = true;
         }
 
         private void NavMenu_Paint(object sender, PaintEventArgs e)
         {
-            RefreshItems();
+            for (int i = 0; i < flp.Controls.Count; i++)
+            {
+                if (itemIcons.Images.Count > i) ((NavMenuItem)flp.Controls[i]).Icon = itemIcons.Images[i];
+            }
         }
     }
 }

@@ -11,9 +11,9 @@ using IKK_controls;
 
 namespace IKK
 {
-    public partial class ViewProfile : IKK_controls.View
+    public partial class View2Profile : IKK_controls.View
     {
-        public ViewProfile()
+        public View2Profile()
         {
             InitializeComponent();
             lblProfile.Text = Storage.LocalUser.ToString();
@@ -22,7 +22,7 @@ namespace IKK
         private void btnLogout_Click(object sender, EventArgs e)
         {
             Storage.LocalUser = null;
-            Storage.MainContainer.SetView(new ViewLogin());
+            Storage.MainContainer.SetView(new View1Login());
         }
     }
 }

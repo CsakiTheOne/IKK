@@ -18,6 +18,9 @@ namespace IKK_controls
         [Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
         public string PDescription { get => lblDesc.Text; set => lblDesc.Text = value; }
         public string PLabel { get => lblLabel.Text; set => lblLabel.Text = value; }
+        public bool Selected { get => selected; set { selected = value; Refresh(); } }
+
+        bool selected = false;
 
         public ProjectCard()
         {
@@ -27,7 +30,7 @@ namespace IKK_controls
 
         public void UpdateTheme()
         {
-            BackColor = Theme.ColorBackground;
+            BackColor = selected ? Theme.ColorAccent : Theme.ColorBackground;
             ForeColor = Theme.ColorText;
         }
     }

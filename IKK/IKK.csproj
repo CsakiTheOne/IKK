@@ -77,37 +77,49 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewProfile.cs">
+    <Compile Include="View1Editor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewProfile.Designer.cs">
-      <DependentUpon>ViewProfile.cs</DependentUpon>
+    <Compile Include="View1Editor.Designer.cs">
+      <DependentUpon>View1Editor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View2Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View2Profile.Designer.cs">
+      <DependentUpon>View2Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Secret.cs" />
     <Compile Include="Storage.cs" />
-    <Compile Include="ViewFront.cs">
+    <Compile Include="View2Front.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewFront.Designer.cs">
-      <DependentUpon>ViewFront.cs</DependentUpon>
+    <Compile Include="View2Front.Designer.cs">
+      <DependentUpon>View2Front.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewLogin.cs">
+    <Compile Include="View1Login.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewLogin.Designer.cs">
-      <DependentUpon>ViewLogin.cs</DependentUpon>
+    <Compile Include="View1Login.Designer.cs">
+      <DependentUpon>View1Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewMain.cs">
+    <Compile Include="View1Main.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewMain.Designer.cs">
-      <DependentUpon>ViewMain.cs</DependentUpon>
+    <Compile Include="View1Main.Designer.cs">
+      <DependentUpon>View1Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewProjects.cs">
+    <Compile Include="View2Projects.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ViewProjects.Designer.cs">
-      <DependentUpon>ViewProjects.cs</DependentUpon>
+    <Compile Include="View2Projects.Designer.cs">
+      <DependentUpon>View2Projects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View3Edit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View3Edit.Designer.cs">
+      <DependentUpon>View3Edit.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -122,20 +134,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ViewFront.resx">
-      <DependentUpon>ViewFront.cs</DependentUpon>
+    <EmbeddedResource Include="View1Editor.resx">
+      <DependentUpon>View1Editor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewLogin.resx">
-      <DependentUpon>ViewLogin.cs</DependentUpon>
+    <EmbeddedResource Include="View2Front.resx">
+      <DependentUpon>View2Front.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewMain.resx">
-      <DependentUpon>ViewMain.cs</DependentUpon>
+    <EmbeddedResource Include="View1Login.resx">
+      <DependentUpon>View1Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewProfile.resx">
-      <DependentUpon>ViewProfile.cs</DependentUpon>
+    <EmbeddedResource Include="View1Main.resx">
+      <DependentUpon>View1Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewProjects.resx">
-      <DependentUpon>ViewProjects.cs</DependentUpon>
+    <EmbeddedResource Include="View2Profile.resx">
+      <DependentUpon>View2Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View2Projects.resx">
+      <DependentUpon>View2Projects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View3Edit.resx">
+      <DependentUpon>View3Edit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -168,6 +186,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sharp_folder_open_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sharp_add_white_48dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

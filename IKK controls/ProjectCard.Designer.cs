@@ -39,7 +39,7 @@
             // 
             this.pbLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pbLabel.Image = global::IKK_controls.Properties.Resources.sharp_label_white_48dp;
-            this.pbLabel.Location = new System.Drawing.Point(3, 75);
+            this.pbLabel.Location = new System.Drawing.Point(3, 97);
             this.pbLabel.Name = "pbLabel";
             this.pbLabel.Size = new System.Drawing.Size(20, 20);
             this.pbLabel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -48,21 +48,24 @@
             // 
             // lblDesc
             // 
+            this.lblDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDesc.Location = new System.Drawing.Point(8, 29);
             this.lblDesc.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
             this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(184, 41);
+            this.lblDesc.Size = new System.Drawing.Size(234, 61);
             this.lblDesc.TabIndex = 3;
-            this.lblDesc.Text = "Mú első sorai\r\nNéhány eszköz leírása\r\nMég több szöveg";
+            this.lblDesc.Text = "Mú első sorai\r\nNéhány eszköz leírása\r\nMég több szöveg\r\nNagyon sok szöveg";
             // 
             // lblLabel
             // 
             this.lblLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLabel.Location = new System.Drawing.Point(26, 75);
+            this.lblLabel.Location = new System.Drawing.Point(26, 97);
             this.lblLabel.Margin = new System.Windows.Forms.Padding(0, 8, 8, 0);
             this.lblLabel.Name = "lblLabel";
-            this.lblLabel.Size = new System.Drawing.Size(164, 20);
+            this.lblLabel.Size = new System.Drawing.Size(216, 20);
             this.lblLabel.TabIndex = 2;
             this.lblLabel.Text = "címke";
             this.lblLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -86,7 +89,7 @@
             this.Controls.Add(this.pbLabel);
             this.Controls.Add(this.lblTitle);
             this.Name = "ProjectCard";
-            this.Size = new System.Drawing.Size(198, 98);
+            this.Size = new System.Drawing.Size(250, 120);
             ((System.ComponentModel.ISupportInitialize)(this.pbLabel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

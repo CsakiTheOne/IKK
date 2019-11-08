@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace IKK
 {
-    public partial class ViewFront : IKK_controls.View
+    public partial class View3Edit : IKK_controls.View
     {
-        public ViewFront()
+        public View3Edit()
         {
             InitializeComponent();
         }

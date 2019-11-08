@@ -1,6 +1,6 @@
 ﻿namespace IKK
 {
-    partial class ViewFront
+    partial class View2Front
     {
         /// <summary> 
         /// Required designer variable.

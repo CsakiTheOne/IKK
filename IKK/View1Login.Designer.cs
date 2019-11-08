@@ -1,6 +1,6 @@
 ﻿namespace IKK
 {
-    partial class ViewLogin
+    partial class View1Login
     {
         /// <summary> 
         /// Required designer variable.

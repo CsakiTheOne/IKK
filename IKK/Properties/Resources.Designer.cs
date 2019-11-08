@@ -73,6 +73,16 @@ namespace IKK.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sharp_add_white_48dp {
+            get {
+                object obj = ResourceManager.GetObject("sharp_add_white_48dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sharp_dashboard_white_48dp {
             get {
                 object obj = ResourceManager.GetObject("sharp_dashboard_white_48dp", resourceCulture);

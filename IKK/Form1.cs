@@ -28,7 +28,7 @@ namespace IKK
         private void Form1_Load(object sender, EventArgs e)
         {
             Storage.MainContainer = viewContainerMain;
-            viewContainerMain.SetView(new ViewLogin());
+            viewContainerMain.SetView(new View1Login());
         }
     }
 }

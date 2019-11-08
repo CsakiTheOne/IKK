@@ -11,31 +11,34 @@ using IKK_controls;
 
 namespace IKK
 {
-    public partial class ViewMain : IKK_controls.View
+    public partial class View1Editor : IKK_controls.View
     {
-        public ViewMain()
+        public View1Editor()
         {
             InitializeComponent();
-            navMenu1.SelectedItem = "Főoldal";
         }
 
         private void navMenu1_SelectedItemChanged(object sender, EventArgs e)
         {
             switch (navMenu1.SelectedItem)
             {
-                case "Főoldal":
-                    viewContainer1.SetView(new ViewFront());
+                case "Kilépés":
+                    Storage.MainContainer.SetView(new View1Main());
                     break;
-                case "Profil":
-                    viewContainer1.SetView(new ViewProfile());
+                case "Szerkesztés":
+                    viewContainer1.SetView(new View3Edit());
                     break;
-                case "Verses fal":
+                case "Eszközök":
                     viewContainer1.SetView(new IKK_controls.View());
                     break;
-                case "Művek":
-                    viewContainer1.SetView(new ViewProjects());
-                    break;
             }
+        }
+
+        public override void UpdateTheme()
+        {
+            base.UpdateTheme();
+            richTextBox1.BackColor = Theme.ColorBackground;
+            richTextBox1.ForeColor = Theme.ColorText;
         }
     }
 }

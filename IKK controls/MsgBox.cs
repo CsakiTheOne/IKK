@@ -12,7 +12,7 @@ namespace IKK_controls
 {
     public partial class MsgBox : Form, IThemable
     {
-        public MsgBox(string title, string text, string btn1Text = "Ok", bool btn1Raise = true, string btn2Text = "", bool btn2Raise = false, string btn3Text = "", bool btn3Raise = false)
+        public MsgBox(string title, string text)
         {
             InitializeComponent();
 
@@ -20,21 +20,24 @@ namespace IKK_controls
 
             lblTitle.Text = title;
             lblText.Text = text;
-            btn1.Text = btn1Text;
-            btn1.Raised = btn1Raise;
-            if (btn2Text == "") btn2.Visible = false;
-            else
+
+            flpButtons.Controls.Add(new Btn() { Text = "Ok", Raised = true, DialogResult = DialogResult.OK });
+        }
+
+        public MsgBox(string title, string text, MsgBoxButton[] buttons)
+        {
+            InitializeComponent();
+
+            UpdateTheme();
+
+            lblTitle.Text = title;
+            lblText.Text = text;
+
+            Btn btnNext;
+            foreach (MsgBoxButton item in buttons)
             {
-                btn2.Visible = true;
-                btn2.Text = btn2Text;
-                btn2.Raised = btn2Raise;
-            }
-            if (btn3Text == "") btn3.Visible = false;
-            else
-            {
-                btn3.Visible = true;
-                btn2.Text = btn3Text;
-                btn2.Raised = btn3Raise;
+                btnNext = new Btn() { Text = item.Text, Raised = item.Raised, DialogResult = item.Result };
+                flpButtons.Controls.Add(btnNext);
             }
         }
 
@@ -43,6 +46,20 @@ namespace IKK_controls
             ForeColor = Theme.ColorText;
             pBox.BackColor = Theme.ColorBackground;
             pHead.BackColor = Theme.ColorPrimary;
+        }
+    }
+
+    public struct MsgBoxButton
+    {
+        public string Text;
+        public bool Raised;
+        public DialogResult Result;
+
+        public MsgBoxButton(string text, bool raised, DialogResult result)
+        {
+            Text = text;
+            Raised = raised;
+            Result = result;
         }
     }
 }

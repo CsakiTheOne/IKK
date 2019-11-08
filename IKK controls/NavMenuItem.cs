@@ -49,6 +49,8 @@ namespace IKK_controls
             Width = Parent.Width;
             collapsed = Width < Height * 2;
 
+            ttText.SetToolTip(this, collapsed ? Text : "");
+
             if (Selected)
             {
                 Brush accentBrush = new SolidBrush(Theme.ColorAccent);
