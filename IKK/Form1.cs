@@ -1,5 +1,4 @@
 ﻿using IKK_controls;
-using IKK_database;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,7 +35,7 @@ namespace IKK
             }
             else
             {
-                Storage.LocalUser = new Profile("nincs", "Offline felhasználó", "Nincs netem vagy a szerver nem elérhető.");
+                Storage.LocalUser = new IKK_data.Profile("nincs", "Offline felhasználó", "Nincs netem vagy a szerver nem elérhető.");
                 viewContainerMain.SetView(new View1Main());
             }
         }

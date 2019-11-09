@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKK", "IKK\IKK.csproj", "{F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKK controls", "IKK controls\IKK controls.csproj", "{CEC5A887-F735-4D53-96E1-F5178FE92324}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKK database", "IKK database\IKK database.csproj", "{FF611970-5A96-4C3F-B121-1F507B291B8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKK data", "IKK database\IKK data.csproj", "{FF611970-5A96-4C3F-B121-1F507B291B8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

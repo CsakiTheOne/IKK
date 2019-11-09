@@ -63,6 +63,8 @@
   <ItemGroup>
     <Compile Include="Database.cs" />
     <Compile Include="IO.cs" />
+    <Compile Include="Profile.cs" />
+    <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data.SqlTypes;
 
-namespace IKK_database
+namespace IKK_data
 {
     public static class Database
     {
