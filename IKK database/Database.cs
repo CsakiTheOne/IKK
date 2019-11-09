@@ -63,14 +63,14 @@ namespace IKK_data
                 return "Írj be egy helyes e-mail címet!";
             }
             // Check for duplicated email
-            if (Database.GetData($"SELECT id FROM user WHERE email LIKE '{email}'").Rows.Count > 0)
+            if (GetData($"SELECT id FROM user WHERE email LIKE '{email}'").Rows.Count > 0)
             {
                 return "Ez az e-mail már foglalt!";
             }
             // Add user to table
             string name = email.Remove(email.IndexOf('@'));
             string sql = $"INSERT INTO `user` (`id`, `email`, `password`, `name`) VALUES (NULL, '{email}', '{pass}', '{name}')";
-            Database.GetData(sql);
+            GetData(sql);
 
             return "Sikeres regisztrálás! Jelentkezz be!";
         }
@@ -83,13 +83,13 @@ namespace IKK_data
                 return "Minden mezőt ki kell tölteni!";
             }
             // Search for user
-            DataTable foundUser = Database.GetData($"SELECT email, name, about FROM user WHERE email LIKE '{email}' AND password LIKE '{pass}'");
+            DataTable foundUser = GetData($"SELECT id, email, name, about FROM user WHERE email LIKE '{email}' AND password LIKE '{pass}'");
             if (foundUser == null || foundUser.Rows.Count < 1)
             {
                 return "E-mail vagy jelszó hibás!";
             }
 
-            return $"PROFILE;{foundUser.Rows[0].Field<string>("email")};{foundUser.Rows[0].Field<string>("name")};{foundUser.Rows[0].Field<string>("about")}";
+            return $"PROFILE;{foundUser.Rows[0].Field<string>("id")};{foundUser.Rows[0].Field<string>("email")};{foundUser.Rows[0].Field<string>("name")};{foundUser.Rows[0].Field<string>("about")}";
         }
     }
 }

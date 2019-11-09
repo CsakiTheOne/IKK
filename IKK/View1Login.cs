@@ -29,7 +29,7 @@ namespace IKK
                 string result = Database.Login(tbEmail.Text, Secret.Encrypt(tbPass.Text));
                 if (result.Contains("PROFILE"))
                 {
-                    Storage.LocalUser = new Profile(result.Split(';')[1], result.Split(';')[2], result.Split(';')[3]);
+                    Storage.LocalUser = new Profile(int.Parse(result.Split(';')[1]), result.Split(';')[2], result.Split(';')[3], result.Split(';')[4]);
                     Storage.MainContainer.SetView(new View1Main());
                 }
                 else new MsgBox("Bejelentkezés", result);

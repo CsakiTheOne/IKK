@@ -8,14 +8,16 @@ namespace IKK_data
 {
     public class Profile
     {
+        public int ID { get; }
         public string Email { get; }
         public string Name { get; }
         public string About { get; }
 
         public Profile() { }
 
-        public Profile(string email, string name, string about)
+        public Profile(int id, string email, string name, string about)
         {
+            ID = id;
             Email = email;
             Name = name;
             About = about;

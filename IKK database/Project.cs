@@ -9,14 +9,18 @@ namespace IKK_data
     [Serializable]
     public class Project
     {
+        public int ID { get; set; }
+        public int Author { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
         public string Label { get; set; }
         public DateTime CreateTime { get; }
 
         public Project() { }
-        public Project(string title, string content, string label, DateTime createTime)
+        public Project(int id, int author, string title, string content, string label, DateTime createTime)
         {
+            ID = id;
+            Author = author;
             Title = title;
             Content = content;
             Label = label;
