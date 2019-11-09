@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace IKK
 {
+    [Serializable]
     public class Project
     {
         public string Title { get; set; }

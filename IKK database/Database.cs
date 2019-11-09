@@ -11,7 +11,7 @@ namespace IKK_database
 {
     public static class Database
     {
-        public static string DB { get => "Server=localhost;User ID=root;Password=rootroot;Database=IKK"; }
+        public static string DB { get => "Server=localhost;User ID=ikk;Password=ikkikk;Database=IKK"; }
 
         public static bool Test()
         {
