@@ -17,8 +17,20 @@ namespace IKK_data
         /// Offline
         /// </summary>
         public string Description { get; set; }
+        /// <summary>
+        /// Offline
+        /// </summary>
+        public string Category { get; set; }
 
         public abstract void OnLoad(string content);
         public abstract void OnChange(string content);
+    }
+
+    public static class ToolStorage
+    {
+        public static List<Tool> Tools
+        {
+            get => new List<Tool>() { };
+        }
     }
 }

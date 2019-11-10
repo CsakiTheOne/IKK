@@ -108,6 +108,12 @@
     <Compile Include="ToolCard.Designer.cs">
       <DependentUpon>ToolCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolDialog.Designer.cs">
+      <DependentUpon>ToolDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="View.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ToolCard.resx">
       <DependentUpon>ToolCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolDialog.resx">
+      <DependentUpon>ToolDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View.resx">
       <DependentUpon>View.cs</DependentUpon>

@@ -77,54 +77,54 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View1Editor.cs">
+    <Compile Include="Views\View1Editor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View1Editor.Designer.cs">
+    <Compile Include="Views\View1Editor.Designer.cs">
       <DependentUpon>View1Editor.cs</DependentUpon>
     </Compile>
-    <Compile Include="View2Profile.cs">
+    <Compile Include="Views\View2Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View2Profile.Designer.cs">
+    <Compile Include="Views\View2Profile.Designer.cs">
       <DependentUpon>View2Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Secret.cs" />
     <Compile Include="Storage.cs" />
-    <Compile Include="View2Front.cs">
+    <Compile Include="Views\View2Front.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View2Front.Designer.cs">
+    <Compile Include="Views\View2Front.Designer.cs">
       <DependentUpon>View2Front.cs</DependentUpon>
     </Compile>
-    <Compile Include="View1Login.cs">
+    <Compile Include="Views\View1Login.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View1Login.Designer.cs">
+    <Compile Include="Views\View1Login.Designer.cs">
       <DependentUpon>View1Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="View1Main.cs">
+    <Compile Include="Views\View1Main.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View1Main.Designer.cs">
+    <Compile Include="Views\View1Main.Designer.cs">
       <DependentUpon>View1Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="View2Projects.cs">
+    <Compile Include="Views\View2Projects.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View2Projects.Designer.cs">
+    <Compile Include="Views\View2Projects.Designer.cs">
       <DependentUpon>View2Projects.cs</DependentUpon>
     </Compile>
-    <Compile Include="View3Edit.cs">
+    <Compile Include="Views\View3Edit.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View3Edit.Designer.cs">
+    <Compile Include="Views\View3Edit.Designer.cs">
       <DependentUpon>View3Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="View3Tools.cs">
+    <Compile Include="Views\View3Tools.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View3Tools.Designer.cs">
+    <Compile Include="Views\View3Tools.Designer.cs">
       <DependentUpon>View3Tools.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
@@ -140,28 +140,28 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View1Editor.resx">
+    <EmbeddedResource Include="Views\View1Editor.resx">
       <DependentUpon>View1Editor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View2Front.resx">
+    <EmbeddedResource Include="Views\View2Front.resx">
       <DependentUpon>View2Front.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View1Login.resx">
+    <EmbeddedResource Include="Views\View1Login.resx">
       <DependentUpon>View1Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View1Main.resx">
+    <EmbeddedResource Include="Views\View1Main.resx">
       <DependentUpon>View1Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View2Profile.resx">
+    <EmbeddedResource Include="Views\View2Profile.resx">
       <DependentUpon>View2Profile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View2Projects.resx">
+    <EmbeddedResource Include="Views\View2Projects.resx">
       <DependentUpon>View2Projects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View3Edit.resx">
+    <EmbeddedResource Include="Views\View3Edit.resx">
       <DependentUpon>View3Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View3Tools.resx">
+    <EmbeddedResource Include="Views\View3Tools.resx">
       <DependentUpon>View3Tools.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

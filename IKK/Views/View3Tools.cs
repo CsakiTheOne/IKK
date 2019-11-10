@@ -15,6 +15,7 @@ namespace IKK
         public View3Tools()
         {
             InitializeComponent();
+            RefreshTools();
         }
 
         void RefreshTools()
