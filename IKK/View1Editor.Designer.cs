@@ -34,18 +34,18 @@
             this.ilMenu = new System.Windows.Forms.ImageList(this.components);
             this.split = new System.Windows.Forms.SplitContainer();
             this.viewContainer1 = new IKK_controls.ViewContainer();
-            this.view3Edit1 = new IKK.View3Edit();
             this.rtb = new System.Windows.Forms.RichTextBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fájlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.újToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.megnyitásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mentésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sfd = new System.Windows.Forms.SaveFileDialog();
+            this.ofd = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.split)).BeginInit();
             this.split.Panel1.SuspendLayout();
             this.split.Panel2.SuspendLayout();
             this.split.SuspendLayout();
-            this.viewContainer1.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,28 +87,17 @@
             this.split.Panel2.Controls.Add(this.rtb);
             this.split.Panel2MinSize = 0;
             this.split.Size = new System.Drawing.Size(840, 476);
-            this.split.SplitterDistance = 150;
+            this.split.SplitterDistance = 0;
             this.split.TabIndex = 1;
             // 
             // viewContainer1
             // 
-            this.viewContainer1.Controls.Add(this.view3Edit1);
             this.viewContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.viewContainer1.Location = new System.Drawing.Point(0, 0);
             this.viewContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.viewContainer1.Name = "viewContainer1";
-            this.viewContainer1.Size = new System.Drawing.Size(150, 476);
+            this.viewContainer1.Size = new System.Drawing.Size(0, 476);
             this.viewContainer1.TabIndex = 0;
-            // 
-            // view3Edit1
-            // 
-            this.view3Edit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.view3Edit1.Location = new System.Drawing.Point(0, 0);
-            this.view3Edit1.Margin = new System.Windows.Forms.Padding(0);
-            this.view3Edit1.Name = "view3Edit1";
-            this.view3Edit1.Padding = new System.Windows.Forms.Padding(8);
-            this.view3Edit1.Size = new System.Drawing.Size(150, 476);
-            this.view3Edit1.TabIndex = 0;
             // 
             // rtb
             // 
@@ -117,7 +106,7 @@
             this.rtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rtb.Location = new System.Drawing.Point(0, 0);
             this.rtb.Name = "rtb";
-            this.rtb.Size = new System.Drawing.Size(686, 476);
+            this.rtb.Size = new System.Drawing.Size(836, 476);
             this.rtb.TabIndex = 0;
             this.rtb.Text = "A rózsa vörös,\nAz ibolya kék...";
             this.rtb.TextChanged += new System.EventHandler(this.rtb_TextChanged);
@@ -145,21 +134,21 @@
             // újToolStripMenuItem
             // 
             this.újToolStripMenuItem.Name = "újToolStripMenuItem";
-            this.újToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.újToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.újToolStripMenuItem.Text = "Új";
             this.újToolStripMenuItem.Click += new System.EventHandler(this.újToolStripMenuItem_Click);
             // 
             // megnyitásToolStripMenuItem
             // 
             this.megnyitásToolStripMenuItem.Name = "megnyitásToolStripMenuItem";
-            this.megnyitásToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.megnyitásToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.megnyitásToolStripMenuItem.Text = "Megnyitás";
             this.megnyitásToolStripMenuItem.Click += new System.EventHandler(this.megnyitásToolStripMenuItem_Click);
             // 
             // mentésToolStripMenuItem
             // 
             this.mentésToolStripMenuItem.Name = "mentésToolStripMenuItem";
-            this.mentésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mentésToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.mentésToolStripMenuItem.Text = "Mentés";
             this.mentésToolStripMenuItem.Click += new System.EventHandler(this.mentésToolStripMenuItem_Click);
             // 
@@ -176,7 +165,6 @@
             this.split.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.split)).EndInit();
             this.split.ResumeLayout(false);
-            this.viewContainer1.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -191,11 +179,12 @@
         private System.Windows.Forms.SplitContainer split;
         private IKK_controls.ViewContainer viewContainer1;
         private System.Windows.Forms.RichTextBox rtb;
-        private View3Edit view3Edit1;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fájlToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem újToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem megnyitásToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mentésToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog sfd;
+        private System.Windows.Forms.OpenFileDialog ofd;
     }
 }

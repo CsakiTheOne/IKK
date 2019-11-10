@@ -8,14 +8,55 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IKK_controls;
+using IKK_data;
 
 namespace IKK
 {
     public partial class View1Editor : IKK_controls.View
     {
+        Project project;
+
         public View1Editor()
         {
             InitializeComponent();
+            split.SplitterDistance = 0;
+            ofd.Filter = IO.PROJECT_FILTER;
+            sfd.Filter = IO.PROJECT_FILTER;
+            LoadProject(new Project(-1, Storage.LocalUser.ID, "", rtb.Text, "", DateTime.Now, null));
+        }
+
+        public View1Editor(Project project)
+        {
+            InitializeComponent();
+            split.SplitterDistance = 0;
+            ofd.Filter = IO.PROJECT_FILTER;
+            sfd.Filter = IO.PROJECT_FILTER;
+            LoadProject(project);
+        }
+
+        public View1Editor(string projectFileName)
+        {
+            InitializeComponent();
+            split.SplitterDistance = 0;
+            ofd.Filter = IO.PROJECT_FILTER;
+            sfd.Filter = IO.PROJECT_FILTER;
+            LoadProject(IO.ProjectOpen(projectFileName));
+        }
+
+        public override void UpdateTheme()
+        {
+            base.UpdateTheme();
+            rtb.BackColor = Theme.ColorBackground;
+            rtb.ForeColor = Theme.ColorText;
+            menuStrip.BackColor = Theme.ColorPrimary;
+            menuStrip.ForeColor = Theme.ColorText;
+        }
+
+        void LoadProject(Project project)
+        {
+            Storage.CurrentProject = project;
+
+            // TODO
         }
 
         private void navMenu1_SelectedItemChanged(object sender, EventArgs e)
@@ -47,15 +88,6 @@ namespace IKK
             }
         }
 
-        public override void UpdateTheme()
-        {
-            base.UpdateTheme();
-            rtb.BackColor = Theme.ColorBackground;
-            rtb.ForeColor = Theme.ColorText;
-            menuStrip.BackColor = Theme.ColorPrimary;
-            menuStrip.ForeColor = Theme.ColorText;
-        }
-
         #region ToolStripMenu
         private void újToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -72,18 +104,24 @@ namespace IKK
 
         private void megnyitásToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                LoadProject(IO.ProjectOpen(ofd.FileName));
+            }
         }
 
         private void mentésToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                IO.ProjectSave(Storage.CurrentProject, sfd.FileName);
+            }
         }
         #endregion
 
         private void rtb_TextChanged(object sender, EventArgs e)
         {
-
+            Storage.CurrentProject.Content = rtb.Text;
         }
     }
 }

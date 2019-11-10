@@ -15,6 +15,19 @@ namespace IKK
         public View3Edit()
         {
             InitializeComponent();
+            if (Storage.CurrentProject != null)
+            {
+                tbTitle.Text = Storage.CurrentProject.Title;
+                cbLabel.Text = Storage.CurrentProject.Label;
+                tbCreateTime.Text = Storage.CurrentProject.CreateTime.ToString();
+                lblIdInfo.Text = $"Mű azonosító: {Storage.CurrentProject.ID}\n\rKöltő / szerző azonosító: {Storage.LocalUser.ID}";
+            }
+        }
+
+        private void valuesChanged(object sender, EventArgs e)
+        {
+            Storage.CurrentProject.Title = tbTitle.Text;
+            Storage.CurrentProject.Label = cbLabel.Text;
         }
     }
 }
