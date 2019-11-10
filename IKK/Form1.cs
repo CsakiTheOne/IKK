@@ -35,7 +35,7 @@ namespace IKK
             }
             else
             {
-                Storage.LocalUser = new IKK_data.Profile(-1, "nincs", "Offline felhasználó", "Nincs netem vagy a szerver nem elérhető.");
+                Storage.LocalUser = new IKK_data.Profile(-1, "nincs", "Offline felhasználó", "Nincs netem vagy a szerver nem elérhető.", DateTime.Today);
                 viewContainerMain.SetView(new View1Main());
             }
         }

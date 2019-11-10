@@ -83,7 +83,7 @@ namespace IKK_data
                 return "Minden mezőt ki kell tölteni!";
             }
             // Search for user
-            DataTable foundUser = GetData($"SELECT id, email, name, about FROM user WHERE email LIKE '{email}' AND password LIKE '{pass}'");
+            DataTable foundUser = GetData($"SELECT id, name, about, lastquote FROM user WHERE email LIKE '{email}' AND password LIKE '{pass}'");
             if (foundUser == null || foundUser.Rows.Count < 1)
             {
                 return "E-mail vagy jelszó hibás!";
@@ -91,7 +91,7 @@ namespace IKK_data
 
             object[] cols = foundUser.Rows[0].ItemArray;
 
-            return $"PROFILE;{cols[0]};{email};{cols[3]};{cols[4]};{cols[5]}";
+            return $"PROFILE;{cols[0]};{email};{cols[1]};{cols[2]};{cols[3]}";
         }
     }
 }
