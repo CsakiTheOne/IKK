@@ -38,6 +38,7 @@
             this.btnPass = new IKK_controls.Btn();
             this.btnReg = new IKK_controls.Btn();
             this.btnLogin = new IKK_controls.Btn();
+            this.btnHelp = new IKK_controls.Btn();
             this.cardLogin.SuspendLayout();
             this.pLogin.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +58,7 @@
             // pLogin
             // 
             this.pLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pLogin.Controls.Add(this.btnHelp);
             this.pLogin.Controls.Add(this.tbPass);
             this.pLogin.Controls.Add(this.tbEmail);
             this.pLogin.Controls.Add(this.lblPass);
@@ -85,7 +87,7 @@
             this.tbPass.Size = new System.Drawing.Size(266, 26);
             this.tbPass.TabIndex = 20;
             // 
-            // tbName
+            // tbEmail
             // 
             this.tbEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -94,7 +96,7 @@
             this.tbEmail.Location = new System.Drawing.Point(17, 98);
             this.tbEmail.Margin = new System.Windows.Forms.Padding(8);
             this.tbEmail.MaxLength = 30;
-            this.tbEmail.Name = "tbName";
+            this.tbEmail.Name = "tbEmail";
             this.tbEmail.Secret = false;
             this.tbEmail.Size = new System.Drawing.Size(266, 26);
             this.tbEmail.TabIndex = 19;
@@ -190,12 +192,28 @@
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // ViewLogin
+            // btnHelp
+            // 
+            this.btnHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHelp.FlatAppearance.BorderSize = 0;
+            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnHelp.Location = new System.Drawing.Point(253, 17);
+            this.btnHelp.Margin = new System.Windows.Forms.Padding(8);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Raised = false;
+            this.btnHelp.Size = new System.Drawing.Size(30, 30);
+            this.btnHelp.TabIndex = 21;
+            this.btnHelp.Text = "?";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
+            // View1Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.cardLogin);
-            this.Name = "ViewLogin";
+            this.Name = "View1Login";
             this.cardLogin.ResumeLayout(false);
             this.pLogin.ResumeLayout(false);
             this.pLogin.PerformLayout();
@@ -215,5 +233,6 @@
         private IKK_controls.Btn btnPass;
         private IKK_controls.Btn btnReg;
         private IKK_controls.Btn btnLogin;
+        private IKK_controls.Btn btnHelp;
     }
 }

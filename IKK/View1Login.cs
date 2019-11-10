@@ -23,7 +23,7 @@ namespace IKK
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (tbPass.Text.Length < 1) new MsgBox("Regisztrálás", "Minden mezőt ki kell tölteni!").ShowDialog();
+            if (tbPass.Text.Length < 1) new MsgBox("Bejelentkezés", "Minden mezőt ki kell tölteni!").ShowDialog();
             else
             {
                 string result = Database.Login(tbEmail.Text, Secret.Encrypt(tbPass.Text));
@@ -51,6 +51,15 @@ namespace IKK
             {
                 Process.Start("https://www.youtube.com/watch?v=kJQP7kiw5Fk");
             }
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            new MsgBox(
+                "Mit jelent az IKK?",
+                "Integrált Költészeti Környezet.\n\rA program, ami beépített eszközökkel segít írni és költeni.\n\r" +
+                "Honnan jött az ötlet? Integrált Fejlesztői Környezet (IDE) a programozók eszköze. A magyar költők ezköze pedig az IKK."
+            ).ShowDialog();
         }
     }
 }
