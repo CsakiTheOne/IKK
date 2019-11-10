@@ -21,21 +21,44 @@ namespace IKK
 
         void RefreshTools()
         {
-            flp.Controls.Clear();
+            tlp.Controls.Clear();
 
             if (Storage.CurrentProject.Tools == null) return;
 
+            ToolCard tc;
+
             foreach (IKK_data.Tool tool in Storage.CurrentProject.Tools)
             {
-                flp.Controls.Add(new IKK_controls.ToolCard());
+                tc = new ToolCard(tool);
+                tc.Width = tlp.Width;
+                tc.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right);
+                tc.ToolRemoveClicked += Tc_ToolRemoveClicked;
+                tlp.Controls.Add(tc);
             }
+        }
+
+        private void Tc_ToolRemoveClicked(IKK_data.Tool tool)
+        {
+            Storage.CurrentProject.Tools.Remove(tool);
+            RefreshTools();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             IKK_data.Tool tool = MsgBox.ShowToolDialog();
             if (tool == null) return;
-            MsgBox.Show("Eszköz választó debug", tool.Name + "\n\r" + tool.Description);
+
+            if (Storage.CurrentProject.Tools.Count(r => r.Name == tool.Name) < 1)
+            {
+                Storage.CurrentProject.Tools.Add(tool);
+                RefreshTools();
+            }
+            else
+            {
+                MsgBox.Show("Eszközök", "Ez az eszköz már szerepel a projektben!");
+            }
         }
+
+
     }
 }

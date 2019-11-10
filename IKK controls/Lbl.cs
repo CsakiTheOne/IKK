@@ -23,10 +23,5 @@ namespace IKK_controls
             if (Parent != null) BackColor = Parent.BackColor;
             ForeColor = Theme.ColorText;
         }
-
-        protected override void OnPaint(PaintEventArgs pe)
-        {
-            base.OnPaint(pe);
-        }
     }
 }

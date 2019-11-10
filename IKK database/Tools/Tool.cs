@@ -9,18 +9,18 @@ namespace IKK_data
     [Serializable]
     public abstract class Tool
     {
-        public int ID { get; }
+        public int ID { get; protected set; }
         public int Project { get; set; }
-        public string Name { get; set; }
+        public abstract string Name { get; }
         public string Settings { get; set; }
         /// <summary>
         /// Offline
         /// </summary>
-        public string Description { get; set; }
+        public abstract string Description { get; }
         /// <summary>
         /// Offline
         /// </summary>
-        public string Category { get; set; }
+        public abstract string Category { get; }
 
         public abstract void OnLoad(string content);
         public abstract void OnChange(string content);
@@ -30,7 +30,7 @@ namespace IKK_data
     {
         public static List<Tool> Tools
         {
-            get => new List<Tool>() { };
+            get => new List<Tool>() { new ToolDescription() };
         }
     }
 }

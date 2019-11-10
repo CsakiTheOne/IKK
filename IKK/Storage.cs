@@ -16,7 +16,7 @@ namespace IKK
         public static bool OfflineMode { get; set; }
         public static ViewContainer MainContainer { get; set; }
         public static Profile LocalUser { get; set; }
-        public static Project CurrentProject { get; set; }
+        public static Project CurrentProject { get; set; } = new Project();
 
         public static bool TestConnection()
         {

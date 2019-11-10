@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Leírás");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Általános", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Líra");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Epika");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Eszköz csomagok");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Általános");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Líra");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Epika");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Eszköz csomagok");
             this.treeView = new System.Windows.Forms.TreeView();
             this.btnAdd = new IKK_controls.Btn();
             this.SuspendLayout();
@@ -46,21 +44,19 @@
             this.treeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView.Location = new System.Drawing.Point(12, 12);
             this.treeView.Name = "treeView";
-            treeNode1.Name = "nodeDesc";
-            treeNode1.Text = "Leírás";
-            treeNode2.Name = "categoryGeneral";
-            treeNode2.Text = "Általános";
-            treeNode3.Name = "categoryLyre";
-            treeNode3.Text = "Líra";
-            treeNode4.Name = "categoryNarrative";
-            treeNode4.Text = "Epika";
-            treeNode5.Name = "categoryPacks";
-            treeNode5.Text = "Eszköz csomagok";
+            treeNode1.Name = "categoryGeneral";
+            treeNode1.Text = "Általános";
+            treeNode2.Name = "categoryLyre";
+            treeNode2.Text = "Líra";
+            treeNode3.Name = "categoryNarrative";
+            treeNode3.Text = "Epika";
+            treeNode4.Name = "categoryPacks";
+            treeNode4.Text = "Eszköz csomagok";
             this.treeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1,
             treeNode2,
             treeNode3,
-            treeNode4,
-            treeNode5});
+            treeNode4});
             this.treeView.Size = new System.Drawing.Size(360, 391);
             this.treeView.TabIndex = 0;
             this.treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterSelect);

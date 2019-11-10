@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IKK_data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +13,18 @@ namespace IKK_controls
 {
     public partial class ToolDialog : Form, IThemable
     {
-        public IKK_data.Tool SelectedTool { get; private set; }
+        public Tool SelectedTool { get; private set; }
 
         public ToolDialog()
         {
             InitializeComponent();
             Theme.ThemeChanged += UpdateTheme;
+            UpdateTheme();
+
+            foreach (Tool tool in ToolStorage.Tools)
+            {
+                treeView.Nodes[tool.Category].Nodes.Add(new TreeNode(tool.Name) { ToolTipText = tool.Description });
+            }
         }
 
         public void UpdateTheme()
@@ -30,9 +37,14 @@ namespace IKK_controls
 
         private void treeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if (!treeView.SelectedNode.Name.Contains("tool")) return;
-
-            // TODO SelectedTool = ;
+            try
+            {
+                SelectedTool = ToolStorage.Tools.First(r => r.Name == treeView.SelectedNode.Text);
+            }
+            catch
+            {
+                SelectedTool = null;
+            }
         }
     }
 }

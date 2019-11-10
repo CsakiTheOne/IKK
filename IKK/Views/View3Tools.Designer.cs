@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnAdd = new IKK_controls.Btn();
-            this.flp = new System.Windows.Forms.FlowLayoutPanel();
+            this.tlp = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -41,34 +41,39 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnAdd.Location = new System.Drawing.Point(16, 16);
+            this.btnAdd.Location = new System.Drawing.Point(8, 8);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(8);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Raised = true;
-            this.btnAdd.Size = new System.Drawing.Size(268, 30);
+            this.btnAdd.Size = new System.Drawing.Size(284, 30);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Eszköz hozzáadása";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // flp
+            // tlp
             // 
-            this.flp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tlp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flp.Location = new System.Drawing.Point(0, 57);
-            this.flp.Margin = new System.Windows.Forms.Padding(0);
-            this.flp.Name = "flp";
-            this.flp.Size = new System.Drawing.Size(300, 443);
-            this.flp.TabIndex = 1;
+            this.tlp.ColumnCount = 1;
+            this.tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlp.Location = new System.Drawing.Point(0, 46);
+            this.tlp.Margin = new System.Windows.Forms.Padding(0);
+            this.tlp.Name = "tlp";
+            this.tlp.RowCount = 1;
+            this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlp.Size = new System.Drawing.Size(300, 454);
+            this.tlp.TabIndex = 1;
             // 
             // View3Tools
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flp);
+            this.Controls.Add(this.tlp);
             this.Controls.Add(this.btnAdd);
             this.Name = "View3Tools";
+            this.Padding = new System.Windows.Forms.Padding(0);
             this.Size = new System.Drawing.Size(300, 500);
             this.ResumeLayout(false);
 
@@ -77,6 +82,6 @@
         #endregion
 
         private IKK_controls.Btn btnAdd;
-        private System.Windows.Forms.FlowLayoutPanel flp;
+        private System.Windows.Forms.TableLayoutPanel tlp;
     }
 }

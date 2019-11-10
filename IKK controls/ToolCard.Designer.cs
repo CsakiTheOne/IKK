@@ -28,35 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblName = new IKK_controls.Lbl();
-            this.lblDesc = new IKK_controls.Lbl();
-            this.btnRemove = new IKK_controls.Btn();
             this.btnSettings = new IKK_controls.Btn();
+            this.btnRemove = new IKK_controls.Btn();
+            this.lblDesc = new IKK_controls.Lbl();
+            this.lblName = new IKK_controls.Lbl();
             this.SuspendLayout();
             // 
-            // lblName
+            // btnSettings
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblName.Location = new System.Drawing.Point(8, 8);
-            this.lblName.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(59, 17);
-            this.lblName.TabIndex = 1;
-            this.lblName.Text = "Eszköz";
-            // 
-            // lblDesc
-            // 
-            this.lblDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDesc.Location = new System.Drawing.Point(8, 33);
-            this.lblDesc.Margin = new System.Windows.Forms.Padding(8, 8, 8, 0);
-            this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(284, 44);
-            this.lblDesc.TabIndex = 2;
-            this.lblDesc.Text = "Leírás\r\nLeírás második sora\r\nHarmadik sor";
+            this.btnSettings.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
+            this.btnSettings.Location = new System.Drawing.Point(8, 77);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Raised = false;
+            this.btnSettings.Size = new System.Drawing.Size(284, 24);
+            this.btnSettings.TabIndex = 4;
+            this.btnSettings.Text = "...";
+            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnRemove
             // 
@@ -76,22 +71,29 @@
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // btnSettings
+            // lblDesc
             // 
-            this.btnSettings.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
-            this.btnSettings.Location = new System.Drawing.Point(8, 77);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Raised = false;
-            this.btnSettings.Size = new System.Drawing.Size(284, 24);
-            this.btnSettings.TabIndex = 4;
-            this.btnSettings.Text = "...";
-            this.btnSettings.UseVisualStyleBackColor = false;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            this.lblDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDesc.Location = new System.Drawing.Point(8, 33);
+            this.lblDesc.Margin = new System.Windows.Forms.Padding(8, 8, 8, 0);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(284, 44);
+            this.lblDesc.TabIndex = 2;
+            this.lblDesc.Text = "Leírás\r\nLeírás második sora\r\nHarmadik sor";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblName.Location = new System.Drawing.Point(8, 8);
+            this.lblName.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(59, 17);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Eszköz";
             // 
             // ToolCard
             // 
@@ -102,7 +104,7 @@
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.lblName);
-            this.Margin = new System.Windows.Forms.Padding(0);
+            this.Margin = new System.Windows.Forms.Padding(0, 0, 0, 16);
             this.Name = "ToolCard";
             this.Size = new System.Drawing.Size(300, 100);
             this.ResumeLayout(false);

@@ -19,7 +19,7 @@ namespace IKK
             InitializeComponent();
             ofd.Filter = IO.PROJECT_FILTER;
             sfd.Filter = IO.PROJECT_FILTER;
-            LoadProject(new Project(-1, Storage.LocalUser.ID, "", rtb.Text, "", DateTime.Now, null));
+            LoadProject(new Project(-1, Storage.LocalUser.ID, "", rtb.Text, "", DateTime.Now, new List<Tool>()));
         }
 
         public View1Editor(Project project)
@@ -132,11 +132,6 @@ namespace IKK
         private void rtb_TextChanged(object sender, EventArgs e)
         {
             Storage.CurrentProject.Content = rtb.Text;
-        }
-
-        private void loadProjectToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoadProject(new Project(-2, -1, "Cím", "Tartalom", "vers", DateTime.Now, null));
         }
     }
 }

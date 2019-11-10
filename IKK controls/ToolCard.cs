@@ -12,18 +12,18 @@ namespace IKK_controls
 {
     public partial class ToolCard : UserControl, IThemable
     {
-        public event EventHandler ToolRemoveClicked;
+        public IKK_data.Tool Tool { get; private set; }
+
+        public event Action<IKK_data.Tool> ToolRemoveClicked;
         public event EventHandler ToolSettingsClicked;
 
-        public ToolCard()
-        {
-            InitializeComponent();
-            Theme.ThemeChanged += UpdateTheme;
-        }
         public ToolCard(IKK_data.Tool tool)
         {
             InitializeComponent();
             Theme.ThemeChanged += UpdateTheme;
+            UpdateTheme();
+
+            Tool = tool;
             lblName.Text = tool.Name;
             lblDesc.Text = tool.Description;
         }
@@ -31,16 +31,21 @@ namespace IKK_controls
         public void UpdateTheme()
         {
             BackColor = Theme.ColorPrimary;
+
+            foreach (IThemable item in Controls)
+            {
+                item.UpdateTheme();
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            ToolRemoveClicked(this, e);
+            ToolRemoveClicked?.Invoke(Tool);
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            ToolSettingsClicked(this, e);
+            ToolSettingsClicked?.Invoke(this, e);
         }
     }
 }
