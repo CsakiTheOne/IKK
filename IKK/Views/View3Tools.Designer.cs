@@ -49,6 +49,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Eszköz hozzáadása";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // flp
             // 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IKK_controls;
 
 namespace IKK
 {
@@ -28,6 +29,13 @@ namespace IKK
             {
                 flp.Controls.Add(new IKK_controls.ToolCard());
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            IKK_data.Tool tool = MsgBox.ShowToolDialog();
+            if (tool == null) return;
+            MsgBox.Show("Eszköz választó debug", tool.Name + "\n\r" + tool.Description);
         }
     }
 }

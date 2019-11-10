@@ -63,11 +63,11 @@ namespace IKK
             {
                 case "Kilépés":
                     if (
-                        new MsgBox(
+                        MsgBox.Show(
                         "Kilépés",
                         "Minden nem mentett változtatás el fog veszni! Folytatod?",
-                        new MsgBoxButton[] { new MsgBoxButton("Igen", true, DialogResult.Yes), new MsgBoxButton("Nem", true, DialogResult.No) }
-                        ).ShowDialog() == DialogResult.No
+                        new MsgBox.MsgBoxButton[] { new MsgBox.MsgBoxButton("Igen", true, DialogResult.Yes), new MsgBox.MsgBoxButton("Nem", true, DialogResult.No) })
+                        == DialogResult.No
                     )
                     {
                         navMenu.SelectedItem = "Szerkesztés";
@@ -88,11 +88,11 @@ namespace IKK
         private void újToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (
-                new MsgBox(
+                MsgBox.Show(
                 "Új projekt",
                 "Minden nem mentett változtatás el fog veszni! Folytatod?",
-                new MsgBoxButton[] { new MsgBoxButton("Igen", true, DialogResult.Yes), new MsgBoxButton("Nem", true, DialogResult.No) }
-                ).ShowDialog() == DialogResult.No
+                new MsgBox.MsgBoxButton[] { new MsgBox.MsgBoxButton("Igen", true, DialogResult.Yes), new MsgBox.MsgBoxButton("Nem", true, DialogResult.No) })
+                == DialogResult.No
             ) return;
 
             Storage.MainContainer.SetView(new View1Editor());
@@ -108,7 +108,7 @@ namespace IKK
                 }
                 catch (Exception ex)
                 {
-                    new MsgBox("Megnyitás", ex.Message).ShowDialog();
+                    MsgBox.Show("Megnyitás", ex.Message);
                 }
             }
         }
@@ -123,7 +123,7 @@ namespace IKK
                 }
                 catch (Exception ex)
                 {
-                    new MsgBox("Mentés", ex.Message).ShowDialog();
+                    MsgBox.Show("Mentés", ex.Message);
                 }
             }
         }

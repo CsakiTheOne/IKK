@@ -23,7 +23,7 @@ namespace IKK
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (tbPass.Text.Length < 1) new MsgBox("Bejelentkezés", "Minden mezőt ki kell tölteni!").ShowDialog();
+            if (tbPass.Text.Length < 1) MsgBox.Show("Bejelentkezés", "Minden mezőt ki kell tölteni!");
             else
             {
                 string result = Database.Login(tbEmail.Text, Secret.Encrypt(tbPass.Text));
@@ -34,20 +34,20 @@ namespace IKK
                     Storage.LocalUser = new Profile(int.Parse(data[1]), data[2], data[3], data[4], DateTime.Parse(data[5]));
                     Storage.MainContainer.SetView(new View1Main());
                 }
-                else new MsgBox("Bejelentkezés", result).ShowDialog();
+                else MsgBox.Show("Bejelentkezés", result);
             }
         }
 
         private void btnReg_Click(object sender, EventArgs e)
         {
-            if (tbPass.Text.Length < 1) new MsgBox("Regisztrálás", "Minden mezőt ki kell tölteni!").ShowDialog();
-            else new MsgBox("Regisztrálás", Database.Register(tbEmail.Text, Secret.Encrypt(tbPass.Text))).ShowDialog();
+            if (tbPass.Text.Length < 1) MsgBox.Show("Regisztrálás", "Minden mezőt ki kell tölteni!");
+            else MsgBox.Show("Regisztrálás", Database.Register(tbEmail.Text, Secret.Encrypt(tbPass.Text)));
         }
 
         private void btnPass_Click(object sender, EventArgs e)
         {
-            MsgBoxButton[] buttons = { new MsgBoxButton("Ok", true, DialogResult.OK), new MsgBoxButton(":(", false, DialogResult.Yes) };
-            if (new MsgBox("This is so sad", "Alexa, play Despasito", buttons).ShowDialog() == DialogResult.Yes)
+            MsgBox.MsgBoxButton[] buttons = { new MsgBox.MsgBoxButton("Ok", true, DialogResult.OK), new MsgBox.MsgBoxButton(":(", false, DialogResult.Yes) };
+            if (MsgBox.Show("This is so sad", "Alexa, play Despasito", buttons) == DialogResult.Yes)
             {
                 Process.Start("https://www.youtube.com/watch?v=kJQP7kiw5Fk");
             }
@@ -55,11 +55,11 @@ namespace IKK
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            new MsgBox(
+            MsgBox.Show(
                 "Mit jelent az IKK?",
                 "Integrált Költészeti Környezet.\n\rA program, ami beépített eszközökkel segít írni és költeni.\n\r" +
                 "Honnan jött az ötlet? Integrált Fejlesztői Környezet (IDE) a programozók eszköze. A magyar költők ezköze pedig az IKK."
-            ).ShowDialog();
+            );
         }
     }
 }

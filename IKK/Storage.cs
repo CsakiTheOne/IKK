@@ -20,17 +20,20 @@ namespace IKK
 
         public static bool TestConnection()
         {
-            MsgBox msgTest = new MsgBox(
-                "Offline mód",
-                "A szerver nem elérhető vagy nincs internet.\n\rA program offline módban van.",
-                new MsgBoxButton[] { new MsgBoxButton("Offline mód", true, DialogResult.OK), new MsgBoxButton("Újra", true, DialogResult.Retry) }
-            );
-
             OfflineMode = !Database.Test();
 
             if (OfflineMode)
             {
-                if (msgTest.ShowDialog() == DialogResult.Retry) return TestConnection();
+                if (
+                    MsgBox.Show(
+                    "Offline mód",
+                    "A szerver nem elérhető vagy nincs internet.\n\rA program offline módban van.",
+                    new MsgBox.MsgBoxButton[] { new MsgBox.MsgBoxButton("Offline mód", true, DialogResult.OK), new MsgBox.MsgBoxButton("Újra", true, DialogResult.Retry) })
+                    == DialogResult.Retry
+                )
+                {
+                    return TestConnection();
+                }
                 
                 return false;
             }
