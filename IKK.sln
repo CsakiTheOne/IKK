@@ -4,8 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29411.138
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKK", "IKK\IKK.csproj", "{F6079E53-A2D1-4BAA-9DED-7F0112A0C98C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FF611970-5A96-4C3F-B121-1F507B291B8B} = {FF611970-5A96-4C3F-B121-1F507B291B8B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKK controls", "IKK controls\IKK controls.csproj", "{CEC5A887-F735-4D53-96E1-F5178FE92324}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FF611970-5A96-4C3F-B121-1F507B291B8B} = {FF611970-5A96-4C3F-B121-1F507B291B8B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKK data", "IKK database\IKK data.csproj", "{FF611970-5A96-4C3F-B121-1F507B291B8B}"
 EndProject

@@ -14,8 +14,6 @@ namespace IKK
 {
     public partial class View1Editor : IKK_controls.View
     {
-        Project project;
-
         public View1Editor()
         {
             InitializeComponent();
@@ -104,7 +102,14 @@ namespace IKK
         {
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                LoadProject(IO.ProjectOpen(ofd.FileName));
+                try
+                {
+                    LoadProject(IO.ProjectOpen(ofd.FileName));
+                }
+                catch (Exception ex)
+                {
+                    new MsgBox("Megnyitás", ex.Message).ShowDialog();
+                }
             }
         }
 
@@ -112,7 +117,14 @@ namespace IKK
         {
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                IO.ProjectSave(Storage.CurrentProject, sfd.FileName);
+                try
+                {
+                    IO.ProjectSave(Storage.CurrentProject, sfd.FileName);
+                }
+                catch (Exception ex)
+                {
+                    new MsgBox("Mentés", ex.Message).ShowDialog();
+                }
             }
         }
         #endregion
