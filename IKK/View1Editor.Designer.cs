@@ -33,7 +33,7 @@
             this.navMenu = new IKK_controls.NavMenu();
             this.ilMenu = new System.Windows.Forms.ImageList(this.components);
             this.split = new System.Windows.Forms.SplitContainer();
-            this.viewContainer1 = new IKK_controls.ViewContainer();
+            this.viewContainer = new IKK_controls.ViewContainer();
             this.rtb = new System.Windows.Forms.RichTextBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fájlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,7 +81,7 @@
             // 
             // split.Panel1
             // 
-            this.split.Panel1.Controls.Add(this.viewContainer1);
+            this.split.Panel1.Controls.Add(this.viewContainer);
             this.split.Panel1MinSize = 0;
             // 
             // split.Panel2
@@ -92,14 +92,14 @@
             this.split.SplitterDistance = 25;
             this.split.TabIndex = 1;
             // 
-            // viewContainer1
+            // viewContainer
             // 
-            this.viewContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewContainer1.Location = new System.Drawing.Point(0, 0);
-            this.viewContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.viewContainer1.Name = "viewContainer1";
-            this.viewContainer1.Size = new System.Drawing.Size(25, 476);
-            this.viewContainer1.TabIndex = 0;
+            this.viewContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.viewContainer.Location = new System.Drawing.Point(0, 0);
+            this.viewContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.viewContainer.Name = "viewContainer";
+            this.viewContainer.Size = new System.Drawing.Size(25, 476);
+            this.viewContainer.TabIndex = 0;
             // 
             // rtb
             // 
@@ -195,7 +195,7 @@
         private IKK_controls.NavMenu navMenu;
         private System.Windows.Forms.ImageList ilMenu;
         private System.Windows.Forms.SplitContainer split;
-        private IKK_controls.ViewContainer viewContainer1;
+        private IKK_controls.ViewContainer viewContainer;
         private System.Windows.Forms.RichTextBox rtb;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fájlToolStripMenuItem;

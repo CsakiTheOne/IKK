@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IKK data">
+      <HintPath>..\IKK database\bin\Debug\IKK data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -99,6 +102,12 @@
       <DependentUpon>Tb.cs</DependentUpon>
     </Compile>
     <Compile Include="Theme.cs" />
+    <Compile Include="ToolCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToolCard.Designer.cs">
+      <DependentUpon>ToolCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="View.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -141,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tb.resx">
       <DependentUpon>Tb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolCard.resx">
+      <DependentUpon>ToolCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View.resx">
       <DependentUpon>View.cs</DependentUpon>

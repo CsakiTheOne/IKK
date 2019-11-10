@@ -16,7 +16,7 @@ namespace IKK_data
         public string Label { get; set; }
         public DateTime CreateTime { get; set; }
         /// <summary>
-        /// This variable is not used for the database.
+        /// Offline
         /// </summary>
         public List<Tool> Tools { get; set; } = new List<Tool>();
 

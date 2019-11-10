@@ -121,6 +121,12 @@
     <Compile Include="View3Edit.Designer.cs">
       <DependentUpon>View3Edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="View3Tools.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View3Tools.Designer.cs">
+      <DependentUpon>View3Tools.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View3Edit.resx">
       <DependentUpon>View3Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View3Tools.resx">
+      <DependentUpon>View3Tools.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

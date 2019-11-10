@@ -78,10 +78,10 @@ namespace IKK
                     Storage.MainContainer.SetView(new View1Main());
                     break;
                 case "Szerkesztés":
-                    viewContainer1.SetView(new View3Edit());
+                    viewContainer.SetView(new View3Edit());
                     break;
                 case "Eszközök":
-                    viewContainer1.SetView(new IKK_controls.View());
+                    viewContainer.SetView(new View3Tools());
                     break;
             }
         }

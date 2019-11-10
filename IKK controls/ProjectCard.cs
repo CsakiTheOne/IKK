@@ -27,6 +27,14 @@ namespace IKK_controls
             InitializeComponent();
             Theme.ThemeChanged += UpdateTheme;
         }
+        public ProjectCard(IKK_data.Project project)
+        {
+            InitializeComponent();
+            Theme.ThemeChanged += UpdateTheme;
+            lblTitle.Text = project.Title;
+            lblDesc.Text = project.Content.Split('\n')[0];
+            lblLabel.Text = project.Label;
+        }
 
         public void UpdateTheme()
         {
