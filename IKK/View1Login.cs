@@ -34,7 +34,7 @@ namespace IKK
                     Storage.LocalUser = new Profile(int.Parse(data[1]), data[2], data[3], data[4], DateTime.Parse(data[5]));
                     Storage.MainContainer.SetView(new View1Main());
                 }
-                else new MsgBox("Bejelentkezés", result);
+                else new MsgBox("Bejelentkezés", result).ShowDialog();
             }
         }
 
