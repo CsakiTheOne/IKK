@@ -42,6 +42,8 @@
             this.mentésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
+            this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.split)).BeginInit();
             this.split.Panel1.SuspendLayout();
             this.split.Panel2.SuspendLayout();
@@ -87,7 +89,7 @@
             this.split.Panel2.Controls.Add(this.rtb);
             this.split.Panel2MinSize = 0;
             this.split.Size = new System.Drawing.Size(840, 476);
-            this.split.SplitterDistance = 0;
+            this.split.SplitterDistance = 25;
             this.split.TabIndex = 1;
             // 
             // viewContainer1
@@ -96,7 +98,7 @@
             this.viewContainer1.Location = new System.Drawing.Point(0, 0);
             this.viewContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.viewContainer1.Name = "viewContainer1";
-            this.viewContainer1.Size = new System.Drawing.Size(0, 476);
+            this.viewContainer1.Size = new System.Drawing.Size(25, 476);
             this.viewContainer1.TabIndex = 0;
             // 
             // rtb
@@ -106,7 +108,7 @@
             this.rtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.rtb.Location = new System.Drawing.Point(0, 0);
             this.rtb.Name = "rtb";
-            this.rtb.Size = new System.Drawing.Size(836, 476);
+            this.rtb.Size = new System.Drawing.Size(811, 476);
             this.rtb.TabIndex = 0;
             this.rtb.Text = "A rózsa vörös,\nAz ibolya kék...";
             this.rtb.TextChanged += new System.EventHandler(this.rtb_TextChanged);
@@ -114,7 +116,8 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fájlToolStripMenuItem});
+            this.fájlToolStripMenuItem,
+            this.debugToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(900, 24);
@@ -152,6 +155,21 @@
             this.mentésToolStripMenuItem.Text = "Mentés";
             this.mentésToolStripMenuItem.Click += new System.EventHandler(this.mentésToolStripMenuItem_Click);
             // 
+            // debugToolStripMenuItem
+            // 
+            this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadProjectToolStripMenuItem});
+            this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
+            this.debugToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.debugToolStripMenuItem.Text = "Debug";
+            // 
+            // loadProjectToolStripMenuItem
+            // 
+            this.loadProjectToolStripMenuItem.Name = "loadProjectToolStripMenuItem";
+            this.loadProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadProjectToolStripMenuItem.Text = "LoadProject();";
+            this.loadProjectToolStripMenuItem.Click += new System.EventHandler(this.loadProjectToolStripMenuItem_Click);
+            // 
             // View1Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,5 +204,7 @@
         private System.Windows.Forms.ToolStripMenuItem mentésToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog sfd;
         private System.Windows.Forms.OpenFileDialog ofd;
+        private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadProjectToolStripMenuItem;
     }
 }
