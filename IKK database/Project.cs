@@ -14,10 +14,14 @@ namespace IKK_data
         public string Title { get; set; }
         public string Content { get; set; }
         public string Label { get; set; }
-        public DateTime CreateTime { get; }
+        public DateTime CreateTime { get; set; }
+        /// <summary>
+        /// This variable is not used for the database.
+        /// </summary>
+        public List<Tool> Tools { get; set; } = new List<Tool>();
 
         public Project() { }
-        public Project(int id, int author, string title, string content, string label, DateTime createTime)
+        public Project(int id, int author, string title, string content, string label, DateTime createTime, List<Tool> tools)
         {
             ID = id;
             Author = author;
@@ -25,6 +29,7 @@ namespace IKK_data
             Content = content;
             Label = label;
             CreateTime = createTime;
+            Tools = tools;
         }
     }
 }

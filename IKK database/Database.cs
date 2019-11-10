@@ -89,7 +89,9 @@ namespace IKK_data
                 return "E-mail vagy jelszó hibás!";
             }
 
-            return $"PROFILE;{foundUser.Rows[0].Field<string>("id")};{foundUser.Rows[0].Field<string>("email")};{foundUser.Rows[0].Field<string>("name")};{foundUser.Rows[0].Field<string>("about")}";
+            object[] cols = foundUser.Rows[0].ItemArray;
+
+            return $"PROFILE;{cols[0]};{email};{cols[3]};{cols[4]};{cols[5]}";
         }
     }
 }

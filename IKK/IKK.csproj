@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="IKK database">
-      <HintPath>..\IKK database\bin\Debug\IKK database.dll</HintPath>
+    <Reference Include="IKK data">
+      <HintPath>..\IKK database\bin\Debug\IKK data.dll</HintPath>
     </Reference>
     <Reference Include="MySqlConnector, Version=0.60.4.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>..\packages\MySqlConnector.0.60.4\lib\net471\MySqlConnector.dll</HintPath>

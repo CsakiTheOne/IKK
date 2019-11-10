@@ -8,10 +8,10 @@ namespace IKK_data
 {
     public class Profile
     {
-        public int ID { get; }
-        public string Email { get; }
-        public string Name { get; }
-        public string About { get; }
+        public int ID { get; set; }
+        public string Email { get; set; }
+        public string Name { get; set; }
+        public string About { get; set; }
 
         public Profile() { }
 
@@ -25,7 +25,7 @@ namespace IKK_data
 
         public override string ToString()
         {
-            return $"E-mail: {Email}\n\rNév: {Name}\n\rLeírás: {About}\n\r";
+            return $"ID: {ID}\n\rE-mail: {Email}\n\rNév: {Name}\n\rLeírás: {About}\n\r";
         }
     }
 }
