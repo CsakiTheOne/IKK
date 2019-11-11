@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using DialogResult = System.Windows.Forms.DialogResult;
 
@@ -13,32 +14,42 @@ namespace IKK
     {
         public static string ProgramName { get => "IKK"; }
         public static string ProgramVer { get => "0.1a1"; }
-        public static bool OfflineMode { get; set; }
         public static ViewContainer MainContainer { get; set; }
         public static Profile LocalUser { get; set; }
         public static Project CurrentProject { get; set; } = new Project();
+        public static bool OfflineMode { get; private set; }
 
-        public static bool TestConnection()
+        public static void TestConnection(Action<bool> OnTested, bool showDialog = true)
         {
-            OfflineMode = !Database.Test();
+            new Thread(() => {
 
-            if (OfflineMode)
-            {
-                if (
-                    MsgBox.Show(
-                    "Offline mód",
-                    "A szerver nem elérhető vagy nincs internet.\n\rA program offline módban van.",
-                    new MsgBox.MsgBoxButton[] { new MsgBox.MsgBoxButton("Offline mód", true, DialogResult.OK), new MsgBox.MsgBoxButton("Újra", true, DialogResult.Retry) })
-                    == DialogResult.Retry
-                )
+                if (showDialog)
                 {
-                    return TestConnection();
+                    if (!Database.Test())
+                    {
+                        OfflineMode = true;
+                        while (ShowConnectionErrorDialog() == DialogResult.Retry && OfflineMode)
+                            OfflineMode = !Database.Test();
+                    }
+                    else
+                    {
+                        OfflineMode = false;
+                    }
                 }
+                else
+                {
+                    OfflineMode = !Database.Test();
+                }
+
+                OnTested(!OfflineMode);
                 
-                return false;
-            }
-            
-            return true;
+            }).Start();
+        }
+        static DialogResult ShowConnectionErrorDialog()
+        {
+            return MsgBox.Show("Offline mód",
+                    "A szerver nem elérhető vagy nincs internet.\n\rA program offline módban van.",
+                    new MsgBox.MsgBoxButton[] { new MsgBox.MsgBoxButton("Offline mód", true, DialogResult.OK), new MsgBox.MsgBoxButton("Újra", true, DialogResult.Retry) });
         }
     }
 }

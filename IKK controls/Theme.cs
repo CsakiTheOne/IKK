@@ -13,6 +13,7 @@ namespace IKK_controls
         public static Color ColorPrimary { get; private set; } = Color.FromArgb(93, 64, 55);
         public static Color ColorAccent { get; private set; } = Color.FromArgb(221, 44, 0);
         public static Color ColorText { get; private set; } = Color.FromArgb(255, 255, 255);
+        public static Color ColorTransparent { get; private set; } = Color.Magenta;
 
         public static event Action ThemeChanged;
 

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.pBox = new System.Windows.Forms.Panel();
+            this.lblDesc = new IKK_controls.Lbl();
             this.flpBtns = new System.Windows.Forms.FlowLayoutPanel();
             this.pHeader = new System.Windows.Forms.Panel();
-            this.lblDesc = new IKK_controls.Lbl();
             this.lblTitle = new IKK_controls.Lbl();
             this.pBox.SuspendLayout();
             this.pHeader.SuspendLayout();
@@ -49,6 +49,18 @@
             this.pBox.Name = "pBox";
             this.pBox.Size = new System.Drawing.Size(400, 200);
             this.pBox.TabIndex = 0;
+            // 
+            // lblDesc
+            // 
+            this.lblDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDesc.Location = new System.Drawing.Point(16, 72);
+            this.lblDesc.Margin = new System.Windows.Forms.Padding(8, 8, 8, 0);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(366, 80);
+            this.lblDesc.TabIndex = 5;
+            this.lblDesc.Text = "Üzenet";
             // 
             // flpBtns
             // 
@@ -70,18 +82,6 @@
             this.pHeader.Size = new System.Drawing.Size(398, 64);
             this.pHeader.TabIndex = 3;
             // 
-            // lblDesc
-            // 
-            this.lblDesc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDesc.Location = new System.Drawing.Point(16, 72);
-            this.lblDesc.Margin = new System.Windows.Forms.Padding(8, 8, 8, 0);
-            this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(366, 80);
-            this.lblDesc.TabIndex = 5;
-            this.lblDesc.Text = "Üzenet";
-            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -102,7 +102,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MsgBoxDialog";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MsgBoxDialog";
             this.pBox.ResumeLayout(false);
             this.pHeader.ResumeLayout(false);

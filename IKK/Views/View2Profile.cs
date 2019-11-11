@@ -21,8 +21,24 @@ namespace IKK
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Storage.LocalUser = null;
-            Storage.MainContainer.SetView(new View1Login());
+            btnLogout.Enabled = false;
+            Storage.TestConnection(ConnectionTestFinnished, false);
+        }
+
+        private void ConnectionTestFinnished(bool connection)
+        {
+            Invoke(new Action(() => {
+                if (connection)
+                {
+                    Storage.LocalUser = null;
+                    Storage.MainContainer.SetView(new View1Login());
+                }
+                else
+                {
+                    MsgBox.Show("Offline mód", "Jelenleg nem tudsz kijelentkezni.");
+                    btnLogout.Enabled = true;
+                }
+            }));
         }
     }
 }

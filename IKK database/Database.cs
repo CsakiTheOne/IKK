@@ -6,13 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data.SqlTypes;
+using System.Threading;
 
 namespace IKK_data
 {
     public static class Database
     {
         public static string DB { get => "Server=localhost;User ID=ikk_user;Password=a12345678b;Database=IKK"; }
-
         public static bool Test()
         {
             try

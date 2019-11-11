@@ -29,15 +29,23 @@ namespace IKK
         {
             Storage.MainContainer = viewContainerMain;
 
-            if (Storage.TestConnection())
+            Storage.TestConnection(ConnectionTestFinnished, true);
+        }
+
+        private void ConnectionTestFinnished(bool connection)
+        {
+            Invoke(new Action(() =>
             {
-                viewContainerMain.SetView(new View1Login());
-            }
-            else
-            {
-                Storage.LocalUser = new IKK_data.Profile(-1, "nincs", "Offline felhasználó", "Nincs netem vagy a szerver nem elérhető.", DateTime.Today);
-                viewContainerMain.SetView(new View1Main());
-            }
+                if (connection)
+                {
+                    viewContainerMain.SetView(new View1Login());
+                }
+                else
+                {
+                    Storage.LocalUser = new IKK_data.Profile(-1, "Nincs bejelentkezve", "Offline felhasználó", "", DateTime.Now);
+                    viewContainerMain.SetView(new View1Main());
+                }
+            }));
         }
     }
 }
