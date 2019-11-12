@@ -29,6 +29,14 @@ namespace IKK
         {
             Storage.MainContainer = viewContainerMain;
 
+            MsgBox.MsgBoxButton[] buttons = { new MsgBox.MsgBoxButton("Publikus", true, DialogResult.OK), new MsgBox.MsgBoxButton("Helyi", false, DialogResult.Ignore) };
+            bool test = MsgBox.Show("Válassz szervert!", "Ha nem a fejlesztő vagy, akkor a publikus szerverrel próbálkozz!", buttons) == DialogResult.Ignore;
+
+            if (!test)
+            {
+                IKK_data.Database.DB = "Server=remotemysql.com;User ID=BwbvoshEex;Password=LJtxlTZdiF;Database=BwbvoshEex";
+            }
+
             Storage.TestConnection(ConnectionTestFinnished, true);
         }
 

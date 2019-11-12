@@ -12,7 +12,7 @@ namespace IKK_data
 {
     public static class Database
     {
-        public static string DB { get => "Server=localhost;User ID=ikk_user;Password=a12345678b;Database=IKK"; }
+        public static string DB { get; set; } = "Server=localhost;User ID=ikk_user;Password=a12345678b;Database=ikk";
         public static bool Test()
         {
             try
