@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IKK_data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,18 @@ namespace IKK_controls
             return new MsgBoxDialog(title, text, buttons).ShowDialog();
         }
 
-        public static IKK_data.Tool ShowToolDialog()
+        public static Tool ShowToolDialog()
         {
             ToolDialog dialog = new ToolDialog();
             dialog.ShowDialog();
             return dialog.SelectedTool;
+        }
+
+        public static Tool ShowToolEditorDialog(Tool tool)
+        {
+            // TODO
+            ToolEditorDialog ted = new ToolEditorDialog();
+            return tool;
         }
 
         public struct MsgBoxButton
