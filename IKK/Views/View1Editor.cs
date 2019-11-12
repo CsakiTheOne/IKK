@@ -138,11 +138,11 @@ namespace IKK
             SaveFileDialog exportDialog = new SaveFileDialog();
             exportDialog.Title = "Weboldal készítése";
             exportDialog.Filter = "HTML only|*.html";
-            if (sfd.ShowDialog() == DialogResult.OK)
+            if (exportDialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    IO.ProjectSave(Storage.CurrentProject, sfd.FileName);
+                    IO.ProjectExport(Storage.CurrentProject, exportDialog.FileName);
                 }
                 catch (Exception ex)
                 {
