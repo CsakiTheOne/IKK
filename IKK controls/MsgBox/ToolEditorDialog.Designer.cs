@@ -1,4 +1,4 @@
-﻿namespace IKK_controls.MsgBox
+﻿namespace IKK_controls
 {
     partial class ToolEditorDialog
     {

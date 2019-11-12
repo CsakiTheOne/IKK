@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IKK_controls.MsgBox
+namespace IKK_controls
 {
     public partial class ToolEditorDialog : Form
     {
