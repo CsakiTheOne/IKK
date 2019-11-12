@@ -42,6 +42,7 @@
             this.mentésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
+            this.weboldalKészítéseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.split)).BeginInit();
             this.split.Panel1.SuspendLayout();
             this.split.Panel2.SuspendLayout();
@@ -130,7 +131,8 @@
             this.fájlToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.újToolStripMenuItem,
             this.megnyitásToolStripMenuItem,
-            this.mentésToolStripMenuItem});
+            this.mentésToolStripMenuItem,
+            this.weboldalKészítéseToolStripMenuItem});
             this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
             this.fájlToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fájlToolStripMenuItem.Text = "Fájl";
@@ -138,23 +140,30 @@
             // újToolStripMenuItem
             // 
             this.újToolStripMenuItem.Name = "újToolStripMenuItem";
-            this.újToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.újToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.újToolStripMenuItem.Text = "Új";
             this.újToolStripMenuItem.Click += new System.EventHandler(this.újToolStripMenuItem_Click);
             // 
             // megnyitásToolStripMenuItem
             // 
             this.megnyitásToolStripMenuItem.Name = "megnyitásToolStripMenuItem";
-            this.megnyitásToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.megnyitásToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.megnyitásToolStripMenuItem.Text = "Megnyitás";
             this.megnyitásToolStripMenuItem.Click += new System.EventHandler(this.megnyitásToolStripMenuItem_Click);
             // 
             // mentésToolStripMenuItem
             // 
             this.mentésToolStripMenuItem.Name = "mentésToolStripMenuItem";
-            this.mentésToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.mentésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mentésToolStripMenuItem.Text = "Mentés";
             this.mentésToolStripMenuItem.Click += new System.EventHandler(this.mentésToolStripMenuItem_Click);
+            // 
+            // weboldalKészítéseToolStripMenuItem
+            // 
+            this.weboldalKészítéseToolStripMenuItem.Name = "weboldalKészítéseToolStripMenuItem";
+            this.weboldalKészítéseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.weboldalKészítéseToolStripMenuItem.Text = "Weboldal készítése";
+            this.weboldalKészítéseToolStripMenuItem.Click += new System.EventHandler(this.weboldalKészítéseToolStripMenuItem_Click);
             // 
             // View1Editor
             // 
@@ -191,5 +200,6 @@
         private System.Windows.Forms.SaveFileDialog sfd;
         private System.Windows.Forms.OpenFileDialog ofd;
         private IKK_controls.Tb tb;
+        private System.Windows.Forms.ToolStripMenuItem weboldalKészítéseToolStripMenuItem;
     }
 }

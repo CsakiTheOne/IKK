@@ -132,6 +132,24 @@ namespace IKK
                 }
             }
         }
+
+        private void weboldalKészítéseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog exportDialog = new SaveFileDialog();
+            exportDialog.Title = "Weboldal készítése";
+            exportDialog.Filter = "HTML only|*.html";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    IO.ProjectSave(Storage.CurrentProject, sfd.FileName);
+                }
+                catch (Exception ex)
+                {
+                    MsgBox.Show("Exportálás", ex.Message);
+                }
+            }
+        }
         #endregion
 
         private void tb_TextChanged(object sender, EventArgs e)

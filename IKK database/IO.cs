@@ -10,8 +10,8 @@ namespace IKK_data
 {
     public static class IO
     {
-        public static string PROJECT_FILTER { get => "Összes fájl mutatása|*.*|Bináris fájl (csak ezzel olvasható)|*.ikk|Szöveg|*.txt|Markdown|*.md|Weboldal|*.html"; }
-        public static string[] PROJECT_FORMATS { get => new string[] { "txt", /*"md", "html",*/ "ikk" }; }
+        public static string PROJECT_FILTER { get => "Összes fájl mutatása|*.*|Bináris fájl (csak ezzel olvasható)|*.ikk|Szöveg|*.txt|Markdown|*.md"; }
+        public static string[] PROJECT_FORMATS { get => new string[] { "txt", "md", "ikk" }; }
 
         #region Open
         public static Project ProjectOpen(string fileName)
@@ -21,11 +21,14 @@ namespace IKK_data
 
             Project project = new Project();
 
+            #region IKK
             if (format == "ikk")
             {
                 BinaryFormatter bf = new BinaryFormatter();
                 project = (Project)bf.Deserialize(new FileStream(fileName, FileMode.Open));
             }
+            #endregion
+            #region TXT
             else if (format == "txt")
             {
                 List<string> lines = File.ReadAllLines(fileName).ToList();
@@ -42,9 +45,31 @@ namespace IKK_data
 
                 for (int i = lines.IndexOf("█ eszközök") + 1; i < lines.Count - 1; i += 2)
                 {
-                    project.Tools.Add(new Tool(lines[i], lines[i + 1].Replace("▄", Environment.NewLine)));
+                    project.Tools.Add(new Tool(lines[i], lines[i + 1].Replace("_", Environment.NewLine)));
                 }
             }
+            #endregion
+            #region MD
+            else if (format == "md")
+            {
+                List<string> lines = File.ReadAllLines(fileName).ToList();
+
+                project.Title = lines[0].Substring(2);
+                project.Label = lines[1].Substring(7);
+
+                int wi = 2;
+                while (!lines[wi].Contains('#'))
+                {
+                    project.Content += lines[wi] + (wi == lines.IndexOf("# Eszközök") - 1 ? "" : Environment.NewLine);
+                    wi++;
+                }
+
+                for (int i = lines.IndexOf("# Eszközök") + 1; i < lines.Count - 1; i += 2)
+                {
+                    project.Tools.Add(new Tool(lines[i].Substring(4), lines[i + 1].Replace("_", Environment.NewLine).Substring(3, lines[i + 1].Length - 6)));
+                }
+            }
+            #endregion
 
             return project;
         }
@@ -56,11 +81,14 @@ namespace IKK_data
             string format = fileName.Split('.').Last();
             if (!PROJECT_FORMATS.Contains(format)) throw new Exception($"A {format} nem támogatott formátum.");
 
+            #region IKK
             if (format == "ikk")
             {
                 BinaryFormatter bf = new BinaryFormatter();
                 bf.Serialize(new FileStream(fileName, FileMode.Create), project);
             }
+            #endregion
+            #region TXT
             else if (format == "txt")
             {
                 List<string> lines = new List<string>();
@@ -71,11 +99,30 @@ namespace IKK_data
                 foreach (Tool tool in project.Tools)
                 {
                     lines.Add(tool.Name);
-                    lines.Add(tool.Settings.Replace(Environment.NewLine, "▄"));
+                    lines.Add(tool.Settings.Replace(Environment.NewLine, "_"));
                 }
 
                 File.WriteAllLines(fileName, lines);
             }
+            #endregion
+            #region MD
+            else if (format == "md")
+            {
+                List<string> lines = new List<string>();
+                lines.Add($"# {project.Title}");
+                lines.Add($"###### {project.Label}");
+                string[] content = project.Content.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+                foreach (string c in content) lines.Add(c + "  ");
+                lines.Add("# Eszközök");
+                foreach (Tool tool in project.Tools)
+                {
+                    lines.Add($"### {tool.Name}");
+                    lines.Add("```" + tool.Settings.Replace(Environment.NewLine, "_") + "```");
+                }
+
+                File.WriteAllLines(fileName, lines);
+            }
+            #endregion
         }
         #endregion
     }
