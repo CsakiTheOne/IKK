@@ -7,23 +7,30 @@ using System.Threading.Tasks;
 namespace IKK_data
 {
     [Serializable]
-    public abstract class Tool
+    public class Tool
     {
         public int ID { get; set; }
         public int Project { get; set; }
-        public abstract string Name { get; }
+        public virtual string Name { get; protected set; }
         public string Settings { get; set; }
         /// <summary>
         /// Offline
         /// </summary>
-        public abstract string Description { get; }
+        public virtual string Description { get; }
         /// <summary>
         /// Offline
         /// </summary>
-        public abstract string Category { get; }
+        public virtual string Category { get => "categoryGeneral"; }
 
-        public abstract void OnLoad(string content);
-        public abstract void OnChange(string content);
+        public Tool() { }
+        public Tool(string name, string settings)
+        {
+            Name = name;
+            Settings = settings;
+        }
+
+        public virtual void OnLoad(string content) { }
+        public virtual void OnChange(string content) { }
     }
 
     public static class ToolStorage

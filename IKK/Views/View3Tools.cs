@@ -51,6 +51,7 @@ namespace IKK
             if (Storage.CurrentProject.Tools == null || Storage.CurrentProject.Tools.Count(r => r.Name == tool.Name) < 1)
             {
                 Storage.CurrentProject.Tools.Add(tool);
+                tool.OnLoad(Storage.CurrentProject.Content);
                 RefreshTools();
             }
             else

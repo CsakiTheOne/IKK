@@ -19,7 +19,7 @@ namespace IKK
             InitializeComponent();
             ofd.Filter = IO.PROJECT_FILTER;
             sfd.Filter = IO.PROJECT_FILTER;
-            LoadProject(new Project(-1, Storage.LocalUser.ID, "", rtb.Text, "", DateTime.Now, new List<Tool>()));
+            LoadProject(new Project(-1, Storage.LocalUser.ID, "", tb.Text, "", DateTime.Now, new List<Tool>()));
         }
 
         public View1Editor(Project project)
@@ -41,8 +41,8 @@ namespace IKK
         public override void UpdateTheme()
         {
             base.UpdateTheme();
-            rtb.BackColor = Theme.ColorBackground;
-            rtb.ForeColor = Theme.ColorText;
+            tb.BackColor = Theme.ColorBackground;
+            tb.ForeColor = Theme.ColorText;
             menuStrip.BackColor = Theme.ColorPrimary;
             menuStrip.ForeColor = Theme.ColorText;
         }
@@ -50,9 +50,14 @@ namespace IKK
         void LoadProject(Project project)
         {
             Storage.CurrentProject = project;
-            rtb.Text = project.Content;
+            tb.Text = project.Content;
             navMenu.SelectedItem = "Szerkesztés";
             split.SplitterDistance = 0;
+
+            foreach (Tool tool in Storage.CurrentProject.Tools)
+            {
+                tool.OnLoad(tb.Text);
+            }
         }
 
         private void navMenu1_SelectedItemChanged(object sender, EventArgs e)
@@ -129,9 +134,14 @@ namespace IKK
         }
         #endregion
 
-        private void rtb_TextChanged(object sender, EventArgs e)
+        private void tb_TextChanged(object sender, EventArgs e)
         {
-            Storage.CurrentProject.Content = rtb.Text;
+            Storage.CurrentProject.Content = tb.Text;
+            foreach (Tool tool in Storage.CurrentProject.Tools)
+            {
+                tool.OnChange(tb.Text);
+            }
+            
         }
     }
 }

@@ -11,16 +11,5 @@ namespace IKK_data
     {
         public override string Name { get => "Leírás"; }
         public override string Description { get => "Egy leírás a művedhez."; }
-        public override string Category { get => "categoryGeneral"; }
-
-        public override void OnChange(string content)
-        {
-            // Do nothing
-        }
-
-        public override void OnLoad(string content)
-        {
-            // Do nothing
-        }
     }
 }

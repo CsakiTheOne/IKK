@@ -34,7 +34,7 @@
             this.ilMenu = new System.Windows.Forms.ImageList(this.components);
             this.split = new System.Windows.Forms.SplitContainer();
             this.viewContainer = new IKK_controls.ViewContainer();
-            this.rtb = new System.Windows.Forms.RichTextBox();
+            this.tb = new IKK_controls.Tb();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fájlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.újToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +84,7 @@
             // 
             // split.Panel2
             // 
-            this.split.Panel2.Controls.Add(this.rtb);
+            this.split.Panel2.Controls.Add(this.tb);
             this.split.Panel2MinSize = 0;
             this.split.Size = new System.Drawing.Size(840, 476);
             this.split.SplitterDistance = 25;
@@ -99,17 +99,21 @@
             this.viewContainer.Size = new System.Drawing.Size(25, 476);
             this.viewContainer.TabIndex = 0;
             // 
-            // rtb
+            // tb
             // 
-            this.rtb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rtb.Location = new System.Drawing.Point(0, 0);
-            this.rtb.Name = "rtb";
-            this.rtb.Size = new System.Drawing.Size(811, 476);
-            this.rtb.TabIndex = 0;
-            this.rtb.Text = "A rózsa vörös,\nAz ibolya kék...";
-            this.rtb.TextChanged += new System.EventHandler(this.rtb_TextChanged);
+            this.tb.BackColor = System.Drawing.Color.Black;
+            this.tb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tb.ForeColor = System.Drawing.Color.White;
+            this.tb.Location = new System.Drawing.Point(0, 0);
+            this.tb.Margin = new System.Windows.Forms.Padding(8);
+            this.tb.Multiline = true;
+            this.tb.Name = "tb";
+            this.tb.Secret = false;
+            this.tb.Size = new System.Drawing.Size(811, 476);
+            this.tb.TabIndex = 0;
+            this.tb.TextChanged += new System.EventHandler(this.tb_TextChanged);
             // 
             // menuStrip
             // 
@@ -134,21 +138,21 @@
             // újToolStripMenuItem
             // 
             this.újToolStripMenuItem.Name = "újToolStripMenuItem";
-            this.újToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.újToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.újToolStripMenuItem.Text = "Új";
             this.újToolStripMenuItem.Click += new System.EventHandler(this.újToolStripMenuItem_Click);
             // 
             // megnyitásToolStripMenuItem
             // 
             this.megnyitásToolStripMenuItem.Name = "megnyitásToolStripMenuItem";
-            this.megnyitásToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.megnyitásToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.megnyitásToolStripMenuItem.Text = "Megnyitás";
             this.megnyitásToolStripMenuItem.Click += new System.EventHandler(this.megnyitásToolStripMenuItem_Click);
             // 
             // mentésToolStripMenuItem
             // 
             this.mentésToolStripMenuItem.Name = "mentésToolStripMenuItem";
-            this.mentésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mentésToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.mentésToolStripMenuItem.Text = "Mentés";
             this.mentésToolStripMenuItem.Click += new System.EventHandler(this.mentésToolStripMenuItem_Click);
             // 
@@ -163,6 +167,7 @@
             this.Padding = new System.Windows.Forms.Padding(0);
             this.split.Panel1.ResumeLayout(false);
             this.split.Panel2.ResumeLayout(false);
+            this.split.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.split)).EndInit();
             this.split.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
@@ -178,7 +183,6 @@
         private System.Windows.Forms.ImageList ilMenu;
         private System.Windows.Forms.SplitContainer split;
         private IKK_controls.ViewContainer viewContainer;
-        private System.Windows.Forms.RichTextBox rtb;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fájlToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem újToolStripMenuItem;
@@ -186,5 +190,6 @@
         private System.Windows.Forms.ToolStripMenuItem mentésToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog sfd;
         private System.Windows.Forms.OpenFileDialog ofd;
+        private IKK_controls.Tb tb;
     }
 }
