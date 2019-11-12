@@ -28,9 +28,9 @@ namespace IKK_controls
 
         public static Tool ShowToolEditorDialog(Tool tool)
         {
-            // TODO
-            ToolEditorDialog ted = new ToolEditorDialog();
-            return tool;
+            ToolEditorDialog ted = new ToolEditorDialog(tool);
+            ted.ShowDialog();
+            return ted.Tool;
         }
 
         public struct MsgBoxButton

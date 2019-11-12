@@ -13,6 +13,8 @@ namespace IKK_controls
 {
     public partial class ToolEditorDialog : Form, IThemable
     {
+        public Tool Tool { get; private set; }
+
         public ToolEditorDialog()
         {
             InitializeComponent();
@@ -27,11 +29,17 @@ namespace IKK_controls
 
             toolCard.Tool = tool;
             tbSettings.Text = tool.Settings;
+            Tool = tool;
         }
 
         public void UpdateTheme()
         {
             BackColor = Theme.ColorBackground;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Tool.Settings = tbSettings.Text;
         }
     }
 }

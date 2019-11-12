@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace IKK_data
 {
+    [Serializable]
     public class ToolDescription : Tool
     {
         public override string Name { get => "Leírás"; }

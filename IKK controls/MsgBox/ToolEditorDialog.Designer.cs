@@ -58,6 +58,7 @@
             this.toolCard.Name = "toolCard";
             this.toolCard.Size = new System.Drawing.Size(350, 100);
             this.toolCard.TabIndex = 1;
+            this.toolCard.Tool = null;
             // 
             // btnSave
             // 
@@ -76,6 +77,7 @@
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Mentés";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // ToolEditorDialog
             // 

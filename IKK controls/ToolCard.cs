@@ -45,6 +45,7 @@ namespace IKK_controls
 
         void RefreshTool()
         {
+            if (Tool == null) return;
             lblName.Text = Tool.Name;
             lblDesc.Text = Tool.Description;
         }

@@ -48,7 +48,7 @@ namespace IKK
             IKK_data.Tool tool = MsgBox.ShowToolDialog();
             if (tool == null) return;
 
-            if (Storage.CurrentProject.Tools.Count(r => r.Name == tool.Name) < 1)
+            if (Storage.CurrentProject.Tools == null || Storage.CurrentProject.Tools.Count(r => r.Name == tool.Name) < 1)
             {
                 Storage.CurrentProject.Tools.Add(tool);
                 RefreshTools();
