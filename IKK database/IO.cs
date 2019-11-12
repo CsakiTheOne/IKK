@@ -133,14 +133,14 @@ namespace IKK_data
 
             string nl = Environment.NewLine;
             lines.Add($"<html>{nl}<head>{nl}\t<meta charset=UTF-8>{nl}\t<meta name=\"viewport\" content=\"width=device -width, initial-scale=1.0\">");
-            lines.Add($"\t<title>{project.Title} - {project.Author}</title>");
-            lines.Add($"</head>{nl}<body>{nl}\t<h1>{project.Title}</h1>{nl}\t<h6>{project.Label}</h6>{nl}\t<pre>");
+            lines.Add($"\t<title>{project.Title}</title>");
+            lines.Add($"</head>{nl}<body>{nl}\t<h1 id=\"ikk-title\">{project.Title}</h1>{nl}\t<h5 id=\"ikk-label\">{project.Label}</h5>{nl}\t<pre id=\"ikk-content\">");
             string[] content = project.Content.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
             foreach (string c in content) lines.Add(c + "  ");
-            lines.Add($"\t</pre>{nl}\t<p>- {project.Author}</p>");
+            lines.Add($"\t</pre>");
             foreach (Tool tool in project.Tools)
             {
-                lines.Add($"\t<div>{nl}\t\t<h3>{tool.Name}</h3>{nl}\t\t<p>{tool.Settings}</p>{nl}\t</div>");
+                lines.Add($"\t<div class=\"ikk-tool\">{nl}\t\t<h3>{tool.Name}</h3>{nl}\t\t<p>{tool.Settings}</p>{nl}\t</div>");
             }
             lines.Add($"</body>{nl}</html>");
 
