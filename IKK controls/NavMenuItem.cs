@@ -21,7 +21,6 @@ namespace IKK_controls
 
         Image icon;
         string text;
-
         bool collapsed = false;
 
         public NavMenuItem()

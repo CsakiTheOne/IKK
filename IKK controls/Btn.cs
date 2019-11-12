@@ -22,11 +22,6 @@ namespace IKK_controls
 
         bool raised;
 
-        protected override void OnPaint(PaintEventArgs pe)
-        {
-            base.OnPaint(pe);
-        }
-
         public void UpdateTheme()
         {
             if (raised)

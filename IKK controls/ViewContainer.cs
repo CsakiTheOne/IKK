@@ -17,11 +17,6 @@ namespace IKK_controls
             InitializeComponent();
         }
 
-        protected override void OnPaint(PaintEventArgs pe)
-        {
-            base.OnPaint(pe);
-        }
-
         public void SetView(View view)
         {
             Controls.Clear();

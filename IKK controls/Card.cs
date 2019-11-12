@@ -22,10 +22,5 @@ namespace IKK_controls
         {
             BackColor = Theme.ColorPrimary;
         }
-
-        protected override void OnPaint(PaintEventArgs pe)
-        {
-            base.OnPaint(pe);
-        }
     }
 }

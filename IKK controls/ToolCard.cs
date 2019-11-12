@@ -45,7 +45,8 @@ namespace IKK_controls
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            ToolSettingsClicked?.Invoke(this, e);
+            // TODO
+            Tool.Settings = "";
         }
     }
 }
