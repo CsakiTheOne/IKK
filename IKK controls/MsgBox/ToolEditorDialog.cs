@@ -35,6 +35,10 @@ namespace IKK_controls
         public void UpdateTheme()
         {
             BackColor = Theme.ColorBackground;
+            foreach (IThemable item in Controls)
+            {
+                item.UpdateTheme();
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
