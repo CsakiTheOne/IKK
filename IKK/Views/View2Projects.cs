@@ -21,5 +21,23 @@ namespace IKK
         {
             Storage.MainContainer.SetView(new View1Editor());
         }
+
+        private void nmiOpen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = IKK_data.IO.PROJECT_FILTER;
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Storage.MainContainer.SetView(new View1Editor(IKK_data.IO.ProjectOpen(ofd.FileName)));
+                    
+                }
+                catch (Exception ex)
+                {
+                    IKK_controls.MsgBox.Show("Megnyitás", ex.Message);
+                }
+            }
+        }
     }
 }
