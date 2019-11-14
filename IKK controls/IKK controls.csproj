@@ -166,6 +166,9 @@
     <EmbeddedResource Include="NavMenuItem.resx">
       <DependentUpon>NavMenuItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NotifCard.resx">
+      <DependentUpon>NotifCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProjectCard.resx">
       <DependentUpon>ProjectCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +194,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sharp_menu_open_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sharp_close_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sharp_expand_more_white_48dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sharp_expand_less_white_48dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

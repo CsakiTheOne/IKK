@@ -31,8 +31,8 @@ namespace IKK
         {
             Storage.MainContainer = viewContainerMain;
 
-            NotifManager.Notified += NotifManager_Refresh;
-            NotifManager.Dismissed += NotifManager_Refresh;
+            NotifManager.Notified += NotifManager_Notified;
+            NotifManager.Dismissed += NotifManager_Dismissed;
 
             MsgBox.MsgBoxButton[] buttons = { new MsgBox.MsgBoxButton("Publikus", true, DialogResult.OK), new MsgBox.MsgBoxButton("Helyi", false, DialogResult.Ignore) };
             bool test = MsgBox.Show("Válassz szervert!", "Ha nem a fejlesztő vagy, akkor a publikus szerverrel próbálkozz!", buttons) == DialogResult.Ignore;
@@ -64,17 +64,33 @@ namespace IKK
         private void btnNotifOpen_Click(object sender, EventArgs e)
         {
             pNotifArea.Visible = !pNotifArea.Visible;
+
+            btnNotifOpen.Raised = false;
         }
 
-        private void NotifManager_Refresh(Notification sender)
+        private void btnNotifClear_Click(object sender, EventArgs e)
+        {
+            NotifManager.Clear();
+        }
+
+        private void NotifManager_Dismissed(Notification sender)
         {
             flpNotifArea.Controls.Clear();
 
             foreach (Notification notif in NotifManager.Notifications)
             {
-                // TODO
-                flpNotifArea.Controls.Add();
+                flpNotifArea.Controls.Add(new NotifCard(notif));
             }
+
+            btnNotifOpen.Text = "Nincs új értesítés";
+            btnNotifOpen.Raised = false;
+        }
+
+        private void NotifManager_Notified(Notification sender)
+        {
+            flpNotifArea.Controls.Add(new NotifCard(sender));
+            btnNotifOpen.Text = $"{sender.Time}: {sender.Title}";
+            btnNotifOpen.Raised = true;
         }
     }
 }

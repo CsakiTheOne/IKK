@@ -16,6 +16,7 @@ namespace IKK
         public View1Main()
         {
             InitializeComponent();
+            IKK_notif.NotifManager.Notify(new IKK_notif.Notification(null, "Profil rendszer", "Üdvözöljük!", actions: new IKK_notif.NotifAction[] { new IKK_notif.NotifAction("Teszt gomb", (n) => { MsgBox.Show("Értesítés", n.Title); }) }));
         }
 
         private void navMenu1_SelectedItemChanged(object sender, EventArgs e)
