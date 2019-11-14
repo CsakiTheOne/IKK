@@ -43,9 +43,12 @@ namespace IKK_data
                     wi++;
                 }
 
+                Tool toolNext;
                 for (int i = lines.IndexOf("█ eszközök") + 1; i < lines.Count - 1; i += 2)
                 {
-                    project.Tools.Add(new Tool(lines[i], lines[i + 1].Replace("_", Environment.NewLine)));
+                    toolNext = ToolStorage.Tools.First(r => r.Name == lines[i]);
+                    toolNext.Settings = lines[i + 1].Replace("_", Environment.NewLine);
+                    project.Tools.Add(toolNext);
                 }
             }
             #endregion
@@ -60,13 +63,16 @@ namespace IKK_data
                 int wi = 2;
                 while (!lines[wi].Contains('#'))
                 {
-                    project.Content += lines[wi] + (wi == lines.IndexOf("# Eszközök") - 1 ? "" : Environment.NewLine);
+                    project.Content += lines[wi].Remove(lines[wi].Length - 2) + (wi == lines.IndexOf("# Eszközök") - 1 ? "" : Environment.NewLine);
                     wi++;
                 }
 
+                Tool toolNext;
                 for (int i = lines.IndexOf("# Eszközök") + 1; i < lines.Count - 1; i += 2)
                 {
-                    project.Tools.Add(new Tool(lines[i].Substring(4), lines[i + 1].Replace("_", Environment.NewLine).Substring(3, lines[i + 1].Length - 6)));
+                    toolNext = ToolStorage.Tools.First(r => r.Name == lines[i].Substring(4));
+                    toolNext.Settings = lines[i + 1].Replace("_", Environment.NewLine).Substring(3, lines[i + 1].Length - 6);
+                    project.Tools.Add(toolNext);
                 }
             }
             #endregion

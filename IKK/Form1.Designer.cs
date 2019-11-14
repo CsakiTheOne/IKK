@@ -41,6 +41,7 @@
             // 
             // pNotifArea
             // 
+            this.pNotifArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pNotifArea.Controls.Add(this.btnNotifClear);
             this.pNotifArea.Controls.Add(this.flpNotifArea);
             this.pNotifArea.Controls.Add(this.lbl1);
@@ -60,7 +61,7 @@
             this.flpNotifArea.Location = new System.Drawing.Point(0, 91);
             this.flpNotifArea.Margin = new System.Windows.Forms.Padding(0);
             this.flpNotifArea.Name = "flpNotifArea";
-            this.flpNotifArea.Size = new System.Drawing.Size(300, 440);
+            this.flpNotifArea.Size = new System.Drawing.Size(298, 438);
             this.flpNotifArea.TabIndex = 1;
             // 
             // viewContainerMain
@@ -83,10 +84,11 @@
             this.btnNotifClear.Margin = new System.Windows.Forms.Padding(8);
             this.btnNotifClear.Name = "btnNotifClear";
             this.btnNotifClear.Raised = false;
-            this.btnNotifClear.Size = new System.Drawing.Size(284, 30);
+            this.btnNotifClear.Size = new System.Drawing.Size(282, 30);
             this.btnNotifClear.TabIndex = 2;
-            this.btnNotifClear.Text = "Összes értesítés törlése";
+            this.btnNotifClear.Text = "Összes törlése";
             this.btnNotifClear.UseVisualStyleBackColor = true;
+            this.btnNotifClear.Visible = false;
             this.btnNotifClear.Click += new System.EventHandler(this.btnNotifClear_Click);
             // 
             // lbl1

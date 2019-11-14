@@ -17,6 +17,8 @@ namespace IKK_notif
 
         public static void Notify(Notification notification)
         {
+            if (Notifications.Count(r => r.ID == notification.ID) > 0) return;
+
             Notifications.Add(notification);
             Notified(notification);
         }

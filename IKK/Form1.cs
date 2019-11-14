@@ -84,6 +84,8 @@ namespace IKK
 
             btnNotifOpen.Text = "Nincs új értesítés";
             btnNotifOpen.Raised = false;
+
+            btnNotifClear.Visible = flpNotifArea.Controls.Count > 0;
         }
 
         private void NotifManager_Notified(Notification sender)
@@ -91,6 +93,8 @@ namespace IKK
             flpNotifArea.Controls.Add(new NotifCard(sender));
             btnNotifOpen.Text = $"{sender.Time}: {sender.Title}";
             btnNotifOpen.Raised = true;
+
+            btnNotifClear.Visible = true;
         }
     }
 }
