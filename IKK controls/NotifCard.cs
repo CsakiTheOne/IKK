@@ -27,6 +27,12 @@ namespace IKK_controls
 
         public void UpdateTheme()
         {
+            BackColor = Theme.ColorPrimary;
+            flpButtons.BackColor = Theme.ColorPrimary;
+            ForeColor = Theme.ColorText;
+
+
+
             lblTop.Text = $"{Notification.Sender} • {Notification.Time}";
             lblTitle.Text = Notification.Title;
             lblDesc.Text = Notification.Desc;
@@ -47,8 +53,6 @@ namespace IKK_controls
                     btn.UpdateTheme();
                 }
             }
-
-            BackColor = Theme.ColorPrimary;
         }
 
         private void pbDismiss_Click(object sender, EventArgs e)

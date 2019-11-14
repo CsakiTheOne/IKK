@@ -34,31 +34,7 @@ namespace IKK
             NotifManager.Notified += NotifManager_Notified;
             NotifManager.Dismissed += NotifManager_Dismissed;
 
-            MsgBox.MsgBoxButton[] buttons = { new MsgBox.MsgBoxButton("Publikus", true, DialogResult.OK), new MsgBox.MsgBoxButton("Helyi", false, DialogResult.Ignore) };
-            bool test = MsgBox.Show("Válassz szervert!", "Ha nem a fejlesztő vagy, akkor a publikus szerverrel próbálkozz!", buttons) == DialogResult.Ignore;
-
-            if (!test)
-            {
-                IKK_data.Database.DB = "Server=remotemysql.com;User ID=BwbvoshEex;Password=LJtxlTZdiF;Database=BwbvoshEex";
-            }
-
-            Storage.TestConnection(ConnectionTestFinnished, true);
-        }
-
-        private void ConnectionTestFinnished(bool connection)
-        {
-            Invoke(new Action(() =>
-            {
-                if (connection)
-                {
-                    viewContainerMain.SetView(new View1Login());
-                }
-                else
-                {
-                    Storage.LocalUser = new IKK_data.Profile(-1, "Nincs bejelentkezve", "Offline felhasználó", "", DateTime.Now);
-                    viewContainerMain.SetView(new View1Main());
-                }
-            }));
+            viewContainerMain.SetView(new View1Login());
         }
 
         private void btnNotifOpen_Click(object sender, EventArgs e)
@@ -95,6 +71,12 @@ namespace IKK
             btnNotifOpen.Raised = true;
 
             btnNotifClear.Visible = true;
+        }
+
+        private void jelölésOlvasottkéntToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnNotifOpen.Text = "Nincs új értesítés";
+            btnNotifOpen.Raised = false;
         }
     }
 }

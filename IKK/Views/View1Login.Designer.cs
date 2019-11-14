@@ -38,7 +38,9 @@
             this.btnPass = new IKK_controls.Btn();
             this.btnReg = new IKK_controls.Btn();
             this.btnLogin = new IKK_controls.Btn();
-            this.btnHelp = new IKK_controls.Btn();
+            this.btnModeNet = new IKK_controls.Btn();
+            this.btnModeDebug = new IKK_controls.Btn();
+            this.btnModeOffline = new IKK_controls.Btn();
             this.cardLogin.SuspendLayout();
             this.pLogin.SuspendLayout();
             this.SuspendLayout();
@@ -48,17 +50,19 @@
             this.cardLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cardLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cardLogin.Controls.Add(this.pLogin);
-            this.cardLogin.Location = new System.Drawing.Point(0, 100);
+            this.cardLogin.Location = new System.Drawing.Point(0, 90);
             this.cardLogin.Margin = new System.Windows.Forms.Padding(8);
             this.cardLogin.Name = "cardLogin";
             this.cardLogin.Padding = new System.Windows.Forms.Padding(8);
-            this.cardLogin.Size = new System.Drawing.Size(900, 300);
+            this.cardLogin.Size = new System.Drawing.Size(900, 320);
             this.cardLogin.TabIndex = 0;
             // 
             // pLogin
             // 
             this.pLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pLogin.Controls.Add(this.btnHelp);
+            this.pLogin.Controls.Add(this.btnModeOffline);
+            this.pLogin.Controls.Add(this.btnModeDebug);
+            this.pLogin.Controls.Add(this.btnModeNet);
             this.pLogin.Controls.Add(this.tbPass);
             this.pLogin.Controls.Add(this.tbEmail);
             this.pLogin.Controls.Add(this.lblPass);
@@ -68,8 +72,9 @@
             this.pLogin.Controls.Add(this.btnReg);
             this.pLogin.Controls.Add(this.btnLogin);
             this.pLogin.Location = new System.Drawing.Point(299, -1);
+            this.pLogin.Margin = new System.Windows.Forms.Padding(0);
             this.pLogin.Name = "pLogin";
-            this.pLogin.Size = new System.Drawing.Size(300, 300);
+            this.pLogin.Size = new System.Drawing.Size(300, 320);
             this.pLogin.TabIndex = 1;
             // 
             // tbPass
@@ -78,13 +83,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbPass.Location = new System.Drawing.Point(17, 161);
+            this.tbPass.Location = new System.Drawing.Point(8, 190);
             this.tbPass.Margin = new System.Windows.Forms.Padding(8, 8, 8, 0);
             this.tbPass.MaxLength = 30;
             this.tbPass.Name = "tbPass";
             this.tbPass.PasswordChar = '●';
             this.tbPass.Secret = true;
-            this.tbPass.Size = new System.Drawing.Size(266, 26);
+            this.tbPass.Size = new System.Drawing.Size(284, 26);
             this.tbPass.TabIndex = 20;
             // 
             // tbEmail
@@ -93,12 +98,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbEmail.Location = new System.Drawing.Point(17, 98);
+            this.tbEmail.Location = new System.Drawing.Point(8, 127);
             this.tbEmail.Margin = new System.Windows.Forms.Padding(8);
             this.tbEmail.MaxLength = 30;
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Secret = false;
-            this.tbEmail.Size = new System.Drawing.Size(266, 26);
+            this.tbEmail.Size = new System.Drawing.Size(284, 26);
             this.tbEmail.TabIndex = 19;
             // 
             // lblPass
@@ -106,7 +111,7 @@
             this.lblPass.AutoSize = true;
             this.lblPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPass.ForeColor = System.Drawing.Color.White;
-            this.lblPass.Location = new System.Drawing.Point(17, 140);
+            this.lblPass.Location = new System.Drawing.Point(8, 169);
             this.lblPass.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(239, 13);
@@ -118,7 +123,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(17, 77);
+            this.lblName.Location = new System.Drawing.Point(8, 106);
             this.lblName.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(41, 13);
@@ -130,7 +135,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(17, 17);
+            this.lblTitle.Location = new System.Drawing.Point(8, 8);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(191, 44);
@@ -146,11 +151,11 @@
             this.btnPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
-            this.btnPass.Location = new System.Drawing.Point(17, 187);
+            this.btnPass.Location = new System.Drawing.Point(8, 216);
             this.btnPass.Margin = new System.Windows.Forms.Padding(8, 0, 8, 8);
             this.btnPass.Name = "btnPass";
             this.btnPass.Raised = false;
-            this.btnPass.Size = new System.Drawing.Size(266, 24);
+            this.btnPass.Size = new System.Drawing.Size(284, 24);
             this.btnPass.TabIndex = 15;
             this.btnPass.Text = "Elfelejtettem a jelszavam";
             this.btnPass.UseVisualStyleBackColor = true;
@@ -164,7 +169,7 @@
             this.btnReg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnReg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
-            this.btnReg.Location = new System.Drawing.Point(67, 253);
+            this.btnReg.Location = new System.Drawing.Point(67, 273);
             this.btnReg.Margin = new System.Windows.Forms.Padding(8);
             this.btnReg.Name = "btnReg";
             this.btnReg.Raised = false;
@@ -182,7 +187,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnLogin.Location = new System.Drawing.Point(183, 253);
+            this.btnLogin.Location = new System.Drawing.Point(183, 273);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(8);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Raised = true;
@@ -192,21 +197,52 @@
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // btnHelp
+            // btnModeNet
             // 
-            this.btnHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHelp.FlatAppearance.BorderSize = 0;
-            this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnHelp.Location = new System.Drawing.Point(253, 17);
-            this.btnHelp.Margin = new System.Windows.Forms.Padding(8);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Raised = false;
-            this.btnHelp.Size = new System.Drawing.Size(30, 30);
-            this.btnHelp.TabIndex = 21;
-            this.btnHelp.Text = "?";
-            this.btnHelp.UseVisualStyleBackColor = true;
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            this.btnModeNet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
+            this.btnModeNet.FlatAppearance.BorderSize = 0;
+            this.btnModeNet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModeNet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnModeNet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnModeNet.Location = new System.Drawing.Point(14, 60);
+            this.btnModeNet.Margin = new System.Windows.Forms.Padding(8);
+            this.btnModeNet.Name = "btnModeNet";
+            this.btnModeNet.Raised = true;
+            this.btnModeNet.Size = new System.Drawing.Size(80, 30);
+            this.btnModeNet.TabIndex = 21;
+            this.btnModeNet.Text = "Internet";
+            this.btnModeNet.UseVisualStyleBackColor = false;
+            this.btnModeNet.Click += new System.EventHandler(this.btnModeNet_Click);
+            // 
+            // btnModeDebug
+            // 
+            this.btnModeDebug.FlatAppearance.BorderSize = 0;
+            this.btnModeDebug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModeDebug.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnModeDebug.Location = new System.Drawing.Point(110, 60);
+            this.btnModeDebug.Margin = new System.Windows.Forms.Padding(8);
+            this.btnModeDebug.Name = "btnModeDebug";
+            this.btnModeDebug.Raised = false;
+            this.btnModeDebug.Size = new System.Drawing.Size(80, 30);
+            this.btnModeDebug.TabIndex = 22;
+            this.btnModeDebug.Text = "Teszt mód";
+            this.btnModeDebug.UseVisualStyleBackColor = true;
+            this.btnModeDebug.Click += new System.EventHandler(this.btnModeDebug_Click);
+            // 
+            // btnModeOffline
+            // 
+            this.btnModeOffline.FlatAppearance.BorderSize = 0;
+            this.btnModeOffline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModeOffline.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnModeOffline.Location = new System.Drawing.Point(206, 60);
+            this.btnModeOffline.Margin = new System.Windows.Forms.Padding(8);
+            this.btnModeOffline.Name = "btnModeOffline";
+            this.btnModeOffline.Raised = false;
+            this.btnModeOffline.Size = new System.Drawing.Size(80, 30);
+            this.btnModeOffline.TabIndex = 23;
+            this.btnModeOffline.Text = "Offline mód";
+            this.btnModeOffline.UseVisualStyleBackColor = true;
+            this.btnModeOffline.Click += new System.EventHandler(this.btnModeOffline_Click);
             // 
             // View1Login
             // 
@@ -233,6 +269,8 @@
         private IKK_controls.Btn btnPass;
         private IKK_controls.Btn btnReg;
         private IKK_controls.Btn btnLogin;
-        private IKK_controls.Btn btnHelp;
+        private IKK_controls.Btn btnModeOffline;
+        private IKK_controls.Btn btnModeDebug;
+        private IKK_controls.Btn btnModeNet;
     }
 }

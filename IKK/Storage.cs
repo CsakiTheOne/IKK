@@ -17,39 +17,14 @@ namespace IKK
         public static ViewContainer MainContainer { get; set; }
         public static Profile LocalUser { get; set; }
         public static Project CurrentProject { get; set; } = new Project();
-        public static bool OfflineMode { get; private set; }
+        public static bool OfflineMode { get; set; }
 
-        public static void TestConnection(Action<bool> OnTested, bool showDialog = true)
+        public static void TestConnection(Action<bool> OnTested)
         {
             new Thread(() => {
-
-                if (showDialog)
-                {
-                    if (!Database.Test())
-                    {
-                        OfflineMode = true;
-                        while (ShowConnectionErrorDialog() == DialogResult.Retry && OfflineMode)
-                            OfflineMode = !Database.Test();
-                    }
-                    else
-                    {
-                        OfflineMode = false;
-                    }
-                }
-                else
-                {
-                    OfflineMode = !Database.Test();
-                }
-
+                OfflineMode = !Database.Test();
                 OnTested(!OfflineMode);
-                
             }).Start();
-        }
-        static DialogResult ShowConnectionErrorDialog()
-        {
-            return MsgBox.Show("Offline mód",
-                    "A szerver nem elérhető vagy nincs internet.\n\rA program offline módban van.",
-                    new MsgBox.MsgBoxButton[] { new MsgBox.MsgBoxButton("Offline mód", true, DialogResult.OK), new MsgBox.MsgBoxButton("Újra", true, DialogResult.Retry) });
         }
     }
 }

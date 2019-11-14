@@ -28,20 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pNotifArea = new System.Windows.Forms.Panel();
-            this.flpNotifArea = new System.Windows.Forms.FlowLayoutPanel();
-            this.viewContainerMain = new IKK_controls.ViewContainer();
             this.btnNotifClear = new IKK_controls.Btn();
+            this.flpNotifArea = new System.Windows.Forms.FlowLayoutPanel();
             this.lbl1 = new IKK_controls.Lbl();
+            this.viewContainerMain = new IKK_controls.ViewContainer();
             this.cardBottom = new IKK_controls.Card();
             this.btnNotifOpen = new IKK_controls.Btn();
+            this.cmsNotif = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.összesTörléseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jelölésOlvasottkéntToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pNotifArea.SuspendLayout();
             this.cardBottom.SuspendLayout();
+            this.cmsNotif.SuspendLayout();
             this.SuspendLayout();
             // 
             // pNotifArea
             // 
             this.pNotifArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pNotifArea.ContextMenuStrip = this.cmsNotif;
             this.pNotifArea.Controls.Add(this.btnNotifClear);
             this.pNotifArea.Controls.Add(this.flpNotifArea);
             this.pNotifArea.Controls.Add(this.lbl1);
@@ -52,25 +58,6 @@
             this.pNotifArea.Size = new System.Drawing.Size(300, 531);
             this.pNotifArea.TabIndex = 2;
             this.pNotifArea.Visible = false;
-            // 
-            // flpNotifArea
-            // 
-            this.flpNotifArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpNotifArea.Location = new System.Drawing.Point(0, 91);
-            this.flpNotifArea.Margin = new System.Windows.Forms.Padding(0);
-            this.flpNotifArea.Name = "flpNotifArea";
-            this.flpNotifArea.Size = new System.Drawing.Size(298, 438);
-            this.flpNotifArea.TabIndex = 1;
-            // 
-            // viewContainerMain
-            // 
-            this.viewContainerMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewContainerMain.Location = new System.Drawing.Point(0, 0);
-            this.viewContainerMain.Name = "viewContainerMain";
-            this.viewContainerMain.Size = new System.Drawing.Size(684, 531);
-            this.viewContainerMain.TabIndex = 0;
             // 
             // btnNotifClear
             // 
@@ -91,6 +78,17 @@
             this.btnNotifClear.Visible = false;
             this.btnNotifClear.Click += new System.EventHandler(this.btnNotifClear_Click);
             // 
+            // flpNotifArea
+            // 
+            this.flpNotifArea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpNotifArea.Location = new System.Drawing.Point(0, 91);
+            this.flpNotifArea.Margin = new System.Windows.Forms.Padding(0);
+            this.flpNotifArea.Name = "flpNotifArea";
+            this.flpNotifArea.Size = new System.Drawing.Size(298, 438);
+            this.flpNotifArea.TabIndex = 1;
+            // 
             // lbl1
             // 
             this.lbl1.AutoSize = true;
@@ -101,6 +99,14 @@
             this.lbl1.Size = new System.Drawing.Size(184, 37);
             this.lbl1.TabIndex = 0;
             this.lbl1.Text = "Értesítések";
+            // 
+            // viewContainerMain
+            // 
+            this.viewContainerMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.viewContainerMain.Location = new System.Drawing.Point(0, 0);
+            this.viewContainerMain.Name = "viewContainerMain";
+            this.viewContainerMain.Size = new System.Drawing.Size(684, 531);
+            this.viewContainerMain.TabIndex = 0;
             // 
             // cardBottom
             // 
@@ -118,6 +124,7 @@
             // 
             this.btnNotifOpen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNotifOpen.ContextMenuStrip = this.cmsNotif;
             this.btnNotifOpen.FlatAppearance.BorderSize = 0;
             this.btnNotifOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotifOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -131,6 +138,28 @@
             this.btnNotifOpen.Text = "Nincs új értesítés";
             this.btnNotifOpen.UseVisualStyleBackColor = true;
             this.btnNotifOpen.Click += new System.EventHandler(this.btnNotifOpen_Click);
+            // 
+            // cmsNotif
+            // 
+            this.cmsNotif.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.jelölésOlvasottkéntToolStripMenuItem,
+            this.összesTörléseToolStripMenuItem});
+            this.cmsNotif.Name = "cmsNotif";
+            this.cmsNotif.Size = new System.Drawing.Size(177, 48);
+            // 
+            // összesTörléseToolStripMenuItem
+            // 
+            this.összesTörléseToolStripMenuItem.Name = "összesTörléseToolStripMenuItem";
+            this.összesTörléseToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.összesTörléseToolStripMenuItem.Text = "Összes törlése";
+            this.összesTörléseToolStripMenuItem.Click += new System.EventHandler(this.btnNotifClear_Click);
+            // 
+            // jelölésOlvasottkéntToolStripMenuItem
+            // 
+            this.jelölésOlvasottkéntToolStripMenuItem.Name = "jelölésOlvasottkéntToolStripMenuItem";
+            this.jelölésOlvasottkéntToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.jelölésOlvasottkéntToolStripMenuItem.Text = "Jelölés olvasottként";
+            this.jelölésOlvasottkéntToolStripMenuItem.Click += new System.EventHandler(this.jelölésOlvasottkéntToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -148,6 +177,7 @@
             this.pNotifArea.ResumeLayout(false);
             this.pNotifArea.PerformLayout();
             this.cardBottom.ResumeLayout(false);
+            this.cmsNotif.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -161,6 +191,9 @@
         private IKK_controls.Lbl lbl1;
         private IKK_controls.Btn btnNotifClear;
         private System.Windows.Forms.FlowLayoutPanel flpNotifArea;
+        private System.Windows.Forms.ContextMenuStrip cmsNotif;
+        private System.Windows.Forms.ToolStripMenuItem jelölésOlvasottkéntToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem összesTörléseToolStripMenuItem;
     }
 }
 
