@@ -10,6 +10,6 @@ namespace IKK_data
     public class ToolDescription : Tool
     {
         public override string Name { get => "Leírás"; }
-        public override string Description { get => "Egy leírás a művedhez."; }
+        public override string[] Description { get => new string[] { "Egy leírás a művedhez.", "Írd körül a műved röviden!" }; }
     }
 }

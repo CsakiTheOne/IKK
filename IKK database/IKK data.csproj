@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IKK notif">
+      <HintPath>..\IKK notif\bin\Debug\IKK notif.dll</HintPath>
+    </Reference>
     <Reference Include="MySqlConnector, Version=0.60.4.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>..\packages\MySqlConnector.0.60.4\lib\net471\MySqlConnector.dll</HintPath>
     </Reference>

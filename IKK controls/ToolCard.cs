@@ -47,7 +47,7 @@ namespace IKK_controls
         {
             if (Tool == null) return;
             lblName.Text = Tool.Name;
-            lblDesc.Text = Tool.Description;
+            lblDesc.Text = Tool.Description[btnSettings.Visible ? 0 : 1];
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

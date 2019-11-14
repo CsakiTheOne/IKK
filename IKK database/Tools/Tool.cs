@@ -16,7 +16,7 @@ namespace IKK_data
         /// <summary>
         /// Offline
         /// </summary>
-        public virtual string Description { get; }
+        public virtual string[] Description { get; }
         /// <summary>
         /// Offline
         /// </summary>

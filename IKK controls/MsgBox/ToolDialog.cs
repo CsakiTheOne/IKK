@@ -23,7 +23,7 @@ namespace IKK_controls
 
             foreach (Tool tool in ToolStorage.Tools)
             {
-                treeView.Nodes[tool.Category].Nodes.Add(new TreeNode(tool.Name) { ToolTipText = tool.Description });
+                treeView.Nodes[tool.Category].Nodes.Add(new TreeNode(tool.Name) { ToolTipText = tool.Description[0] });
             }
         }
 

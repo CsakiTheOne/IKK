@@ -16,6 +16,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKK controls", "IKK control
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKK data", "IKK database\IKK data.csproj", "{FF611970-5A96-4C3F-B121-1F507B291B8B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2132EBB1-772B-4730-ACC2-9DB3F273D28B} = {2132EBB1-772B-4730-ACC2-9DB3F273D28B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKK notif", "IKK notif\IKK notif.csproj", "{2132EBB1-772B-4730-ACC2-9DB3F273D28B}"
 EndProject
