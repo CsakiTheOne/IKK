@@ -33,6 +33,9 @@
     <Reference Include="IKK data">
       <HintPath>..\IKK database\bin\Debug\IKK data.dll</HintPath>
     </Reference>
+    <Reference Include="IKK notif">
+      <HintPath>..\IKK notif\bin\Debug\IKK notif.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -89,6 +92,12 @@
     </Compile>
     <Compile Include="NavMenuItem.Designer.cs">
       <DependentUpon>NavMenuItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotifCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NotifCard.Designer.cs">
+      <DependentUpon>NotifCard.cs</DependentUpon>
     </Compile>
     <Compile Include="ProjectCard.cs">
       <SubType>UserControl</SubType>

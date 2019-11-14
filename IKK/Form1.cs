@@ -1,4 +1,5 @@
 ﻿using IKK_controls;
+using IKK_notif;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,11 +24,15 @@ namespace IKK
         public void UpdateTheme()
         {
             BackColor = Theme.ColorBackground;
+            btnNotifOpen.UpdateTheme();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             Storage.MainContainer = viewContainerMain;
+
+            NotifManager.Notified += NotifManager_Refresh;
+            NotifManager.Dismissed += NotifManager_Refresh;
 
             MsgBox.MsgBoxButton[] buttons = { new MsgBox.MsgBoxButton("Publikus", true, DialogResult.OK), new MsgBox.MsgBoxButton("Helyi", false, DialogResult.Ignore) };
             bool test = MsgBox.Show("Válassz szervert!", "Ha nem a fejlesztő vagy, akkor a publikus szerverrel próbálkozz!", buttons) == DialogResult.Ignore;
@@ -54,6 +59,22 @@ namespace IKK
                     viewContainerMain.SetView(new View1Main());
                 }
             }));
+        }
+
+        private void btnNotifOpen_Click(object sender, EventArgs e)
+        {
+            pNotifArea.Visible = !pNotifArea.Visible;
+        }
+
+        private void NotifManager_Refresh(Notification sender)
+        {
+            flpNotifArea.Controls.Clear();
+
+            foreach (Notification notif in NotifManager.Notifications)
+            {
+                // TODO
+                flpNotifArea.Controls.Add();
+            }
         }
     }
 }

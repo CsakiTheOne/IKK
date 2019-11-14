@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKK controls", "IKK control
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKK data", "IKK database\IKK data.csproj", "{FF611970-5A96-4C3F-B121-1F507B291B8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKK notif", "IKK notif\IKK notif.csproj", "{2132EBB1-772B-4730-ACC2-9DB3F273D28B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FF611970-5A96-4C3F-B121-1F507B291B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF611970-5A96-4C3F-B121-1F507B291B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF611970-5A96-4C3F-B121-1F507B291B8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2132EBB1-772B-4730-ACC2-9DB3F273D28B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2132EBB1-772B-4730-ACC2-9DB3F273D28B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2132EBB1-772B-4730-ACC2-9DB3F273D28B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2132EBB1-772B-4730-ACC2-9DB3F273D28B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
