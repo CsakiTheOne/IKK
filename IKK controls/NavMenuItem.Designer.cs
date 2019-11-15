@@ -28,16 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.ttText = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
-            // 
-            // ttText
-            // 
-            this.ttText.AutomaticDelay = 0;
-            this.ttText.AutoPopDelay = 5000;
-            this.ttText.InitialDelay = 0;
-            this.ttText.ReshowDelay = 0;
             // 
             // NavMenuItem
             // 
@@ -46,12 +37,12 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Size = new System.Drawing.Size(250, 60);
+            this.MouseEnter += new System.EventHandler(this.NavMenuItem_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.NavMenuItem_MouseLeave);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolTip ttText;
     }
 }

@@ -50,7 +50,7 @@ namespace IKK_controls
 
             foreach (Control item in flp.Controls)
             {
-                item.Width = Width;
+                item.Width = flp.Width;
                 item.Refresh();
             }
         }
@@ -81,6 +81,7 @@ namespace IKK_controls
                 if (itemIcons.Images.Count > i) nextItem.Icon = itemIcons.Images[i];
                 nextItem.Click += SelectItem;
                 flp.Controls.Add(nextItem);
+                nextItem.Width = flp.Width;
             }
         }
 
