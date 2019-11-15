@@ -88,7 +88,7 @@
             this.Controls.Add(this.lblLabel);
             this.Controls.Add(this.pbLabel);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(0);
+            this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "ProjectCard";
             this.Size = new System.Drawing.Size(250, 120);
             ((System.ComponentModel.ISupportInitialize)(this.pbLabel)).EndInit();

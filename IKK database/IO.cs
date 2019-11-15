@@ -153,5 +153,22 @@ namespace IKK_data
             File.WriteAllLines(fileName, lines);
         }
         #endregion
+
+        public static List<Project> GetProjectsFromFolder(string path)
+        {
+            List<Project> projects = new List<Project>();
+
+            List<string> fileNames = new List<string>();
+            fileNames.AddRange(Directory.GetFiles(path, "*.ikk"));
+            fileNames.AddRange(Directory.GetFiles(path, "*.txt"));
+            fileNames.AddRange(Directory.GetFiles(path, "*.md"));
+
+            foreach (string fileName in fileNames)
+            {
+                projects.Add(ProjectOpen(fileName));
+            }
+
+            return projects;
+        }
     }
 }

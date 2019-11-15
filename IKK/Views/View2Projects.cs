@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IKK_data;
 
 namespace IKK
 {
@@ -15,24 +16,37 @@ namespace IKK
         public View2Projects()
         {
             InitializeComponent();
-            projectSelected.UpdateProject(new IKK_data.Project(-1, -1, "Válassz egy projektet!", "Kattints egy kártyára szerkesztéshez.", "", DateTime.Now, null));
         }
 
-        private void flp_Paint(object sender, PaintEventArgs e)
+        void ReloadProjects()
         {
-            lblSectionLocal.Width = flp.Width - flp.Margin.Left * 2;
-            lblSectionOnline.Width = flp.Width - flp.Margin.Left * 2;
+            flpLatest.Controls.Clear();
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.SelectedPath = Application.ExecutablePath.Remove(Application.ExecutablePath.LastIndexOf('\\'));
+
+            if (fbd.ShowDialog() != DialogResult.OK) return;
+
+            List<Project> projects = IO.GetProjectsFromFolder(fbd.SelectedPath);
+            foreach (Project project in projects)
+            {
+                flpLatest.Controls.Add(new IKK_controls.ProjectCard(project));
+            }
+        }
+
+        private void nmiRefresh_Click(object sender, EventArgs e)
+        {
+            ReloadProjects();
         }
 
         private void nmiOpenFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = IKK_data.IO.PROJECT_FILTER;
+            ofd.Filter = IO.PROJECT_FILTER;
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    Storage.MainContainer.SetView(new View1Editor(IKK_data.IO.ProjectOpen(ofd.FileName)));
+                    Storage.MainContainer.SetView(new View1Editor(IO.ProjectOpen(ofd.FileName)));
 
                 }
                 catch (Exception ex)

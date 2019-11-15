@@ -24,11 +24,13 @@ namespace IKK_controls
         {
             InitializeComponent();
             Theme.ThemeChanged += UpdateTheme;
+            UpdateTheme();
         }
         public ProjectCard(Project project)
         {
             InitializeComponent();
             Theme.ThemeChanged += UpdateTheme;
+            UpdateTheme();
             UpdateProject(project);
         }
 

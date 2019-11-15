@@ -28,73 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.nmiOpenSelected = new IKK_controls.NavMenuItem();
-            this.projectSelected = new IKK_controls.ProjectCard();
+            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.pSidebar = new System.Windows.Forms.Panel();
             this.nmiOpenFile = new IKK_controls.NavMenuItem();
             this.nmiNew = new IKK_controls.NavMenuItem();
-            this.flp = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblSectionLocal = new IKK_controls.Lbl();
-            this.lblSectionOnline = new IKK_controls.Lbl();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.flp.SuspendLayout();
+            this.nmiRefresh = new IKK_controls.NavMenuItem();
+            this.pLatestProjects = new System.Windows.Forms.Panel();
+            this.lblLatestProjects = new IKK_controls.Lbl();
+            this.flpLatest = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel.SuspendLayout();
+            this.pSidebar.SuspendLayout();
+            this.pLatestProjects.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.flp, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(900, 500);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel.ColumnCount = 2;
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tableLayoutPanel.Controls.Add(this.pSidebar, 1, 0);
+            this.tableLayoutPanel.Controls.Add(this.pLatestProjects, 0, 0);
+            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel.Name = "tableLayoutPanel";
+            this.tableLayoutPanel.RowCount = 1;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(900, 500);
+            this.tableLayoutPanel.TabIndex = 0;
             // 
-            // panel1
+            // pSidebar
             // 
-            this.panel1.Controls.Add(this.nmiOpenSelected);
-            this.panel1.Controls.Add(this.projectSelected);
-            this.panel1.Controls.Add(this.nmiOpenFile);
-            this.panel1.Controls.Add(this.nmiNew);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(600, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 500);
-            this.panel1.TabIndex = 0;
-            // 
-            // nmiOpenSelected
-            // 
-            this.nmiOpenSelected.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nmiOpenSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.nmiOpenSelected.Icon = null;
-            this.nmiOpenSelected.Location = new System.Drawing.Point(0, 152);
-            this.nmiOpenSelected.Margin = new System.Windows.Forms.Padding(0);
-            this.nmiOpenSelected.Name = "nmiOpenSelected";
-            this.nmiOpenSelected.Selected = false;
-            this.nmiOpenSelected.Size = new System.Drawing.Size(300, 60);
-            this.nmiOpenSelected.TabIndex = 3;
-            this.nmiOpenSelected.Text = "Írás";
-            // 
-            // projectSelected
-            // 
-            this.projectSelected.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.projectSelected.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.projectSelected.Location = new System.Drawing.Point(25, 16);
-            this.projectSelected.Margin = new System.Windows.Forms.Padding(16);
-            this.projectSelected.Name = "projectSelected";
-            this.projectSelected.Selected = false;
-            this.projectSelected.Size = new System.Drawing.Size(250, 120);
-            this.projectSelected.TabIndex = 2;
+            this.pSidebar.Controls.Add(this.nmiRefresh);
+            this.pSidebar.Controls.Add(this.nmiOpenFile);
+            this.pSidebar.Controls.Add(this.nmiNew);
+            this.pSidebar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pSidebar.Location = new System.Drawing.Point(600, 0);
+            this.pSidebar.Margin = new System.Windows.Forms.Padding(0);
+            this.pSidebar.Name = "pSidebar";
+            this.pSidebar.Size = new System.Drawing.Size(300, 500);
+            this.pSidebar.TabIndex = 0;
             // 
             // nmiOpenFile
             // 
@@ -124,62 +97,77 @@
             this.nmiNew.Text = "Új projekt";
             this.nmiNew.Click += new System.EventHandler(this.nmiNew_Click);
             // 
-            // flp
+            // nmiRefresh
             // 
-            this.flp.Controls.Add(this.lblSectionLocal);
-            this.flp.Controls.Add(this.lblSectionOnline);
-            this.flp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flp.Location = new System.Drawing.Point(0, 0);
-            this.flp.Margin = new System.Windows.Forms.Padding(0);
-            this.flp.Name = "flp";
-            this.flp.Size = new System.Drawing.Size(600, 500);
-            this.flp.TabIndex = 1;
-            this.flp.Paint += new System.Windows.Forms.PaintEventHandler(this.flp_Paint);
+            this.nmiRefresh.Dock = System.Windows.Forms.DockStyle.Top;
+            this.nmiRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.nmiRefresh.Icon = null;
+            this.nmiRefresh.Location = new System.Drawing.Point(0, 0);
+            this.nmiRefresh.Margin = new System.Windows.Forms.Padding(0);
+            this.nmiRefresh.Name = "nmiRefresh";
+            this.nmiRefresh.Selected = false;
+            this.nmiRefresh.Size = new System.Drawing.Size(300, 60);
+            this.nmiRefresh.TabIndex = 2;
+            this.nmiRefresh.Text = "Frissítés";
+            this.nmiRefresh.Click += new System.EventHandler(this.nmiRefresh_Click);
             // 
-            // lblSectionLocal
+            // pLatestProjects
             // 
-            this.lblSectionLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblSectionLocal.Location = new System.Drawing.Point(8, 8);
-            this.lblSectionLocal.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.lblSectionLocal.Name = "lblSectionLocal";
-            this.lblSectionLocal.Size = new System.Drawing.Size(600, 44);
-            this.lblSectionLocal.TabIndex = 0;
-            this.lblSectionLocal.Text = "Legutóbbi művek";
+            this.pLatestProjects.Controls.Add(this.flpLatest);
+            this.pLatestProjects.Controls.Add(this.lblLatestProjects);
+            this.pLatestProjects.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pLatestProjects.Location = new System.Drawing.Point(0, 0);
+            this.pLatestProjects.Margin = new System.Windows.Forms.Padding(0);
+            this.pLatestProjects.Name = "pLatestProjects";
+            this.pLatestProjects.Size = new System.Drawing.Size(600, 500);
+            this.pLatestProjects.TabIndex = 1;
             // 
-            // lblSectionOnline
+            // lblLatestProjects
             // 
-            this.lblSectionOnline.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblSectionOnline.Location = new System.Drawing.Point(8, 60);
-            this.lblSectionOnline.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.lblSectionOnline.Name = "lblSectionOnline";
-            this.lblSectionOnline.Size = new System.Drawing.Size(600, 44);
-            this.lblSectionOnline.TabIndex = 1;
-            this.lblSectionOnline.Text = "Művek a felhőben";
+            this.lblLatestProjects.AutoSize = true;
+            this.lblLatestProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblLatestProjects.Location = new System.Drawing.Point(8, 8);
+            this.lblLatestProjects.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.lblLatestProjects.Name = "lblLatestProjects";
+            this.lblLatestProjects.Size = new System.Drawing.Size(321, 44);
+            this.lblLatestProjects.TabIndex = 0;
+            this.lblLatestProjects.Text = "Legutóbbi művek:";
+            // 
+            // flpLatest
+            // 
+            this.flpLatest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpLatest.Location = new System.Drawing.Point(0, 68);
+            this.flpLatest.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.flpLatest.Name = "flpLatest";
+            this.flpLatest.Size = new System.Drawing.Size(600, 432);
+            this.flpLatest.TabIndex = 1;
             // 
             // View2Projects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tableLayoutPanel);
             this.Name = "View2Projects";
             this.Padding = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.flp.ResumeLayout(false);
+            this.tableLayoutPanel.ResumeLayout(false);
+            this.pSidebar.ResumeLayout(false);
+            this.pLatestProjects.ResumeLayout(false);
+            this.pLatestProjects.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flp;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
+        private System.Windows.Forms.Panel pSidebar;
         private IKK_controls.NavMenuItem nmiNew;
         private IKK_controls.NavMenuItem nmiOpenFile;
-        private IKK_controls.Lbl lblSectionLocal;
-        private IKK_controls.Lbl lblSectionOnline;
-        private IKK_controls.ProjectCard projectSelected;
-        private IKK_controls.NavMenuItem nmiOpenSelected;
+        private IKK_controls.NavMenuItem nmiRefresh;
+        private System.Windows.Forms.Panel pLatestProjects;
+        private IKK_controls.Lbl lblLatestProjects;
+        private System.Windows.Forms.FlowLayoutPanel flpLatest;
     }
 }
