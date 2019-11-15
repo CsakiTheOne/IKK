@@ -30,12 +30,12 @@
         {
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.pSidebar = new System.Windows.Forms.Panel();
+            this.nmiRefresh = new IKK_controls.NavMenuItem();
             this.nmiOpenFile = new IKK_controls.NavMenuItem();
             this.nmiNew = new IKK_controls.NavMenuItem();
-            this.nmiRefresh = new IKK_controls.NavMenuItem();
             this.pLatestProjects = new System.Windows.Forms.Panel();
-            this.lblLatestProjects = new IKK_controls.Lbl();
             this.flpLatest = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblLatestProjects = new IKK_controls.Lbl();
             this.tableLayoutPanel.SuspendLayout();
             this.pSidebar.SuspendLayout();
             this.pLatestProjects.SuspendLayout();
@@ -69,6 +69,20 @@
             this.pSidebar.Size = new System.Drawing.Size(300, 500);
             this.pSidebar.TabIndex = 0;
             // 
+            // nmiRefresh
+            // 
+            this.nmiRefresh.Dock = System.Windows.Forms.DockStyle.Top;
+            this.nmiRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.nmiRefresh.Icon = global::IKK.Properties.Resources.sharp_refresh_white_48dp;
+            this.nmiRefresh.Location = new System.Drawing.Point(0, 0);
+            this.nmiRefresh.Margin = new System.Windows.Forms.Padding(0);
+            this.nmiRefresh.Name = "nmiRefresh";
+            this.nmiRefresh.Selected = false;
+            this.nmiRefresh.Size = new System.Drawing.Size(300, 60);
+            this.nmiRefresh.TabIndex = 2;
+            this.nmiRefresh.Text = "Frissítés";
+            this.nmiRefresh.Click += new System.EventHandler(this.nmiRefresh_Click);
+            // 
             // nmiOpenFile
             // 
             this.nmiOpenFile.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -97,20 +111,6 @@
             this.nmiNew.Text = "Új projekt";
             this.nmiNew.Click += new System.EventHandler(this.nmiNew_Click);
             // 
-            // nmiRefresh
-            // 
-            this.nmiRefresh.Dock = System.Windows.Forms.DockStyle.Top;
-            this.nmiRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.nmiRefresh.Icon = null;
-            this.nmiRefresh.Location = new System.Drawing.Point(0, 0);
-            this.nmiRefresh.Margin = new System.Windows.Forms.Padding(0);
-            this.nmiRefresh.Name = "nmiRefresh";
-            this.nmiRefresh.Selected = false;
-            this.nmiRefresh.Size = new System.Drawing.Size(300, 60);
-            this.nmiRefresh.TabIndex = 2;
-            this.nmiRefresh.Text = "Frissítés";
-            this.nmiRefresh.Click += new System.EventHandler(this.nmiRefresh_Click);
-            // 
             // pLatestProjects
             // 
             this.pLatestProjects.Controls.Add(this.flpLatest);
@@ -122,17 +122,6 @@
             this.pLatestProjects.Size = new System.Drawing.Size(600, 500);
             this.pLatestProjects.TabIndex = 1;
             // 
-            // lblLatestProjects
-            // 
-            this.lblLatestProjects.AutoSize = true;
-            this.lblLatestProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblLatestProjects.Location = new System.Drawing.Point(8, 8);
-            this.lblLatestProjects.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.lblLatestProjects.Name = "lblLatestProjects";
-            this.lblLatestProjects.Size = new System.Drawing.Size(321, 44);
-            this.lblLatestProjects.TabIndex = 0;
-            this.lblLatestProjects.Text = "Legutóbbi művek:";
-            // 
             // flpLatest
             // 
             this.flpLatest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -143,6 +132,17 @@
             this.flpLatest.Name = "flpLatest";
             this.flpLatest.Size = new System.Drawing.Size(600, 432);
             this.flpLatest.TabIndex = 1;
+            // 
+            // lblLatestProjects
+            // 
+            this.lblLatestProjects.AutoSize = true;
+            this.lblLatestProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblLatestProjects.Location = new System.Drawing.Point(8, 8);
+            this.lblLatestProjects.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.lblLatestProjects.Name = "lblLatestProjects";
+            this.lblLatestProjects.Size = new System.Drawing.Size(321, 44);
+            this.lblLatestProjects.TabIndex = 0;
+            this.lblLatestProjects.Text = "Legutóbbi művek:";
             // 
             // View2Projects
             // 

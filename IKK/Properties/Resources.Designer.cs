@@ -103,6 +103,16 @@ namespace IKK.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sharp_refresh_white_48dp {
+            get {
+                object obj = ResourceManager.GetObject("sharp_refresh_white_48dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sharp_view_day_white_48dp {
             get {
                 object obj = ResourceManager.GetObject("sharp_view_day_white_48dp", resourceCulture);
