@@ -30,6 +30,9 @@
         {
             this.cardLogin = new IKK_controls.Card();
             this.pLogin = new System.Windows.Forms.Panel();
+            this.btnModeOffline = new IKK_controls.Btn();
+            this.btnModeDebug = new IKK_controls.Btn();
+            this.btnModeNet = new IKK_controls.Btn();
             this.tbPass = new IKK_controls.Tb();
             this.tbEmail = new IKK_controls.Tb();
             this.lblPass = new IKK_controls.Lbl();
@@ -38,9 +41,7 @@
             this.btnPass = new IKK_controls.Btn();
             this.btnReg = new IKK_controls.Btn();
             this.btnLogin = new IKK_controls.Btn();
-            this.btnModeNet = new IKK_controls.Btn();
-            this.btnModeDebug = new IKK_controls.Btn();
-            this.btnModeOffline = new IKK_controls.Btn();
+            this.lblVersion = new IKK_controls.Lbl();
             this.cardLogin.SuspendLayout();
             this.pLogin.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +78,55 @@
             this.pLogin.Size = new System.Drawing.Size(300, 320);
             this.pLogin.TabIndex = 1;
             // 
+            // btnModeOffline
+            // 
+            this.btnModeOffline.FlatAppearance.BorderSize = 0;
+            this.btnModeOffline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModeOffline.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnModeOffline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
+            this.btnModeOffline.Location = new System.Drawing.Point(206, 60);
+            this.btnModeOffline.Margin = new System.Windows.Forms.Padding(8);
+            this.btnModeOffline.Name = "btnModeOffline";
+            this.btnModeOffline.Raised = false;
+            this.btnModeOffline.Size = new System.Drawing.Size(80, 30);
+            this.btnModeOffline.TabIndex = 23;
+            this.btnModeOffline.Text = "Offline mód";
+            this.btnModeOffline.UseVisualStyleBackColor = true;
+            this.btnModeOffline.Click += new System.EventHandler(this.btnModeOffline_Click);
+            // 
+            // btnModeDebug
+            // 
+            this.btnModeDebug.FlatAppearance.BorderSize = 0;
+            this.btnModeDebug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModeDebug.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnModeDebug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
+            this.btnModeDebug.Location = new System.Drawing.Point(110, 60);
+            this.btnModeDebug.Margin = new System.Windows.Forms.Padding(8);
+            this.btnModeDebug.Name = "btnModeDebug";
+            this.btnModeDebug.Raised = false;
+            this.btnModeDebug.Size = new System.Drawing.Size(80, 30);
+            this.btnModeDebug.TabIndex = 22;
+            this.btnModeDebug.Text = "Teszt mód";
+            this.btnModeDebug.UseVisualStyleBackColor = true;
+            this.btnModeDebug.Click += new System.EventHandler(this.btnModeDebug_Click);
+            // 
+            // btnModeNet
+            // 
+            this.btnModeNet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
+            this.btnModeNet.FlatAppearance.BorderSize = 0;
+            this.btnModeNet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModeNet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnModeNet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnModeNet.Location = new System.Drawing.Point(14, 60);
+            this.btnModeNet.Margin = new System.Windows.Forms.Padding(8);
+            this.btnModeNet.Name = "btnModeNet";
+            this.btnModeNet.Raised = true;
+            this.btnModeNet.Size = new System.Drawing.Size(80, 30);
+            this.btnModeNet.TabIndex = 21;
+            this.btnModeNet.Text = "Internet";
+            this.btnModeNet.UseVisualStyleBackColor = false;
+            this.btnModeNet.Click += new System.EventHandler(this.btnModeNet_Click);
+            // 
             // tbPass
             // 
             this.tbPass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -91,6 +141,7 @@
             this.tbPass.Secret = true;
             this.tbPass.Size = new System.Drawing.Size(284, 26);
             this.tbPass.TabIndex = 20;
+            this.tbPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPass_KeyDown);
             // 
             // tbEmail
             // 
@@ -197,57 +248,22 @@
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // btnModeNet
+            // lblVersion
             // 
-            this.btnModeNet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
-            this.btnModeNet.FlatAppearance.BorderSize = 0;
-            this.btnModeNet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModeNet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnModeNet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnModeNet.Location = new System.Drawing.Point(14, 60);
-            this.btnModeNet.Margin = new System.Windows.Forms.Padding(8);
-            this.btnModeNet.Name = "btnModeNet";
-            this.btnModeNet.Raised = true;
-            this.btnModeNet.Size = new System.Drawing.Size(80, 30);
-            this.btnModeNet.TabIndex = 21;
-            this.btnModeNet.Text = "Internet";
-            this.btnModeNet.UseVisualStyleBackColor = false;
-            this.btnModeNet.Click += new System.EventHandler(this.btnModeNet_Click);
-            // 
-            // btnModeDebug
-            // 
-            this.btnModeDebug.FlatAppearance.BorderSize = 0;
-            this.btnModeDebug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModeDebug.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnModeDebug.Location = new System.Drawing.Point(110, 60);
-            this.btnModeDebug.Margin = new System.Windows.Forms.Padding(8);
-            this.btnModeDebug.Name = "btnModeDebug";
-            this.btnModeDebug.Raised = false;
-            this.btnModeDebug.Size = new System.Drawing.Size(80, 30);
-            this.btnModeDebug.TabIndex = 22;
-            this.btnModeDebug.Text = "Teszt mód";
-            this.btnModeDebug.UseVisualStyleBackColor = true;
-            this.btnModeDebug.Click += new System.EventHandler(this.btnModeDebug_Click);
-            // 
-            // btnModeOffline
-            // 
-            this.btnModeOffline.FlatAppearance.BorderSize = 0;
-            this.btnModeOffline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModeOffline.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnModeOffline.Location = new System.Drawing.Point(206, 60);
-            this.btnModeOffline.Margin = new System.Windows.Forms.Padding(8);
-            this.btnModeOffline.Name = "btnModeOffline";
-            this.btnModeOffline.Raised = false;
-            this.btnModeOffline.Size = new System.Drawing.Size(80, 30);
-            this.btnModeOffline.TabIndex = 23;
-            this.btnModeOffline.Text = "Offline mód";
-            this.btnModeOffline.UseVisualStyleBackColor = true;
-            this.btnModeOffline.Click += new System.EventHandler(this.btnModeOffline_Click);
+            this.lblVersion.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblVersion.Location = new System.Drawing.Point(350, 479);
+            this.lblVersion.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(200, 13);
+            this.lblVersion.TabIndex = 1;
+            this.lblVersion.Text = "...";
+            this.lblVersion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // View1Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.cardLogin);
             this.Name = "View1Login";
             this.cardLogin.ResumeLayout(false);
@@ -272,5 +288,6 @@
         private IKK_controls.Btn btnModeOffline;
         private IKK_controls.Btn btnModeDebug;
         private IKK_controls.Btn btnModeNet;
+        private IKK_controls.Lbl lblVersion;
     }
 }

@@ -20,6 +20,17 @@ namespace IKK
         {
             InitializeComponent();
             lblTitle.Text = Storage.ProgramName;
+            lblVersion.Text = Storage.ProgramVer;
+            btnModeNet.PerformClick();
+        }
+
+        private void tbPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter) return;
+
+            e.SuppressKeyPress = false;
+            e.Handled = true;
+            btnLogin.PerformClick();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
