@@ -9,15 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.ComponentModel.Design;
 using System.Drawing.Design;
+using IKK_data;
 
 namespace IKK_controls
 {
     public partial class ProjectCard : UserControl, IThemable
     {
-        public string PTitle { get => lblTitle.Text; set => lblTitle.Text = value; }
-        [Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
-        public string PDescription { get => lblDesc.Text; set => lblDesc.Text = value; }
-        public string PLabel { get => lblLabel.Text; set => lblLabel.Text = value; }
+        public Project Project { get; private set; }
         public bool Selected { get => selected; set { selected = value; Refresh(); } }
 
         bool selected = false;
@@ -27,19 +25,31 @@ namespace IKK_controls
             InitializeComponent();
             Theme.ThemeChanged += UpdateTheme;
         }
-        public ProjectCard(IKK_data.Project project)
+        public ProjectCard(Project project)
         {
             InitializeComponent();
             Theme.ThemeChanged += UpdateTheme;
-            lblTitle.Text = project.Title;
-            lblDesc.Text = project.Content.Split('\n')[0];
-            lblLabel.Text = project.Label;
+            UpdateProject(project);
         }
 
         public void UpdateTheme()
         {
             BackColor = selected ? Theme.ColorAccent : Theme.ColorBackground;
             ForeColor = Theme.ColorText;
+        }
+
+        public void UpdateProject(Project project)
+        {
+            Project = project;
+            lblTitle.Text = project.Title;
+            lblDesc.Text = project.Content;
+            lblLabel.Text = project.Label;
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            if (Selected) ControlPaint.DrawBorder(e.Graphics, new Rectangle(0, 0, Width - 2, Height - 2), Theme.ColorAccent, ButtonBorderStyle.Solid);
         }
     }
 }

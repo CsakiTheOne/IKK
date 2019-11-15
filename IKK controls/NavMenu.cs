@@ -50,6 +50,7 @@ namespace IKK_controls
 
             foreach (Control item in flp.Controls)
             {
+                item.Width = Width;
                 item.Refresh();
             }
         }

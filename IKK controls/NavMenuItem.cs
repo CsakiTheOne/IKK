@@ -45,20 +45,27 @@ namespace IKK_controls
 
         protected override void OnPaint(PaintEventArgs pe)
         {
-            Width = Parent.Width;
             collapsed = Width < Height * 2;
 
             ttText.SetToolTip(this, collapsed ? Text : "");
 
+            Brush accentBrush = new SolidBrush(Theme.ColorAccent);
             if (Selected)
             {
-                Brush accentBrush = new SolidBrush(Theme.ColorAccent);
                 Point[] points = { new Point(0, 4), new Point(Width - 30, 4), new Point(Width, 30), new Point(Width - 30, Height - 4), new Point(0, Height - 4) };
                 byte[] ppt = { 0, 1, 1, 1, 1 };
                 GraphicsPath path = new GraphicsPath(points, ppt);
                 pe.Graphics.FillPath(accentBrush, path);
-                accentBrush.Dispose();
             }
+            else
+            {
+                int leftDecoMargin = collapsed ? 0 : 4;
+                Point[] points = { new Point(leftDecoMargin, 12), new Point(leftDecoMargin + 2, 8), new Point(leftDecoMargin + 2, Height - 8), new Point(leftDecoMargin, Height - 12) };
+                byte[] ppt = { 0, 1, 1, 1 };
+                GraphicsPath path = new GraphicsPath(points, ppt);
+                pe.Graphics.FillPath(accentBrush, path);
+            }
+            accentBrush.Dispose();
 
             if (Icon != null) pe.Graphics.DrawImage(Icon, new Rectangle(collapsed ? 8 : 16, 16, 28, 28));
 
