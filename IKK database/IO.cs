@@ -25,7 +25,9 @@ namespace IKK_data
             if (format == "ikk")
             {
                 BinaryFormatter bf = new BinaryFormatter();
-                project = (Project)bf.Deserialize(new FileStream(fileName, FileMode.Open));
+                FileStream fs = new FileStream(fileName, FileMode.Open);
+                project = (Project)bf.Deserialize(fs);
+                fs.Close();
             }
             #endregion
             #region TXT
@@ -91,7 +93,9 @@ namespace IKK_data
             if (format == "ikk")
             {
                 BinaryFormatter bf = new BinaryFormatter();
-                bf.Serialize(new FileStream(fileName, FileMode.Create), project);
+                FileStream fs = new FileStream(fileName, FileMode.Create);
+                bf.Serialize(fs, project);
+                fs.Close();
             }
             #endregion
             #region TXT
