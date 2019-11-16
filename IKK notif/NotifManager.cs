@@ -17,7 +17,7 @@ namespace IKK_notif
 
         public static void Send(Notification notification)
         {
-            if (Notifications.Count(r => r.ID == notification.ID) > 0) Dismiss(notification.ID);
+            if (Notifications.Count(r => r.Title == notification.Title) > 0) Dismiss(notification.Title);
 
             Notifications.Add(notification);
             Notified(notification);
@@ -37,11 +37,11 @@ namespace IKK_notif
             }
         }
 
-        public static bool Dismiss(string id)
+        public static bool Dismiss(string senderOrTitle)
         {
             try
             {
-                Notification temp = Notifications.First(r => r.ID == id);
+                Notification temp = Notifications.First(r => r.Sender == senderOrTitle || r.Title == senderOrTitle);
                 Notifications.Remove(temp);
                 Dismissed(temp);
                 return true;

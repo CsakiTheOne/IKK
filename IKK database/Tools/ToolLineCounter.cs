@@ -18,7 +18,7 @@ namespace IKK_data
             int count;
             if (!int.TryParse(Settings, out count))
             {
-                IKK_notif.NotifManager.Send(new IKK_notif.Notification("tool-line-counter", "Sor számláló", "Nem jó beállítás", Settings));
+                IKK_notif.NotifManager.Send(new IKK_notif.Notification("Sor számláló", "Sor számláló rosszul van beállítva", Settings));
                 return;
             }
             string[] lines = content.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
@@ -35,8 +35,8 @@ namespace IKK_data
                 }
             }
 
-            if (errors.Length > 0) IKK_notif.NotifManager.Send(new IKK_notif.Notification("tool-line-counter", "Sor számláló", "Hibák vannak a műben", errors));
-            else IKK_notif.NotifManager.Dismiss("tool-line-counter");
+            if (errors.Length > 0) IKK_notif.NotifManager.Send(new IKK_notif.Notification("Sor számláló", "Nem jó sor számok", errors));
+            else IKK_notif.NotifManager.Dismiss("Sor számláló");
         }
     }
 }
