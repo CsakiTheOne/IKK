@@ -50,7 +50,7 @@ namespace IKK
             tbEmail.Text = Storage.LocalUser.Email;
             tbName.Text = Storage.LocalUser.Name;
             tbAbout.Text = Storage.LocalUser.About;
-            lblOther.Text = Storage.LocalUser.ID + " " + Storage.LocalUser.LastQuote;
+            lblOther.Text = $"({Storage.LocalUser.ID}) {Storage.LocalUser.LastQuote}";
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -61,6 +61,30 @@ namespace IKK
                 return;
             }
             IKK_data.Database.GetData($"UPDATE user SET email = '{tbEmail.Text}', name = '{tbName.Text}', about = '{tbAbout.Text}' WHERE id = {Storage.LocalUser.ID};");
+        }
+
+        private void btnPass_Click(object sender, EventArgs e)
+        {
+            if (Storage.OfflineMode)
+            {
+                MsgBox.Show("Offline mód", "Nem vagy bejelentkezve!");
+                return;
+            }
+            string result = IKK_data.Database.Login(Storage.LocalUser.Email, Secret.Encrypt(tbPassOld.Text));
+            if (!result.Contains("PROFILE"))
+            {
+                MsgBox.Show("Jelszó változtatás", "Írd be helyesen a régi jelszavad, hogy újat tudj állítani!");
+                return;
+            }
+
+            if (
+                MsgBox.Show(
+                    "Jelszó változtatás", "Biztos meg akarod változtatni?",
+                    new MsgBox.MsgBoxButton[] { new MsgBox.MsgBoxButton("Igen", true, DialogResult.Yes), new MsgBox.MsgBoxButton("Nem", false, DialogResult.No)
+                }) != DialogResult.Yes)
+                return;
+            
+            IKK_data.Database.GetData($"UPDATE user SET password = '{Secret.Encrypt(tbPassNew.Text)}' WHERE id = {Storage.LocalUser.ID};");
         }
     }
 }

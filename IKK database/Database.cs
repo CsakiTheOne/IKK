@@ -26,6 +26,11 @@ namespace IKK_data
             }
         }
 
+        public static string ConvertToSqlDate(DateTime dateTime)
+        {
+            return dateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
+        }
+
         public static DataTable GetData(string sql)
         {
             DataTable dataTable = new DataTable();
@@ -90,6 +95,8 @@ namespace IKK_data
             }
 
             object[] cols = foundUser.Rows[0].ItemArray;
+
+            GetData($"UPDATE user SET lastlogin = '{ConvertToSqlDate(DateTime.Now)}' WHERE id = {cols[0]}");
 
             return $"PROFILE;{cols[0]};{email};{cols[1]};{cols[2]};{cols[3]}";
         }

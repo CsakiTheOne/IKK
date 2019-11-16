@@ -38,6 +38,11 @@
             this.lblAbout = new IKK_controls.Lbl();
             this.lblOther = new IKK_controls.Lbl();
             this.btnUpdate = new IKK_controls.Btn();
+            this.tbPassOld = new IKK_controls.Tb();
+            this.tbPassNew = new IKK_controls.Tb();
+            this.lblPassOld = new IKK_controls.Lbl();
+            this.lblPassNew = new IKK_controls.Lbl();
+            this.btnPass = new IKK_controls.Btn();
             this.SuspendLayout();
             // 
             // nmiRefresh
@@ -68,7 +73,7 @@
             // 
             this.tbEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbEmail.Location = new System.Drawing.Point(78, 16);
+            this.tbEmail.Location = new System.Drawing.Point(85, 16);
             this.tbEmail.Margin = new System.Windows.Forms.Padding(8);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Secret = false;
@@ -93,7 +98,7 @@
             // 
             this.tbName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbName.Location = new System.Drawing.Point(78, 58);
+            this.tbName.Location = new System.Drawing.Point(85, 58);
             this.tbName.Margin = new System.Windows.Forms.Padding(8);
             this.tbName.Name = "tbName";
             this.tbName.Secret = false;
@@ -104,12 +109,12 @@
             // 
             this.tbAbout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbAbout.Location = new System.Drawing.Point(78, 100);
+            this.tbAbout.Location = new System.Drawing.Point(85, 100);
             this.tbAbout.Margin = new System.Windows.Forms.Padding(8);
             this.tbAbout.Multiline = true;
             this.tbAbout.Name = "tbAbout";
             this.tbAbout.Secret = false;
-            this.tbAbout.Size = new System.Drawing.Size(300, 52);
+            this.tbAbout.Size = new System.Drawing.Size(300, 78);
             this.tbAbout.TabIndex = 4;
             // 
             // lblName
@@ -135,7 +140,7 @@
             // lblOther
             // 
             this.lblOther.AutoSize = true;
-            this.lblOther.Location = new System.Drawing.Point(16, 177);
+            this.lblOther.Location = new System.Drawing.Point(16, 203);
             this.lblOther.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.lblOther.Name = "lblOther";
             this.lblOther.Size = new System.Drawing.Size(57, 13);
@@ -149,20 +154,86 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnUpdate.Location = new System.Drawing.Point(198, 168);
+            this.btnUpdate.Location = new System.Drawing.Point(225, 194);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(8);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Raised = true;
-            this.btnUpdate.Size = new System.Drawing.Size(180, 30);
+            this.btnUpdate.Size = new System.Drawing.Size(160, 30);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Változtatások mentése";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // tbPassOld
+            // 
+            this.tbPassOld.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbPassOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbPassOld.Location = new System.Drawing.Point(85, 240);
+            this.tbPassOld.Margin = new System.Windows.Forms.Padding(8);
+            this.tbPassOld.Name = "tbPassOld";
+            this.tbPassOld.PasswordChar = '●';
+            this.tbPassOld.Secret = true;
+            this.tbPassOld.Size = new System.Drawing.Size(300, 26);
+            this.tbPassOld.TabIndex = 8;
+            // 
+            // tbPassNew
+            // 
+            this.tbPassNew.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbPassNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbPassNew.Location = new System.Drawing.Point(85, 282);
+            this.tbPassNew.Margin = new System.Windows.Forms.Padding(8);
+            this.tbPassNew.Name = "tbPassNew";
+            this.tbPassNew.PasswordChar = '●';
+            this.tbPassNew.Secret = true;
+            this.tbPassNew.Size = new System.Drawing.Size(300, 26);
+            this.tbPassNew.TabIndex = 9;
+            // 
+            // lblPassOld
+            // 
+            this.lblPassOld.AutoSize = true;
+            this.lblPassOld.Location = new System.Drawing.Point(16, 247);
+            this.lblPassOld.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.lblPassOld.Name = "lblPassOld";
+            this.lblPassOld.Size = new System.Drawing.Size(61, 13);
+            this.lblPassOld.TabIndex = 10;
+            this.lblPassOld.Text = "Régi jelszó:";
+            // 
+            // lblPassNew
+            // 
+            this.lblPassNew.AutoSize = true;
+            this.lblPassNew.Location = new System.Drawing.Point(16, 289);
+            this.lblPassNew.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.lblPassNew.Name = "lblPassNew";
+            this.lblPassNew.Size = new System.Drawing.Size(49, 13);
+            this.lblPassNew.TabIndex = 11;
+            this.lblPassNew.Text = "Új jelszó:";
+            // 
+            // btnPass
+            // 
+            this.btnPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
+            this.btnPass.FlatAppearance.BorderSize = 0;
+            this.btnPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnPass.Location = new System.Drawing.Point(225, 324);
+            this.btnPass.Margin = new System.Windows.Forms.Padding(8);
+            this.btnPass.Name = "btnPass";
+            this.btnPass.Raised = true;
+            this.btnPass.Size = new System.Drawing.Size(160, 30);
+            this.btnPass.TabIndex = 12;
+            this.btnPass.Text = "Jelszó változtatása";
+            this.btnPass.UseVisualStyleBackColor = false;
+            this.btnPass.Click += new System.EventHandler(this.btnPass_Click);
+            // 
             // View2Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnPass);
+            this.Controls.Add(this.lblPassNew);
+            this.Controls.Add(this.lblPassOld);
+            this.Controls.Add(this.tbPassNew);
+            this.Controls.Add(this.tbPassOld);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lblOther);
             this.Controls.Add(this.nmiLogout);
@@ -190,5 +261,10 @@
         private IKK_controls.Lbl lblAbout;
         private IKK_controls.Lbl lblOther;
         private IKK_controls.Btn btnUpdate;
+        private IKK_controls.Tb tbPassOld;
+        private IKK_controls.Tb tbPassNew;
+        private IKK_controls.Lbl lblPassOld;
+        private IKK_controls.Lbl lblPassNew;
+        private IKK_controls.Btn btnPass;
     }
 }
