@@ -20,16 +20,16 @@ namespace IKK_notif
         /// <param name="id">NULLABLE</param>
         /// <param name="time">NULLABLE</param>
         /// <param name="title">NULLABLE</param>
-        public Notification(string id, string sender, string title = "Értesítés", string desc = "", bool startExtended = false, bool resizable = true, NotifAction[] actions = null)
+        public Notification(string id, string sender, string title = "Értesítés", string desc = "", NotifAction[] actions = null, bool startExtended = false)
         {
             Time = DateTime.Now.TimeOfDay.ToString().Split('.')[0];
             ID = id != null ? id : sender;
             Sender = sender;
             Title = title != null ? title : sender;
             Desc = desc;
-            StartExtended = startExtended;
-            Resizable = resizable;
             Actions = actions;
+            StartExtended = startExtended;
+            Resizable = actions != null;
         }
     }
 

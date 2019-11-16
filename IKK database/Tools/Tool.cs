@@ -7,27 +7,20 @@ using System.Threading.Tasks;
 namespace IKK_data
 {
     [Serializable]
-    public class Tool
+    public abstract class Tool
     {
         public int ID { get; set; }
         public int Project { get; set; }
-        public virtual string Name { get; protected set; }
+        public abstract string Name { get; }
         public string Settings { get; set; }
         /// <summary>
         /// Offline
         /// </summary>
-        public virtual string[] Description { get; }
+        public abstract string[] Description { get; } 
         /// <summary>
-        /// Offline
+        /// Offline. Values can be: categoryGeneral, categoryLyre, categoryNarrative, categoryPacks
         /// </summary>
-        public virtual string Category { get => "categoryGeneral"; }
-
-        public Tool() { }
-        public Tool(string name, string settings)
-        {
-            Name = name;
-            Settings = settings;
-        }
+        public virtual string Category => "categoryGeneral";
 
         public virtual void OnLoad(string content) { }
         public virtual void OnChange(string content) { }
@@ -37,7 +30,7 @@ namespace IKK_data
     {
         public static List<Tool> Tools
         {
-            get => new List<Tool>() { new ToolDescription() };
+            get => new List<Tool>() { new ToolDescription(), new ToolLineCounter() };
         }
     }
 }

@@ -71,6 +71,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\Tool.cs" />
     <Compile Include="Tools\ToolDescription.cs" />
+    <Compile Include="Tools\ToolLineCounter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
