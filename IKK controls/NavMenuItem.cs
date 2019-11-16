@@ -20,7 +20,7 @@ namespace IKK_controls
         public override string Text { get => text; set { text = value; Refresh(); } }
 
         Image icon;
-        string text;
+        string text = "";
         bool collapsed = false;
         bool mouseHover = false;
 
@@ -50,34 +50,30 @@ namespace IKK_controls
             collapsed = Width < Height * 2;
             Brush accentBrush = new SolidBrush(Theme.ColorAccent);
             Brush textBrush = new SolidBrush(Theme.ColorText);
+
             // ALWAYS DRAW
             int leftDecoMargin = collapsed ? 0 : 4;
             Point[] points = { new Point(leftDecoMargin, 12), new Point(leftDecoMargin + 2, 8), new Point(leftDecoMargin + 2, Height - 8), new Point(leftDecoMargin, Height - 12) };
             byte[] ppt = { 0, 1, 1, 1 };
             GraphicsPath path = new GraphicsPath(points, ppt);
             pe.Graphics.FillPath(accentBrush, path);
-            // SELECTED
-            if (Selected)
+
+            // BACKTINT
+            if (Selected || mouseHover)
             {
-                points = new Point[] { new Point(0, 4), new Point(Width - 30, 4), new Point(Width, 30), new Point(Width - 30, Height - 4), new Point(0, Height - 4) };
+                int tintWidth = text == null || text.Length < 1 ? Height : Width;
+                points = new Point[] { new Point(0, 4), new Point(tintWidth - 30, 4), new Point(tintWidth, 30), new Point(tintWidth - 30, Height - 4), new Point(0, Height - 4) };
                 ppt = new byte[] { 0, 1, 1, 1, 1 };
                 path = new GraphicsPath(points, ppt);
-                pe.Graphics.FillPath(accentBrush, path);
+                pe.Graphics.FillPath(Selected ? accentBrush : (mouseHover ? new SolidBrush(Color.FromArgb(32, Theme.ColorAccent)) : new SolidBrush(BackColor)), path);
             }
-            // MOUSE HOVER
-            if (mouseHover)
-            {
-                points = new Point[] { new Point(0, 4), new Point(Width - 30, 4), new Point(Width, 30), new Point(Width - 30, Height - 4), new Point(0, Height - 4) };
-                ppt = new byte[] { 0, 1, 1, 1, 1 };
-                path = new GraphicsPath(points, ppt);
-                pe.Graphics.FillPath(new SolidBrush(Color.FromArgb(32, Theme.ColorAccent)), path);
-            }
+
             // DRAW ICON
             if (Icon != null) pe.Graphics.DrawImage(Icon, new Rectangle(collapsed ? 8 : 16, 16, 28, 28));
+
             // DRAW TEXT
-            Point textLocation = collapsed ? new Point(2, 8) : new Point(68, 20);
-            Font textFont = collapsed ? new Font(FontFamily.GenericSansSerif, 6) : Font;
-            if (!collapsed || mouseHover) pe.Graphics.DrawString(Text, textFont, textBrush, textLocation);
+            if (!collapsed) pe.Graphics.DrawString(Text, Font, textBrush, new Point(68, 20));
+
             // END
             accentBrush.Dispose();
             textBrush.Dispose();
