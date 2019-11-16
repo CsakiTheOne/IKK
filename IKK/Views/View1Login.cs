@@ -37,7 +37,7 @@ namespace IKK
         {
             if (Storage.OfflineMode)
             {
-                Storage.LocalUser = new Profile(-1, "Nincs bejelentkezve", "Offline felhasználó", "Ez a felhasználó aktív, mikor a program offline módban van.", DateTime.Now);
+                Storage.LocalUser = new Profile(-1, "Nincs bejelentkezve", "Offline felhasználó", "Ez a felhasználó aktív, mikor a program offline módban van.");
                 Storage.MainContainer.SetView(new View1Main());
                 return;
             }
@@ -49,8 +49,7 @@ namespace IKK
                 if (result.Contains("PROFILE"))
                 {
                     string[] data = result.Split(';');
-                    if (data[5].Length < 1) data[5] = DateTime.MinValue.ToString();
-                    Storage.LocalUser = new Profile(int.Parse(data[1]), data[2], data[3], data[4], DateTime.Parse(data[5]));
+                    Storage.LocalUser = new Profile(int.Parse(data[1]), data[2], data[3], data[4]);
                     Storage.MainContainer.SetView(new View1Main());
                 }
                 else MsgBox.Show("Bejelentkezés", result);
