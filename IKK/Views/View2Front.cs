@@ -17,6 +17,15 @@ namespace IKK
             InitializeComponent();
         }
 
+        private void View2Front_Load(object sender, EventArgs e)
+        {
+            if (Storage.OfflineMode) return;
+            int length = int.Parse(IKK_data.Database.GetData("SELECT COUNT(id) FROM quote;").Rows[0].ItemArray[0].ToString());
+            int rdm = new Random(DateTime.Now.DayOfYear).Next(length);
+            object[] cols = IKK_data.Database.GetData("SELECT quote, author FROM quote;").Rows[rdm].ItemArray;
+            lblQuote.Text = $"{cols[0]}\n\r- {cols[1]}";
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (Storage.OfflineMode) IKK_controls.MsgBox.Show("Offline mód", "Ez a funkció nem működik offline módban.");

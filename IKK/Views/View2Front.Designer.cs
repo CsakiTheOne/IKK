@@ -31,12 +31,15 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pCenter = new System.Windows.Forms.Panel();
             this.cardSearch = new IKK_controls.Card();
-            this.lblSearch = new IKK_controls.Lbl();
-            this.tbSearch = new IKK_controls.Tb();
             this.btnSearch = new IKK_controls.Btn();
+            this.tbSearch = new IKK_controls.Tb();
+            this.lblSearch = new IKK_controls.Lbl();
+            this.cardQuote = new IKK_controls.Card();
+            this.lblQuote = new IKK_controls.Lbl();
             this.tableLayoutPanel1.SuspendLayout();
             this.pCenter.SuspendLayout();
             this.cardSearch.SuspendLayout();
+            this.cardQuote.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -57,6 +60,7 @@
             // 
             // pCenter
             // 
+            this.pCenter.Controls.Add(this.cardQuote);
             this.pCenter.Controls.Add(this.cardSearch);
             this.pCenter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pCenter.Location = new System.Drawing.Point(180, 0);
@@ -74,36 +78,12 @@
             this.cardSearch.Controls.Add(this.btnSearch);
             this.cardSearch.Controls.Add(this.tbSearch);
             this.cardSearch.Controls.Add(this.lblSearch);
-            this.cardSearch.Location = new System.Drawing.Point(16, 16);
+            this.cardSearch.Location = new System.Drawing.Point(16, 132);
             this.cardSearch.Margin = new System.Windows.Forms.Padding(8);
             this.cardSearch.Name = "cardSearch";
             this.cardSearch.Padding = new System.Windows.Forms.Padding(8);
             this.cardSearch.Size = new System.Drawing.Size(508, 60);
             this.cardSearch.TabIndex = 0;
-            // 
-            // lblSearch
-            // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblSearch.Location = new System.Drawing.Point(16, 18);
-            this.lblSearch.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(198, 20);
-            this.lblSearch.TabIndex = 0;
-            this.lblSearch.Text = "Felhasználók keresése:";
-            // 
-            // tbSearch
-            // 
-            this.tbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbSearch.Location = new System.Drawing.Point(222, 16);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(8);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Secret = false;
-            this.tbSearch.Size = new System.Drawing.Size(152, 26);
-            this.tbSearch.TabIndex = 1;
             // 
             // btnSearch
             // 
@@ -123,6 +103,53 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // tbSearch
+            // 
+            this.tbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbSearch.Location = new System.Drawing.Point(222, 16);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(8);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Secret = false;
+            this.tbSearch.Size = new System.Drawing.Size(152, 26);
+            this.tbSearch.TabIndex = 1;
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSearch.Location = new System.Drawing.Point(16, 18);
+            this.lblSearch.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(198, 20);
+            this.lblSearch.TabIndex = 0;
+            this.lblSearch.Text = "Felhasználók keresése:";
+            // 
+            // cardQuote
+            // 
+            this.cardQuote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cardQuote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cardQuote.Controls.Add(this.lblQuote);
+            this.cardQuote.Location = new System.Drawing.Point(16, 16);
+            this.cardQuote.Margin = new System.Windows.Forms.Padding(8);
+            this.cardQuote.Name = "cardQuote";
+            this.cardQuote.Padding = new System.Windows.Forms.Padding(8);
+            this.cardQuote.Size = new System.Drawing.Size(508, 100);
+            this.cardQuote.TabIndex = 1;
+            // 
+            // lblQuote
+            // 
+            this.lblQuote.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblQuote.Location = new System.Drawing.Point(8, 8);
+            this.lblQuote.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.lblQuote.Name = "lblQuote";
+            this.lblQuote.Size = new System.Drawing.Size(490, 82);
+            this.lblQuote.TabIndex = 0;
+            this.lblQuote.Text = "Offline módban nincs internet.\r\n- Csáktornyai Ádám József";
+            // 
             // View2Front
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -130,10 +157,12 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "View2Front";
             this.Padding = new System.Windows.Forms.Padding(0);
+            this.Load += new System.EventHandler(this.View2Front_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.pCenter.ResumeLayout(false);
             this.cardSearch.ResumeLayout(false);
             this.cardSearch.PerformLayout();
+            this.cardQuote.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -146,5 +175,7 @@
         private IKK_controls.Lbl lblSearch;
         private IKK_controls.Tb tbSearch;
         private IKK_controls.Btn btnSearch;
+        private IKK_controls.Card cardQuote;
+        private IKK_controls.Lbl lblQuote;
     }
 }
