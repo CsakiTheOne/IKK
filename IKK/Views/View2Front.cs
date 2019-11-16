@@ -28,7 +28,11 @@ namespace IKK
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (Storage.OfflineMode) IKK_controls.MsgBox.Show("Offline mód", "Ez a funkció nem működik offline módban.");
+            if (Storage.OfflineMode)
+            {
+                IKK_controls.MsgBox.Show("Offline mód", "Ez a funkció nem működik offline módban.");
+                return;
+            }
 
             DataTable response = IKK_data.Database.GetData($"SELECT id, email, name, about, lastlogin FROM user WHERE name LIKE '%{tbSearch.Text}%';");
             if (response.Rows.Count < 1)
