@@ -61,7 +61,7 @@ namespace IKK_controls
             // BACKTINT
             if (Selected || mouseHover)
             {
-                int tintWidth = text == null || text.Length < 1 ? Height : Width;
+                int tintWidth = !collapsed && (text == null || text.Length < 1) ? Height + 20 : Width;
                 points = new Point[] { new Point(0, 4), new Point(tintWidth - 30, 4), new Point(tintWidth, 30), new Point(tintWidth - 30, Height - 4), new Point(0, Height - 4) };
                 ppt = new byte[] { 0, 1, 1, 1, 1 };
                 path = new GraphicsPath(points, ppt);
