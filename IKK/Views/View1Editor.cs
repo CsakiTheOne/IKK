@@ -14,6 +14,8 @@ namespace IKK
 {
     public partial class View1Editor : IKK_controls.View
     {
+        TextBoxMenu formTbMenu = new TextBoxMenu();
+
         public View1Editor()
         {
             InitializeComponent();
@@ -58,6 +60,17 @@ namespace IKK
             {
                 tool.OnLoad(tb.Text);
             }
+
+            IKK_notif.NotifManager.Notified += NotifManager_Notified;
+        }
+
+        private void NotifManager_Notified(IKK_notif.Notification sender)
+        {
+            if (sender.Sender == "Eszköz")
+            {
+                formTbMenu.SetText($"{sender.Title}: {sender.Desc}");
+                IKK_notif.NotifManager.Dismiss(sender);
+            }
         }
 
         private void navMenu1_SelectedItemChanged(object sender, EventArgs e)
@@ -78,6 +91,8 @@ namespace IKK
                         navMenu.SelectedItem = "Szerkesztés";
                         return;
                     }
+                    timer.Enabled = false;
+                    formTbMenu.Close();
                     Storage.MainContainer.SetView(new View1Main());
                     break;
                 case "Szerkesztés":
@@ -159,7 +174,38 @@ namespace IKK
             {
                 tool.OnChange(tb.Text);
             }
-            
+
         }
+
+        private void tb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                formTbMenu.Show();
+                ParentForm.Focus();
+            }
+        }
+
+        private void tb_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                formTbMenu.Hide();
+            }
+        }
+
+        private void tb_Click(object sender, EventArgs e)
+        {
+            formTbMenu.Hide();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            Point atChar = tb.GetPositionFromCharIndex(tb.SelectionStart);
+            Point point = new Point(60 + split.SplitterDistance + atChar.X, 70 + atChar.Y);
+            formTbMenu.Location = point;
+        }
+
+
     }
 }

@@ -75,6 +75,12 @@
       <DependentUpon>MsgBoxDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="MsgBox\MsgBox.cs" />
+    <Compile Include="MsgBox\TextBoxMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgBox\TextBoxMenu.Designer.cs">
+      <DependentUpon>TextBoxMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="MsgBox\ToolEditorDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MsgBox\MsgBoxDialog.resx">
       <DependentUpon>MsgBoxDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsgBox\TextBoxMenu.resx">
+      <DependentUpon>TextBoxMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MsgBox\ToolEditorDialog.resx">
       <DependentUpon>ToolEditorDialog.cs</DependentUpon>
