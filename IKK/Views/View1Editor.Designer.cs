@@ -41,10 +41,9 @@
             this.megnyitásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mentésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.weboldalKészítéseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tartsdNyomvaAzF1etToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBoxMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
-            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.split)).BeginInit();
             this.split.Panel1.SuspendLayout();
             this.split.Panel2.SuspendLayout();
@@ -125,7 +124,7 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fájlToolStripMenuItem,
-            this.tartsdNyomvaAzF1etToolStripMenuItem});
+            this.textBoxMenuToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(900, 24);
@@ -171,17 +170,13 @@
             this.weboldalKészítéseToolStripMenuItem.Text = "Weboldal készítése";
             this.weboldalKészítéseToolStripMenuItem.Click += new System.EventHandler(this.weboldalKészítéseToolStripMenuItem_Click);
             // 
-            // tartsdNyomvaAzF1etToolStripMenuItem
+            // textBoxMenuToolStripMenuItem
             // 
-            this.tartsdNyomvaAzF1etToolStripMenuItem.Name = "tartsdNyomvaAzF1etToolStripMenuItem";
-            this.tartsdNyomvaAzF1etToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
-            this.tartsdNyomvaAzF1etToolStripMenuItem.Text = "Tartsd nyomva az F1-et";
-            // 
-            // timer
-            // 
-            this.timer.Enabled = true;
-            this.timer.Interval = 300;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            this.textBoxMenuToolStripMenuItem.CheckOnClick = true;
+            this.textBoxMenuToolStripMenuItem.Name = "textBoxMenuToolStripMenuItem";
+            this.textBoxMenuToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.textBoxMenuToolStripMenuItem.Text = "Segítő menü";
+            this.textBoxMenuToolStripMenuItem.Click += new System.EventHandler(this.textBoxMenuToolStripMenuItem_Click);
             // 
             // View1Editor
             // 
@@ -219,7 +214,6 @@
         private System.Windows.Forms.OpenFileDialog ofd;
         private IKK_controls.Tb tb;
         private System.Windows.Forms.ToolStripMenuItem weboldalKészítéseToolStripMenuItem;
-        private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.ToolStripMenuItem tartsdNyomvaAzF1etToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem textBoxMenuToolStripMenuItem;
     }
 }

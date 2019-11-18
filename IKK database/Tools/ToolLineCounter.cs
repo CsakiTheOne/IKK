@@ -36,7 +36,7 @@ namespace IKK_data
             }
 
             if (errors.Length > 0) IKK_notif.NotifManager.Send(new IKK_notif.Notification("Eszköz", "Nem jó sor számok", errors));
-            else IKK_notif.NotifManager.Dismiss("Nem jó sor számok");
+            else IKK_notif.NotifManager.Send(new IKK_notif.Notification("Eszköz", "A műben nincs semmi probléma.", ""));
         }
     }
 }

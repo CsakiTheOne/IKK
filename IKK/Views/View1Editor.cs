@@ -68,7 +68,7 @@ namespace IKK
         {
             if (sender.Sender == "Eszköz")
             {
-                formTbMenu.SetText($"{sender.Title}: {sender.Desc}");
+                formTbMenu.SetText($"{sender.Title}\n\r{sender.Desc}");
                 IKK_notif.NotifManager.Dismiss(sender);
             }
         }
@@ -91,7 +91,6 @@ namespace IKK
                         navMenu.SelectedItem = "Szerkesztés";
                         return;
                     }
-                    timer.Enabled = false;
                     formTbMenu.Close();
                     Storage.MainContainer.SetView(new View1Main());
                     break;
@@ -174,7 +173,6 @@ namespace IKK
             {
                 tool.OnChange(tb.Text);
             }
-
         }
 
         private void tb_KeyDown(object sender, KeyEventArgs e)
@@ -188,24 +186,34 @@ namespace IKK
 
         private void tb_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F1)
-            {
-                formTbMenu.Hide();
-            }
+            tb_Update();
         }
 
         private void tb_Click(object sender, EventArgs e)
         {
             formTbMenu.Hide();
+            textBoxMenuToolStripMenuItem.Checked = false;
         }
 
-        private void timer_Tick(object sender, EventArgs e)
+        private void tb_Update()
         {
             Point atChar = tb.GetPositionFromCharIndex(tb.SelectionStart);
-            Point point = new Point(60 + split.SplitterDistance + atChar.X, 70 + atChar.Y);
+            Point point = new Point(64 + split.SplitterDistance + atChar.X, 70 + atChar.Y);
             formTbMenu.Location = point;
         }
 
-
+        private void textBoxMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (textBoxMenuToolStripMenuItem.Checked)
+            {
+                formTbMenu.Show();
+                ParentForm.Focus();
+                tb_Update();
+            }
+            else
+            {
+                formTbMenu.Hide();
+            }
+        }
     }
 }
