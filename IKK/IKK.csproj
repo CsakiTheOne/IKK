@@ -114,6 +114,12 @@
     <Compile Include="Views\View1Editor.Designer.cs">
       <DependentUpon>View1Editor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\View2Feed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\View2Feed.Designer.cs">
+      <DependentUpon>View2Feed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\View2Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </Compile>
     <EmbeddedResource Include="Views\View1Editor.resx">
       <DependentUpon>View1Editor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\View2Feed.resx">
+      <DependentUpon>View2Feed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\View2Front.resx">
       <DependentUpon>View2Front.cs</DependentUpon>

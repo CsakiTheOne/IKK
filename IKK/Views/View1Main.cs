@@ -29,7 +29,7 @@ namespace IKK
                     viewContainer1.SetView(new View2Profile());
                     break;
                 case "Verses fal":
-                    viewContainer1.SetView(new IKK_controls.View());
+                    viewContainer1.SetView(new View2Feed());
                     break;
                 case "Művek":
                     viewContainer1.SetView(new View2Projects());

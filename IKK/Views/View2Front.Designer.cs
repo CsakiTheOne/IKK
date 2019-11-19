@@ -30,16 +30,16 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pCenter = new System.Windows.Forms.Panel();
+            this.cardQuote = new IKK_controls.Card();
+            this.lblQuote = new IKK_controls.Lbl();
             this.cardSearch = new IKK_controls.Card();
             this.btnSearch = new IKK_controls.Btn();
             this.tbSearch = new IKK_controls.Tb();
             this.lblSearch = new IKK_controls.Lbl();
-            this.cardQuote = new IKK_controls.Card();
-            this.lblQuote = new IKK_controls.Lbl();
             this.tableLayoutPanel1.SuspendLayout();
             this.pCenter.SuspendLayout();
-            this.cardSearch.SuspendLayout();
             this.cardQuote.SuspendLayout();
+            this.cardSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -69,6 +69,29 @@
             this.pCenter.Padding = new System.Windows.Forms.Padding(8);
             this.pCenter.Size = new System.Drawing.Size(540, 500);
             this.pCenter.TabIndex = 0;
+            // 
+            // cardQuote
+            // 
+            this.cardQuote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cardQuote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cardQuote.Controls.Add(this.lblQuote);
+            this.cardQuote.Location = new System.Drawing.Point(16, 16);
+            this.cardQuote.Margin = new System.Windows.Forms.Padding(8);
+            this.cardQuote.Name = "cardQuote";
+            this.cardQuote.Padding = new System.Windows.Forms.Padding(8);
+            this.cardQuote.Size = new System.Drawing.Size(508, 100);
+            this.cardQuote.TabIndex = 1;
+            // 
+            // lblQuote
+            // 
+            this.lblQuote.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblQuote.Location = new System.Drawing.Point(8, 8);
+            this.lblQuote.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.lblQuote.Name = "lblQuote";
+            this.lblQuote.Size = new System.Drawing.Size(490, 82);
+            this.lblQuote.TabIndex = 0;
+            this.lblQuote.Text = "Offline módban nincs internet.\r\n- Csáktornyai Ádám József";
             // 
             // cardSearch
             // 
@@ -127,29 +150,6 @@
             this.lblSearch.TabIndex = 0;
             this.lblSearch.Text = "Felhasználók keresése:";
             // 
-            // cardQuote
-            // 
-            this.cardQuote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cardQuote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.cardQuote.Controls.Add(this.lblQuote);
-            this.cardQuote.Location = new System.Drawing.Point(16, 16);
-            this.cardQuote.Margin = new System.Windows.Forms.Padding(8);
-            this.cardQuote.Name = "cardQuote";
-            this.cardQuote.Padding = new System.Windows.Forms.Padding(8);
-            this.cardQuote.Size = new System.Drawing.Size(508, 100);
-            this.cardQuote.TabIndex = 1;
-            // 
-            // lblQuote
-            // 
-            this.lblQuote.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblQuote.Location = new System.Drawing.Point(8, 8);
-            this.lblQuote.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.lblQuote.Name = "lblQuote";
-            this.lblQuote.Size = new System.Drawing.Size(490, 82);
-            this.lblQuote.TabIndex = 0;
-            this.lblQuote.Text = "Offline módban nincs internet.\r\n- Csáktornyai Ádám József";
-            // 
             // View2Front
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,9 +160,9 @@
             this.Load += new System.EventHandler(this.View2Front_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.pCenter.ResumeLayout(false);
+            this.cardQuote.ResumeLayout(false);
             this.cardSearch.ResumeLayout(false);
             this.cardSearch.PerformLayout();
-            this.cardQuote.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
