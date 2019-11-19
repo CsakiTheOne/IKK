@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IKK_data;
+using IKK_controls;
 
 namespace IKK
 {
     public partial class View2Projects : IKK_controls.View
     {
+        Project selectedProject;
+
         public View2Projects()
         {
             InitializeComponent();
@@ -27,10 +30,23 @@ namespace IKK
             if (fbd.ShowDialog() != DialogResult.OK) return;
 
             List<Project> projects = IO.GetProjectsFromFolder(fbd.SelectedPath);
+            ProjectCard projectCard;
             foreach (Project project in projects)
             {
-                flpLatest.Controls.Add(new IKK_controls.ProjectCard(project));
+                projectCard = new ProjectCard(project);
+                projectCard.Click += ProjectCard_Click;
+                flpLatest.Controls.Add(projectCard);
             }
+        }
+
+        private void ProjectCard_Click(object sender, EventArgs e)
+        {
+            foreach (ProjectCard item in flpLatest.Controls)
+            {
+                item.Selected = false;
+            }
+            ((ProjectCard)sender).Selected = true;
+            selectedProject = ((ProjectCard)sender).Project;
         }
 
         private void nmiRefresh_Click(object sender, EventArgs e)
@@ -38,6 +54,7 @@ namespace IKK
             ReloadProjects();
         }
 
+        #region New & Open
         private void nmiOpenFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -60,5 +77,6 @@ namespace IKK
         {
             Storage.MainContainer.SetView(new View1Editor());
         }
+        #endregion
     }
 }

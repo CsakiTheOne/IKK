@@ -36,7 +36,7 @@ namespace IKK_controls
 
         public void UpdateTheme()
         {
-            BackColor = selected ? Theme.ColorAccent : Theme.ColorBackground;
+            BackColor = selected ? Theme.ColorAccent : Theme.ColorPrimary;
             ForeColor = Theme.ColorText;
         }
 
@@ -52,6 +52,11 @@ namespace IKK_controls
         {
             base.OnPaint(e);
             if (Selected) ControlPaint.DrawBorder(e.Graphics, new Rectangle(0, 0, Width - 2, Height - 2), Theme.ColorAccent, ButtonBorderStyle.Solid);
+        }
+
+        private void controls_Click(object sender, EventArgs e)
+        {
+            OnClick(e);
         }
     }
 }

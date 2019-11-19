@@ -45,6 +45,7 @@
             this.pbLabel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLabel.TabIndex = 1;
             this.pbLabel.TabStop = false;
+            this.pbLabel.Click += new System.EventHandler(this.controls_Click);
             // 
             // lblDesc
             // 
@@ -57,6 +58,7 @@
             this.lblDesc.Size = new System.Drawing.Size(234, 61);
             this.lblDesc.TabIndex = 3;
             this.lblDesc.Text = "Mú első sorai\r\nNéhány eszköz leírása\r\nMég több szöveg\r\nNagyon sok szöveg";
+            this.lblDesc.Click += new System.EventHandler(this.controls_Click);
             // 
             // lblLabel
             // 
@@ -69,6 +71,7 @@
             this.lblLabel.TabIndex = 2;
             this.lblLabel.Text = "címke";
             this.lblLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblLabel.Click += new System.EventHandler(this.controls_Click);
             // 
             // lblTitle
             // 
@@ -80,6 +83,7 @@
             this.lblTitle.Size = new System.Drawing.Size(34, 17);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Cím";
+            this.lblTitle.Click += new System.EventHandler(this.controls_Click);
             // 
             // ProjectCard
             // 
