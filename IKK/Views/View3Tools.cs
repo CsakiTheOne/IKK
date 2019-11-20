@@ -21,7 +21,7 @@ namespace IKK
 
         void RefreshTools()
         {
-            tlp.Controls.Clear();
+            flp.Controls.Clear();
 
             if (Storage.CurrentProject.Tools == null) return;
 
@@ -30,10 +30,10 @@ namespace IKK
             foreach (IKK_data.Tool tool in Storage.CurrentProject.Tools)
             {
                 tc = new ToolCard(tool);
-                tc.Width = tlp.Width;
+                tc.Width = flp.Width;
                 tc.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right);
                 tc.ToolRemoveClicked += Tc_ToolRemoveClicked;
-                tlp.Controls.Add(tc);
+                flp.Controls.Add(tc);
             }
         }
 

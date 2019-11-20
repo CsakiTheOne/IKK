@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnAdd = new IKK_controls.Btn();
-            this.tlp = new System.Windows.Forms.TableLayoutPanel();
+            this.flp = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -51,26 +51,21 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // tlp
+            // flp
             // 
-            this.tlp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.flp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlp.ColumnCount = 1;
-            this.tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp.Location = new System.Drawing.Point(0, 46);
-            this.tlp.Margin = new System.Windows.Forms.Padding(0);
-            this.tlp.Name = "tlp";
-            this.tlp.RowCount = 1;
-            this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp.Size = new System.Drawing.Size(300, 454);
-            this.tlp.TabIndex = 1;
+            this.flp.Location = new System.Drawing.Point(0, 49);
+            this.flp.Name = "flp";
+            this.flp.Size = new System.Drawing.Size(300, 451);
+            this.flp.TabIndex = 1;
             // 
             // View3Tools
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tlp);
+            this.Controls.Add(this.flp);
             this.Controls.Add(this.btnAdd);
             this.Name = "View3Tools";
             this.Padding = new System.Windows.Forms.Padding(0);
@@ -82,6 +77,6 @@
         #endregion
 
         private IKK_controls.Btn btnAdd;
-        private System.Windows.Forms.TableLayoutPanel tlp;
+        private System.Windows.Forms.FlowLayoutPanel flp;
     }
 }

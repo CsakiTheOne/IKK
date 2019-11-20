@@ -101,6 +101,8 @@ namespace IKK
                     viewContainer.SetView(new View3Tools());
                     break;
             }
+
+            tb.Refresh();
         }
 
         #region ToolStripMenu
