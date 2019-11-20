@@ -13,7 +13,7 @@ namespace IKK
 {
     public partial class View2Feed : IKK_controls.View
     {
-        List<PostData> posts = new List<PostData>();
+        List<IKK_controls.PostData> posts = new List<IKK_controls.PostData>();
 
         public View2Feed()
         {
@@ -40,11 +40,11 @@ namespace IKK
             foreach (DataRow row in dtPosts.Rows)
             {
                 posts.Add(
-                    new PostData(row.ItemArray[0], row.ItemArray[1], row.ItemArray[2],
+                    new IKK_controls.PostData(row.ItemArray[0], row.ItemArray[1], row.ItemArray[2],
                     row.ItemArray[3], row.ItemArray[4], row.ItemArray[5], row.ItemArray[6],
-                    row.ItemArray[7], row.ItemArray[8])
+                    row.ItemArray[7], row.ItemArray[8], Storage.LocalUser.ID)
                 );
-                flpPosts.Controls.Add(new Label() { Text = posts.Last().ToString(), Width = flpPosts.Width, ForeColor = Color.White });
+                flpPosts.Controls.Add(new IKK_controls.Post(posts.Last()));
             }
         }
 
@@ -55,34 +55,5 @@ namespace IKK
         }
     }
 
-    struct PostData
-    {
-        int id;
-        DateTime time;
-        string text;
-        int author;
-        string userName;
-        int project;
-        string projectTitle;
-        string projectType;
-        int likes;
-
-        public PostData(object id, object time, object text, object author, object userName, object project, object projectTitle, object projectType, object likes)
-        {
-            this.id = int.Parse(id.ToString());
-            this.time = (DateTime)time;
-            this.text = text.ToString();
-            this.author = int.Parse(author.ToString());
-            this.userName = userName.ToString();
-            this.project = project.ToString() != "" ? int.Parse(project.ToString()) : -1;
-            this.projectTitle = projectTitle.ToString();
-            this.projectType = projectType.ToString();
-            this.likes = int.Parse(likes.ToString());
-        }
-
-        public override string ToString()
-        {
-            return $"{time}, {text}, {author}, {userName}, {project}, {projectTitle}, {projectType}, {likes}";
-        }
-    }
+    
 }

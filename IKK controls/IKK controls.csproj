@@ -105,6 +105,12 @@
     <Compile Include="NotifCard.Designer.cs">
       <DependentUpon>NotifCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Post.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Post.Designer.cs">
+      <DependentUpon>Post.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProjectCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NotifCard.resx">
       <DependentUpon>NotifCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Post.resx">
+      <DependentUpon>Post.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectCard.resx">
       <DependentUpon>ProjectCard.cs</DependentUpon>

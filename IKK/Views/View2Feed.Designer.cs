@@ -72,12 +72,11 @@
             // 
             // flpPosts
             // 
-            this.flpPosts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpPosts.Location = new System.Drawing.Point(0, 167);
+            this.flpPosts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.flpPosts.AutoScroll = true;
+            this.flpPosts.Location = new System.Drawing.Point(17, 167);
             this.flpPosts.Name = "flpPosts";
-            this.flpPosts.Size = new System.Drawing.Size(455, 333);
+            this.flpPosts.Size = new System.Drawing.Size(420, 333);
             this.flpPosts.TabIndex = 1;
             // 
             // cardShare
