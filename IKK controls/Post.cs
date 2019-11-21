@@ -32,7 +32,6 @@ namespace IKK_controls
         {
             ForeColor = Theme.ColorText;
             btnLike.UpdateTheme();
-            projectCard.UpdateTheme();
             btnOpen.UpdateTheme();
         }
 

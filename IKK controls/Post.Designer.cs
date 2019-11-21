@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.flp = new System.Windows.Forms.FlowLayoutPanel();
-            this.pBtns = new System.Windows.Forms.Panel();
-            this.lblTime = new IKK_controls.Lbl();
             this.lblText = new IKK_controls.Lbl();
-            this.projectCard = new IKK_controls.ProjectCard();
+            this.pBtns = new System.Windows.Forms.Panel();
             this.btnOpen = new IKK_controls.Btn();
             this.btnLike = new IKK_controls.Btn();
+            this.lblTime = new IKK_controls.Lbl();
             this.lblUsername = new IKK_controls.Lbl();
             this.flp.SuspendLayout();
             this.pBtns.SuspendLayout();
@@ -43,36 +42,15 @@
             // flp
             // 
             this.flp.AutoSize = true;
+            this.flp.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flp.Controls.Add(this.lblText);
-            this.flp.Controls.Add(this.projectCard);
             this.flp.Controls.Add(this.pBtns);
             this.flp.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flp.Location = new System.Drawing.Point(0, 32);
             this.flp.Margin = new System.Windows.Forms.Padding(0);
             this.flp.Name = "flp";
-            this.flp.Size = new System.Drawing.Size(400, 202);
+            this.flp.Size = new System.Drawing.Size(400, 66);
             this.flp.TabIndex = 2;
-            // 
-            // pBtns
-            // 
-            this.pBtns.Controls.Add(this.btnOpen);
-            this.pBtns.Controls.Add(this.btnLike);
-            this.pBtns.Location = new System.Drawing.Point(0, 172);
-            this.pBtns.Margin = new System.Windows.Forms.Padding(0);
-            this.pBtns.Name = "pBtns";
-            this.pBtns.Size = new System.Drawing.Size(400, 30);
-            this.pBtns.TabIndex = 3;
-            // 
-            // lblTime
-            // 
-            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTime.Location = new System.Drawing.Point(153, 8);
-            this.lblTime.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(189, 24);
-            this.lblTime.TabIndex = 3;
-            this.lblTime.Text = "time";
-            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblText
             // 
@@ -85,18 +63,15 @@
             this.lblText.TabIndex = 1;
             this.lblText.Text = "Szöveg";
             // 
-            // projectCard
+            // pBtns
             // 
-            this.projectCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.projectCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.projectCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.projectCard.Location = new System.Drawing.Point(8, 44);
-            this.projectCard.Margin = new System.Windows.Forms.Padding(8);
-            this.projectCard.Name = "projectCard";
-            this.projectCard.Selected = false;
-            this.projectCard.Size = new System.Drawing.Size(384, 120);
-            this.projectCard.TabIndex = 2;
-            this.projectCard.Visible = false;
+            this.pBtns.Controls.Add(this.btnOpen);
+            this.pBtns.Controls.Add(this.btnLike);
+            this.pBtns.Location = new System.Drawing.Point(0, 36);
+            this.pBtns.Margin = new System.Windows.Forms.Padding(0);
+            this.pBtns.Name = "pBtns";
+            this.pBtns.Size = new System.Drawing.Size(400, 30);
+            this.pBtns.TabIndex = 3;
             // 
             // btnOpen
             // 
@@ -134,6 +109,17 @@
             this.btnLike.UseVisualStyleBackColor = true;
             this.btnLike.Click += new System.EventHandler(this.btnLike_Click);
             // 
+            // lblTime
+            // 
+            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTime.Location = new System.Drawing.Point(153, 8);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(189, 24);
+            this.lblTime.TabIndex = 3;
+            this.lblTime.Text = "time";
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
@@ -156,8 +142,8 @@
             this.Controls.Add(this.lblUsername);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Post";
-            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 32);
-            this.Size = new System.Drawing.Size(400, 266);
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 64);
+            this.Size = new System.Drawing.Size(400, 162);
             this.Load += new System.EventHandler(this.Post_Load);
             this.flp.ResumeLayout(false);
             this.flp.PerformLayout();
@@ -172,7 +158,6 @@
         private Lbl lblUsername;
         private Lbl lblText;
         private System.Windows.Forms.FlowLayoutPanel flp;
-        private ProjectCard projectCard;
         private System.Windows.Forms.Panel pBtns;
         private Btn btnOpen;
         private Btn btnLike;
