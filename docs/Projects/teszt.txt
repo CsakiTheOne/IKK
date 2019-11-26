@@ -1,0 +1,14 @@
+-1|1|Teszt versike|líra|2019. 11. 16. 11:56:28
+
+A rózsa vörös,
+Az ibolya kék.
+Ha működne a kódom
+Nagyon örülnék.
+
+De működik ez,
+Jól van megírva.
+A költők írnak,
+A program javítja.
+█ eszközök
+Sor számláló
+4

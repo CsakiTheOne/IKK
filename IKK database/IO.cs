@@ -35,8 +35,11 @@ namespace IKK_data
             {
                 List<string> lines = File.ReadAllLines(fileName).ToList();
 
-                project.Title = lines[0].Split('|')[0];
-                project.Label = lines[0].Split('|')[1];
+                project.ID = int.Parse(lines[0].Split('|')[0]);
+                project.Author = int.Parse(lines[0].Split('|')[1]);
+                project.Title = lines[0].Split('|')[2];
+                project.Label = lines[0].Split('|')[3];
+                project.CreateTime = DateTime.Parse(lines[0].Split('|')[4]);
 
                 int wi = 2;
                 while (!lines[wi].Contains('█'))
@@ -48,8 +51,9 @@ namespace IKK_data
                 Tool toolNext;
                 for (int i = lines.IndexOf("█ eszközök") + 1; i < lines.Count - 1; i += 2)
                 {
-                    toolNext = ToolStorage.Tools.First(r => r.Name == lines[i]);
+                    toolNext = ToolStorage.Tools.First(r => r.Name == lines[i].Split(':')[0]);
                     toolNext.Settings = lines[i + 1].Replace("_", Environment.NewLine);
+                    toolNext.ID = int.Parse(lines[i].Split(':')[1]);
                     project.Tools.Add(toolNext);
                 }
             }
@@ -59,7 +63,9 @@ namespace IKK_data
             {
                 List<string> lines = File.ReadAllLines(fileName).ToList();
 
-                project.Title = lines[0].Substring(2);
+                project.Title = lines[0].Substring(2).Split(':')[0];
+                project.ID = int.Parse(lines[0].Substring(2).Split(':')[1]);
+                project.Author = int.Parse(lines[0].Substring(2).Split(':')[2]);
                 project.Label = lines[1].Substring(7);
 
                 int wi = 2;
@@ -72,8 +78,9 @@ namespace IKK_data
                 Tool toolNext;
                 for (int i = lines.IndexOf("# Eszközök") + 1; i < lines.Count - 1; i += 2)
                 {
-                    toolNext = ToolStorage.Tools.First(r => r.Name == lines[i].Substring(4));
+                    toolNext = ToolStorage.Tools.First(r => r.Name == lines[i].Substring(4).Split(':')[0]);
                     toolNext.Settings = lines[i + 1].Replace("_", Environment.NewLine).Substring(3, lines[i + 1].Length - 6);
+                    toolNext.ID = int.Parse(lines[i].Substring(4).Split(':')[1]);
                     project.Tools.Add(toolNext);
                 }
             }
@@ -102,13 +109,13 @@ namespace IKK_data
             else if (format == "txt")
             {
                 List<string> lines = new List<string>();
-                lines.Add($"{project.Title}|{project.Label}");
+                lines.Add($"{project.ID}|{project.Author}|{project.Title}|{project.Label}|{project.CreateTime}");
                 lines.Add("");
                 lines.Add(project.Content);
                 lines.Add("█ eszközök");
                 foreach (Tool tool in project.Tools)
                 {
-                    lines.Add(tool.Name);
+                    lines.Add(tool.Name+":"+tool.ID);
                     lines.Add(tool.Settings.Replace(Environment.NewLine, "_"));
                 }
 
@@ -119,14 +126,14 @@ namespace IKK_data
             else if (format == "md")
             {
                 List<string> lines = new List<string>();
-                lines.Add($"# {project.Title}");
+                lines.Add($"# {project.Title}:{project.ID}:{project.Author}");
                 lines.Add($"###### {project.Label}");
                 string[] content = project.Content.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
                 foreach (string c in content) lines.Add(c + "  ");
                 lines.Add("# Eszközök");
                 foreach (Tool tool in project.Tools)
                 {
-                    lines.Add($"### {tool.Name}");
+                    lines.Add($"### {tool.Name}:{tool.ID}");
                     lines.Add("```" + tool.Settings.Replace(Environment.NewLine, "_") + "```");
                 }
 
