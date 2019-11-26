@@ -74,9 +74,9 @@
             // 
             this.flpPosts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.flpPosts.AutoScroll = true;
-            this.flpPosts.Location = new System.Drawing.Point(17, 167);
+            this.flpPosts.Location = new System.Drawing.Point(2, 167);
             this.flpPosts.Name = "flpPosts";
-            this.flpPosts.Size = new System.Drawing.Size(420, 333);
+            this.flpPosts.Size = new System.Drawing.Size(450, 333);
             this.flpPosts.TabIndex = 1;
             // 
             // cardShare

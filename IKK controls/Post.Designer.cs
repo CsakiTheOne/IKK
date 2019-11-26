@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.flp = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblText = new IKK_controls.Lbl();
             this.pBtns = new System.Windows.Forms.Panel();
+            this.lblTime = new IKK_controls.Lbl();
+            this.lblText = new IKK_controls.Lbl();
             this.btnOpen = new IKK_controls.Btn();
             this.btnLike = new IKK_controls.Btn();
-            this.lblTime = new IKK_controls.Lbl();
             this.lblUsername = new IKK_controls.Lbl();
             this.flp.SuspendLayout();
             this.pBtns.SuspendLayout();
@@ -49,8 +49,29 @@
             this.flp.Location = new System.Drawing.Point(0, 32);
             this.flp.Margin = new System.Windows.Forms.Padding(0);
             this.flp.Name = "flp";
-            this.flp.Size = new System.Drawing.Size(400, 66);
+            this.flp.Size = new System.Drawing.Size(430, 66);
             this.flp.TabIndex = 2;
+            // 
+            // pBtns
+            // 
+            this.pBtns.Controls.Add(this.btnOpen);
+            this.pBtns.Controls.Add(this.btnLike);
+            this.pBtns.Location = new System.Drawing.Point(0, 36);
+            this.pBtns.Margin = new System.Windows.Forms.Padding(0);
+            this.pBtns.Name = "pBtns";
+            this.pBtns.Size = new System.Drawing.Size(430, 30);
+            this.pBtns.TabIndex = 3;
+            // 
+            // lblTime
+            // 
+            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTime.Location = new System.Drawing.Point(191, 8);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(189, 24);
+            this.lblTime.TabIndex = 3;
+            this.lblTime.Text = "time";
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblText
             // 
@@ -63,16 +84,6 @@
             this.lblText.TabIndex = 1;
             this.lblText.Text = "Szöveg";
             // 
-            // pBtns
-            // 
-            this.pBtns.Controls.Add(this.btnOpen);
-            this.pBtns.Controls.Add(this.btnLike);
-            this.pBtns.Location = new System.Drawing.Point(0, 36);
-            this.pBtns.Margin = new System.Windows.Forms.Padding(0);
-            this.pBtns.Name = "pBtns";
-            this.pBtns.Size = new System.Drawing.Size(400, 30);
-            this.pBtns.TabIndex = 3;
-            // 
             // btnOpen
             // 
             this.btnOpen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -81,7 +92,7 @@
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOpen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
-            this.btnOpen.Location = new System.Drawing.Point(176, 0);
+            this.btnOpen.Location = new System.Drawing.Point(206, 0);
             this.btnOpen.Margin = new System.Windows.Forms.Padding(8);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Raised = false;
@@ -99,7 +110,7 @@
             this.btnLike.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLike.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnLike.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
-            this.btnLike.Location = new System.Drawing.Point(292, 0);
+            this.btnLike.Location = new System.Drawing.Point(322, 0);
             this.btnLike.Margin = new System.Windows.Forms.Padding(8);
             this.btnLike.Name = "btnLike";
             this.btnLike.Raised = false;
@@ -108,17 +119,6 @@
             this.btnLike.Text = "0 ♥";
             this.btnLike.UseVisualStyleBackColor = true;
             this.btnLike.Click += new System.EventHandler(this.btnLike_Click);
-            // 
-            // lblTime
-            // 
-            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTime.Location = new System.Drawing.Point(153, 8);
-            this.lblTime.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(189, 24);
-            this.lblTime.TabIndex = 3;
-            this.lblTime.Text = "time";
-            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblUsername
             // 
@@ -143,7 +143,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Post";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 64);
-            this.Size = new System.Drawing.Size(400, 162);
+            this.Size = new System.Drawing.Size(430, 162);
             this.Load += new System.EventHandler(this.Post_Load);
             this.flp.ResumeLayout(false);
             this.flp.PerformLayout();
