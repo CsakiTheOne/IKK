@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using IKK_data;
 using IKK_controls;
+using IKK_storage;
 
 namespace IKK
 {
@@ -63,7 +64,7 @@ namespace IKK
             {
                 try
                 {
-                    Storage.MainContainer.SetView(new View1Editor(IO.ProjectOpen(ofd.FileName)));
+                    Storage.GetMainContainer<ViewContainer>().SetView(new View1Editor(IO.ProjectOpen(ofd.FileName)));
 
                 }
                 catch (Exception ex)
@@ -75,7 +76,7 @@ namespace IKK
 
         private void nmiNew_Click(object sender, EventArgs e)
         {
-            Storage.MainContainer.SetView(new View1Editor());
+            Storage.GetMainContainer<ViewContainer>().SetView(new View1Editor());
         }
         #endregion
     }

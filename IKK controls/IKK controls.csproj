@@ -36,6 +36,9 @@
     <Reference Include="IKK notif">
       <HintPath>..\IKK notif\bin\Debug\IKK notif.dll</HintPath>
     </Reference>
+    <Reference Include="IKK storage">
+      <HintPath>..\IKK storage\bin\Debug\IKK storage.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />

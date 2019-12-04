@@ -67,6 +67,9 @@
     <Reference Include="IKK notif">
       <HintPath>..\IKK notif\bin\Debug\IKK notif.dll</HintPath>
     </Reference>
+    <Reference Include="IKK storage">
+      <HintPath>..\IKK storage\bin\Debug\IKK storage.dll</HintPath>
+    </Reference>
     <Reference Include="MySqlConnector, Version=0.60.4.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>..\packages\MySqlConnector.0.60.4\lib\net471\MySqlConnector.dll</HintPath>
     </Reference>
@@ -127,7 +130,6 @@
       <DependentUpon>View2Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Secret.cs" />
-    <Compile Include="Storage.cs" />
     <Compile Include="Views\View2Front.cs">
       <SubType>UserControl</SubType>
     </Compile>

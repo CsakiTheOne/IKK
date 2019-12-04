@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IKK_storage;
+using IKK_data;
 
 namespace IKK
 {
@@ -20,9 +22,9 @@ namespace IKK
         private void View2Front_Load(object sender, EventArgs e)
         {
             if (Storage.OfflineMode) return;
-            int length = int.Parse(IKK_data.Database.GetData("SELECT COUNT(id) FROM quote;").Rows[0].ItemArray[0].ToString());
+            int length = int.Parse(Database.ExecuteSQL("SELECT COUNT(id) FROM quote;").Rows[0].ItemArray[0].ToString());
             int rdm = new Random(DateTime.Now.DayOfYear).Next(length);
-            object[] cols = IKK_data.Database.GetData("SELECT quote, author FROM quote;").Rows[rdm].ItemArray;
+            object[] cols = Database.ExecuteSQL("SELECT quote, author FROM quote;").Rows[rdm].ItemArray;
             lblQuote.Text = $"{cols[0]}\n\r- {cols[1]}";
         }
 
@@ -34,15 +36,14 @@ namespace IKK
                 return;
             }
 
-            DataTable response = IKK_data.Database.GetData($"SELECT id, email, name, about, lastlogin FROM user WHERE name LIKE '%{tbSearch.Text}%';");
-            if (response.Rows.Count < 1)
+            Profile profile = Database.GetProfileByName(tbSearch.Text);
+            if (profile == null)
             {
                 IKK_controls.MsgBox.Show("Keresés", "Nincs ilyen nevű felhasználó.");
                 return;
             }
-            object[] cols = response.Rows[0].ItemArray;
-            string answer = $"({cols[0]}) {cols[1]}\n\r{cols[3]}\n\r\n\rUtolsó bejelentkezés ideje: {cols[4]}";
-            IKK_controls.MsgBox.Show(cols[2].ToString(), answer);
+            string answer = $"{profile.Email}\n\r{profile.About}\n\r\n\rUtolsó bejelentkezés ideje: {profile.LastLogin.ToString()}";
+            IKK_controls.MsgBox.Show(profile.Name, answer);
             tbSearch.Clear();
         }
     }

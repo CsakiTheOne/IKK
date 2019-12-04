@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using IKK_controls;
 using IKK_data;
+using IKK_storage;
 
 namespace IKK
 {
@@ -92,7 +93,7 @@ namespace IKK
                         return;
                     }
                     formTbMenu.Close();
-                    Storage.MainContainer.SetView(new View1Main());
+                    Storage.GetMainContainer<ViewContainer>().SetView(new View1Main());
                     break;
                 case "Szerkesztés":
                     viewContainer.SetView(new View3Edit());
@@ -116,7 +117,7 @@ namespace IKK
                 == DialogResult.No
             ) return;
 
-            Storage.MainContainer.SetView(new View1Editor());
+            Storage.GetMainContainer<ViewContainer>().SetView(new View1Editor());
         }
 
         private void megnyitásToolStripMenuItem_Click(object sender, EventArgs e)

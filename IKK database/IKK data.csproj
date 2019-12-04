@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Database.cs" />
     <Compile Include="IO.cs" />
+    <Compile Include="PostData.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

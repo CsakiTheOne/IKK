@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IKK_controls;
+using IKK_storage;
+using IKK_data;
 
 namespace IKK
 {
@@ -22,7 +24,7 @@ namespace IKK
         private void nmiLogout_Click(object sender, EventArgs e)
         {
             Storage.LocalUser = null;
-            Storage.MainContainer.SetView(new View1Login());
+            Storage.GetMainContainer<ViewContainer>().SetView(new View1Login());
         }
 
         private void nmiRefresh_Click(object sender, EventArgs e)
@@ -38,18 +40,15 @@ namespace IKK
                 return;
             }
 
-            DataTable response = IKK_data.Database.GetData($"SELECT id, email, name, about FROM user WHERE id = {Storage.LocalUser.ID}");
+            Profile profile = Database.GetProfileByID(Storage.LocalUser.ID);
 
-            if (response.Rows.Count < 1) return;
+            if (profile == null) return;
 
-            object[] cols = response.Rows[0].ItemArray;
-
-            Storage.LocalUser = new IKK_data.Profile((int)cols[0], cols[1].ToString(), cols[2].ToString(), cols[3].ToString());
+            Storage.LocalUser = profile;
 
             tbEmail.Text = Storage.LocalUser.Email;
             tbName.Text = Storage.LocalUser.Name;
             tbAbout.Text = Storage.LocalUser.About;
-            lblOther.Text = $"({Storage.LocalUser.ID})";
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -59,7 +58,7 @@ namespace IKK
                 MsgBox.Show("Offline mód", "Nem vagy bejelentkezve!");
                 return;
             }
-            IKK_data.Database.GetData($"UPDATE user SET email = '{tbEmail.Text}', name = '{tbName.Text}', about = '{tbAbout.Text}' WHERE id = {Storage.LocalUser.ID};");
+            Database.UpdateProfile(Storage.LocalUser.ID, tbEmail.Text, tbName.Text, tbAbout.Text);
         }
 
         private void btnPass_Click(object sender, EventArgs e)
@@ -69,7 +68,7 @@ namespace IKK
                 MsgBox.Show("Offline mód", "Nem vagy bejelentkezve!");
                 return;
             }
-            string result = IKK_data.Database.Login(Storage.LocalUser.Email, Secret.Encrypt(tbPassOld.Text));
+            string result = Database.Login(Storage.LocalUser.Email, Secret.Encrypt(tbPassOld.Text));
             if (!result.Contains("PROFILE"))
             {
                 MsgBox.Show("Jelszó változtatás", "Írd be helyesen a régi jelszavad, hogy újat tudj állítani!");
@@ -83,7 +82,7 @@ namespace IKK
                 }) != DialogResult.Yes)
                 return;
             
-            IKK_data.Database.GetData($"UPDATE user SET password = '{Secret.Encrypt(tbPassNew.Text)}' WHERE id = {Storage.LocalUser.ID};");
+            Database.UpdatePassword(Storage.LocalUser.ID, Secret.Encrypt(tbPassNew.Text));
         }
     }
 }

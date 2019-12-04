@@ -11,6 +11,7 @@ using IKK_data;
 using IKK_controls;
 using System.Diagnostics;
 using IKK_notif;
+using IKK_storage;
 
 namespace IKK
 {
@@ -38,7 +39,7 @@ namespace IKK
             if (Storage.OfflineMode)
             {
                 Storage.LocalUser = new Profile(-1, "Nincs bejelentkezve", "Offline felhasználó", "Ez a felhasználó aktív, mikor a program offline módban van.");
-                Storage.MainContainer.SetView(new View1Main());
+                Storage.GetMainContainer<ViewContainer>().SetView(new View1Main());
                 return;
             }
 
@@ -50,7 +51,7 @@ namespace IKK
                 {
                     string[] data = result.Split(';');
                     Storage.LocalUser = new Profile(int.Parse(data[1]), data[2], data[3], data[4]);
-                    Storage.MainContainer.SetView(new View1Main());
+                    Storage.GetMainContainer<ViewContainer>().SetView(new View1Main());
                 }
                 else MsgBox.Show("Bejelentkezés", result);
             }

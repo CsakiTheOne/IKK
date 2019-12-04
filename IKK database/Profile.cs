@@ -12,6 +12,7 @@ namespace IKK_data
         public string Email { get; set; }
         public string Name { get; set; }
         public string About { get; set; }
+        public DateTime LastLogin { get; set; }
 
         public Profile() { }
 

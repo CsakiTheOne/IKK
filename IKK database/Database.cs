@@ -13,6 +13,8 @@ namespace IKK_data
     public static class Database
     {
         public static string DB { get; set; } = "Server=localhost;User ID=ikk_user;Password=a12345678b;Database=ikk";
+
+        #region Helper
         public static bool Test()
         {
             try
@@ -30,8 +32,15 @@ namespace IKK_data
         {
             return dateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
         }
+        #endregion
 
-        public static DataTable GetData(string sql)
+        [Obsolete]
+        public static DataTable ExecuteSQL(string sql)
+        {
+            return GetData(sql);
+        }
+
+        static DataTable GetData(string sql)
         {
             DataTable dataTable = new DataTable();
 
@@ -53,6 +62,85 @@ namespace IKK_data
             return dataTable;
         }
 
+        #region Profiles
+        public static Profile GetProfileByID(int id)
+        {
+            Profile profile;
+
+            DataTable dt = GetData($"SELECT id, email, name, about, lastlogin FROM user WHERE id = {id};");
+
+            if (dt.Rows.Count < 1) return null;
+
+            object[] cols = dt.Rows[0].ItemArray;
+            profile = new Profile((int)cols[0], cols[1].ToString(), cols[2].ToString(), cols[3].ToString()) { LastLogin = DateTime.Parse(cols[4].ToString()) };
+
+            return profile;
+        }
+        public static Profile GetProfileByName(string name)
+        {
+            Profile profile;
+
+            DataTable dt = GetData($"SELECT id, email, name, about, lastlogin FROM user WHERE name LIKE '%{name}%';");
+
+            if (dt.Rows.Count < 1) return null;
+
+            object[] cols = dt.Rows[0].ItemArray;
+            profile = new Profile((int)cols[0], cols[1].ToString(), cols[2].ToString(), cols[3].ToString()) { LastLogin = DateTime.Parse(cols[4].ToString()) };
+
+            return profile;
+        }
+        public static void UpdateProfile(int id, string email, string name, string about)
+        {
+            GetData($"UPDATE user SET email = '{email}', name = '{name}', about = '{about}' WHERE id = {id};");
+        }
+        public static void UpdatePassword(int id, string newPass)
+        {
+
+        }
+        #endregion
+
+        #region Posts
+        public static void CreatePost(int userID, string text)
+        {
+            GetData($"INSERT INTO `post` (`time`, `author`, `text`) VALUES ('{Database.ConvertToSqlDate(DateTime.Now)}', '{userID}', '{text}');");
+        }
+        public static List<PostData> GetPosts()
+        {
+            List<PostData> posts = new List<PostData>();
+
+            DataTable dtPosts = GetData("SELECT `post`.`id`, `post`.`time`, `post`.`text`, `post`.`author`, " +
+                "`user`.`name`, `post`.`project`, `project`.`title`, `project`.`type`, " +
+                "(SELECT COUNT(`id`) FROM `post_like` WHERE `post_like`.`post` = `post`.`id`) " +
+                "FROM `post` LEFT JOIN `project` ON `project`.`id` = `post`.`project` " +
+                "INNER JOIN `user` ON `post`.`author` = `user`.`id`ORDER BY `post`.`time` DESC");
+
+            foreach (DataRow row in dtPosts.Rows)
+            {
+                posts.Add(
+                    new PostData(row.ItemArray[0], row.ItemArray[1], row.ItemArray[2],
+                    row.ItemArray[3], row.ItemArray[4], row.ItemArray[5], row.ItemArray[6],
+                    row.ItemArray[7], row.ItemArray[8])
+                );
+            }
+
+            return posts;
+        }
+        public static bool GetLike(int postID, int userID)
+        {
+            return GetData($"SELECT id FROM post_like WHERE post = {postID} AND user = {userID}").Rows.Count > 0;
+        }
+        public static int GetLikeCount(int postID)
+        {
+            return (int)GetData($"SELECT COUNT(id) FROM post_like WHERE post = {postID}").Rows[0].ItemArray[0];
+        }
+        public static void SetLike(int postID, int userID)
+        {
+            if (GetLike(postID, userID)) GetData($"DELETE FROM post_like WHERE post = {postID} AND user = {userID};");
+            else GetData($"INSERT INTO post_like (post, user) VALUES ({postID}, {userID});");
+        }
+        #endregion
+
+        #region Session management
         public static string Register(string email, string pass)
         {
             if (pass.Length != 32) throw new Exception("A JELSZÓT TIKOSÍTANI KELL!");
@@ -100,5 +188,6 @@ namespace IKK_data
 
             return $"PROFILE;{cols[0]};{email};{cols[1]};{cols[2]}";
         }
+        #endregion
     }
 }

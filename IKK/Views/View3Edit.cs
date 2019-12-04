@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IKK_storage;
+using IKK_data;
 
 namespace IKK
 {
