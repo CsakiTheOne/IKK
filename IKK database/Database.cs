@@ -95,7 +95,7 @@ namespace IKK_data
         }
         public static void UpdatePassword(int id, string newPass)
         {
-
+            GetData($"UPDATE user SET password = '{newPass}' WHERE id = {id};");
         }
         #endregion
 
