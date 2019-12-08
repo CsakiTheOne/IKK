@@ -28,26 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nmiRefresh = new IKK_controls.NavMenuItem();
             this.nmiOpenFile = new IKK_controls.NavMenuItem();
             this.nmiNew = new IKK_controls.NavMenuItem();
             this.flpLatest = new System.Windows.Forms.FlowLayoutPanel();
             this.lblLatestProjects = new IKK_controls.Lbl();
             this.SuspendLayout();
-            // 
-            // nmiRefresh
-            // 
-            this.nmiRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nmiRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.nmiRefresh.Icon = global::IKK.Properties.Resources.sharp_refresh_white_48dp;
-            this.nmiRefresh.Location = new System.Drawing.Point(650, 0);
-            this.nmiRefresh.Margin = new System.Windows.Forms.Padding(0);
-            this.nmiRefresh.Name = "nmiRefresh";
-            this.nmiRefresh.Selected = false;
-            this.nmiRefresh.Size = new System.Drawing.Size(250, 60);
-            this.nmiRefresh.TabIndex = 2;
-            this.nmiRefresh.Text = "Frissítés";
-            this.nmiRefresh.Click += new System.EventHandler(this.nmiRefresh_Click);
             // 
             // nmiOpenFile
             // 
@@ -103,7 +88,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.nmiRefresh);
             this.Controls.Add(this.nmiOpenFile);
             this.Controls.Add(this.flpLatest);
             this.Controls.Add(this.nmiNew);
@@ -118,7 +102,6 @@
         #endregion
         private IKK_controls.NavMenuItem nmiNew;
         private IKK_controls.NavMenuItem nmiOpenFile;
-        private IKK_controls.NavMenuItem nmiRefresh;
         private IKK_controls.Lbl lblLatestProjects;
         private System.Windows.Forms.FlowLayoutPanel flpLatest;
     }

@@ -22,24 +22,6 @@ namespace IKK
             InitializeComponent();
         }
 
-        void ReloadProjects()
-        {
-            flpLatest.Controls.Clear();
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
-            fbd.SelectedPath = Application.ExecutablePath.Remove(Application.ExecutablePath.LastIndexOf('\\'));
-
-            if (fbd.ShowDialog() != DialogResult.OK) return;
-
-            List<Project> projects = IO.GetProjectsFromFolder(fbd.SelectedPath);
-            ProjectCard projectCard;
-            foreach (Project project in projects)
-            {
-                projectCard = new ProjectCard(project);
-                projectCard.Click += ProjectCard_Click;
-                flpLatest.Controls.Add(projectCard);
-            }
-        }
-
         private void ProjectCard_Click(object sender, EventArgs e)
         {
             foreach (ProjectCard item in flpLatest.Controls)
@@ -48,11 +30,6 @@ namespace IKK
             }
             ((ProjectCard)sender).Selected = true;
             selectedProject = ((ProjectCard)sender).Project;
-        }
-
-        private void nmiRefresh_Click(object sender, EventArgs e)
-        {
-            ReloadProjects();
         }
 
         #region New & Open
