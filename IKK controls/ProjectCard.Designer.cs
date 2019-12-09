@@ -32,6 +32,7 @@
             this.lblDesc = new IKK_controls.Lbl();
             this.lblLabel = new IKK_controls.Lbl();
             this.lblTitle = new IKK_controls.Lbl();
+            this.btnRemove = new IKK_controls.Btn();
             ((System.ComponentModel.ISupportInitialize)(this.pbLabel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,9 +86,26 @@
             this.lblTitle.Text = "Cím";
             this.lblTitle.Click += new System.EventHandler(this.controls_Click);
             // 
+            // btnRemove
+            // 
+            this.btnRemove.FlatAppearance.BorderSize = 0;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRemove.Location = new System.Drawing.Point(225, 8);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(8);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Raised = false;
+            this.btnRemove.Size = new System.Drawing.Size(17, 17);
+            this.btnRemove.TabIndex = 4;
+            this.btnRemove.Text = "x";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Visible = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
             // ProjectCard
             // 
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.lblLabel);
             this.Controls.Add(this.pbLabel);
@@ -107,5 +125,6 @@
         private System.Windows.Forms.PictureBox pbLabel;
         private Lbl lblLabel;
         private Lbl lblDesc;
+        private Btn btnRemove;
     }
 }

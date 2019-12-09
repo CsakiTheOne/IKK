@@ -30,6 +30,7 @@ namespace IKK
             foreach (Project p in latestProjects)
             {
                 pc = new ProjectCard(p);
+                pc.Removable = true;
                 pc.Click += ProjectCard_Click;
                 flpLatest.Controls.Add(pc);
             }

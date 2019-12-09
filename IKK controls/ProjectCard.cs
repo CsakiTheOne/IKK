@@ -16,6 +16,7 @@ namespace IKK_controls
     public partial class ProjectCard : UserControl, IThemable
     {
         public Project Project { get; private set; }
+        public bool Removable { get => btnRemove.Visible; set => btnRemove.Visible = value; }
         public bool Selected { get => selected; set { selected = value; Refresh(); } }
 
         bool selected = false;
@@ -57,6 +58,12 @@ namespace IKK_controls
         private void controls_Click(object sender, EventArgs e)
         {
             OnClick(e);
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            Settings.ListDelete("latestFiles", Project.FileName);
+            Parent.Controls.Remove(this);
         }
     }
 }

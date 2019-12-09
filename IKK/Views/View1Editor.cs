@@ -22,7 +22,7 @@ namespace IKK
             InitializeComponent();
             ofd.Filter = IO.PROJECT_FILTER;
             sfd.Filter = IO.PROJECT_FILTER;
-            LoadProject(new Project(-1, Storage.LocalUser.ID, "", tb.Text, "", DateTime.Now, new List<Tool>()));
+            LoadProject(new Project(-1, Storage.LocalUser.ID, "", tb.Text, "", DateTime.Now, new List<Tool>(), ""));
         }
 
         public View1Editor(Project project)

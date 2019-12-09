@@ -110,6 +110,8 @@ namespace IKK_data
             }
             #endregion
 
+            project.FileName = fileName;
+
             return project;
         }
         #endregion

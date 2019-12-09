@@ -15,13 +15,11 @@ namespace IKK_data
         public string Content { get; set; }
         public string Label { get; set; }
         public DateTime CreateTime { get; set; }
-        /// <summary>
-        /// Offline
-        /// </summary>
         public List<Tool> Tools { get; set; } = new List<Tool>();
+        public string FileName { get; set; }
 
         public Project() { }
-        public Project(int id, int author, string title, string content, string label, DateTime createTime, List<Tool> tools)
+        public Project(int id, int author, string title, string content, string label, DateTime createTime, List<Tool> tools, string fileName)
         {
             ID = id;
             Author = author;
@@ -30,6 +28,7 @@ namespace IKK_data
             Label = label;
             CreateTime = createTime;
             Tools = tools;
+            FileName = fileName;
         }
     }
 }
