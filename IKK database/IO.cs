@@ -10,7 +10,7 @@ namespace IKK_data
 {
     public static class IO
     {
-        public static string PROJECT_FILTER { get => "Összes fájl mutatása|*.*|Bináris fájl (csak ezzel olvasható)|*.ikk|Szöveg|*.txt|Markdown|*.md"; }
+        public static string PROJECT_FILTER { get => "Összes fájl mutatása|*.*|Bináris fájl (csak ezzel olvasható)|*.ikk|Szöveg|*.txt|Markdown (A fejlesztő ajánlja)|*.md"; }
         public static string[] PROJECT_FORMATS { get => new string[] { "txt", "md", "ikk" }; }
 
         #region LoadProjects

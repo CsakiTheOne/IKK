@@ -23,8 +23,10 @@ namespace IKK
             LoadLatest();
         }
 
+        #region Latest projects
         void LoadLatest()
         {
+            flpLatest.Controls.Clear();
             List<Project> latestProjects = IO.LatestProjects();
             ProjectCard pc;
             foreach (Project p in latestProjects)
@@ -36,15 +38,25 @@ namespace IKK
             }
         }
 
-        private void ProjectCard_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            foreach (ProjectCard item in flpLatest.Controls)
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = IO.PROJECT_FILTER;
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
-                item.Selected = false;
+                try
+                {
+                    IO.ProjectOpen(ofd.FileName);
+                    Settings.ListAppend("latestFiles", ofd.FileName);
+                }
+                catch (Exception ex)
+                {
+                    MsgBox.Show("Hozzáadás a legutóbbikhoz", ex.Message);
+                }
+                LoadLatest();
             }
-            ((ProjectCard)sender).Selected = true;
-            selectedProject = ((ProjectCard)sender).Project;
         }
+        #endregion
 
         #region New & Open
         private void nmiOpenFile_Click(object sender, EventArgs e)
@@ -56,11 +68,10 @@ namespace IKK
                 try
                 {
                     Storage.GetMainContainer<ViewContainer>().SetView(new View1Editor(IO.ProjectOpen(ofd.FileName)));
-
                 }
                 catch (Exception ex)
                 {
-                    IKK_controls.MsgBox.Show("Megnyitás", ex.Message);
+                    MsgBox.Show("Megnyitás", ex.Message);
                 }
             }
         }
@@ -70,5 +81,22 @@ namespace IKK
             Storage.GetMainContainer<ViewContainer>().SetView(new View1Editor());
         }
         #endregion
+
+        private void ProjectCard_Click(object sender, EventArgs e)
+        {
+            foreach (ProjectCard item in flpLatest.Controls)
+            {
+                item.Selected = false;
+            }
+            ((ProjectCard)sender).Selected = true;
+            selectedProject = ((ProjectCard)sender).Project;
+            cardManageSelected.Visible = true;
+            lblSelected.Text = selectedProject.Title;
+        }
+
+        private void nmiEdit_Click(object sender, EventArgs e)
+        {
+            Storage.GetMainContainer<ViewContainer>().SetView(new View1Editor(selectedProject));
+        }
     }
 }

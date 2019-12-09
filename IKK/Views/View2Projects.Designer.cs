@@ -28,11 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nmiOpenFile = new IKK_controls.NavMenuItem();
-            this.nmiNew = new IKK_controls.NavMenuItem();
             this.flpLatest = new System.Windows.Forms.FlowLayoutPanel();
             this.lblLatestProjects = new IKK_controls.Lbl();
+            this.cardManageSelected = new IKK_controls.Card();
+            this.nmiEdit = new IKK_controls.NavMenuItem();
+            this.nmiOpenFile = new IKK_controls.NavMenuItem();
+            this.nmiNew = new IKK_controls.NavMenuItem();
+            this.lblSelected = new IKK_controls.Lbl();
+            this.btnAdd = new IKK_controls.Btn();
+            this.cardManageSelected.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // flpLatest
+            // 
+            this.flpLatest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpLatest.Location = new System.Drawing.Point(0, 60);
+            this.flpLatest.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.flpLatest.Name = "flpLatest";
+            this.flpLatest.Size = new System.Drawing.Size(650, 440);
+            this.flpLatest.TabIndex = 1;
+            // 
+            // lblLatestProjects
+            // 
+            this.lblLatestProjects.AutoSize = true;
+            this.lblLatestProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblLatestProjects.Location = new System.Drawing.Point(8, 8);
+            this.lblLatestProjects.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.lblLatestProjects.Name = "lblLatestProjects";
+            this.lblLatestProjects.Size = new System.Drawing.Size(321, 44);
+            this.lblLatestProjects.TabIndex = 0;
+            this.lblLatestProjects.Text = "Legutóbbi művek:";
+            // 
+            // cardManageSelected
+            // 
+            this.cardManageSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cardManageSelected.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cardManageSelected.Controls.Add(this.lblSelected);
+            this.cardManageSelected.Controls.Add(this.nmiEdit);
+            this.cardManageSelected.Location = new System.Drawing.Point(650, 60);
+            this.cardManageSelected.Margin = new System.Windows.Forms.Padding(0);
+            this.cardManageSelected.Name = "cardManageSelected";
+            this.cardManageSelected.Padding = new System.Windows.Forms.Padding(8);
+            this.cardManageSelected.Size = new System.Drawing.Size(250, 96);
+            this.cardManageSelected.TabIndex = 2;
+            this.cardManageSelected.Visible = false;
+            // 
+            // nmiEdit
+            // 
+            this.nmiEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nmiEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.nmiEdit.Icon = global::IKK.Properties.Resources.sharp_edit_white_48dp;
+            this.nmiEdit.Location = new System.Drawing.Point(-1, 37);
+            this.nmiEdit.Margin = new System.Windows.Forms.Padding(0);
+            this.nmiEdit.Name = "nmiEdit";
+            this.nmiEdit.Selected = false;
+            this.nmiEdit.Size = new System.Drawing.Size(250, 60);
+            this.nmiEdit.TabIndex = 0;
+            this.nmiEdit.Text = "Írás";
+            this.nmiEdit.Click += new System.EventHandler(this.nmiEdit_Click);
             // 
             // nmiOpenFile
             // 
@@ -62,38 +118,47 @@
             this.nmiNew.Text = "Új projekt";
             this.nmiNew.Click += new System.EventHandler(this.nmiNew_Click);
             // 
-            // flpLatest
+            // lblSelected
             // 
-            this.flpLatest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpLatest.Location = new System.Drawing.Point(0, 60);
-            this.flpLatest.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.flpLatest.Name = "flpLatest";
-            this.flpLatest.Size = new System.Drawing.Size(650, 440);
-            this.flpLatest.TabIndex = 1;
+            this.lblSelected.AutoSize = true;
+            this.lblSelected.Location = new System.Drawing.Point(16, 16);
+            this.lblSelected.Margin = new System.Windows.Forms.Padding(8, 8, 0, 8);
+            this.lblSelected.Name = "lblSelected";
+            this.lblSelected.Size = new System.Drawing.Size(110, 13);
+            this.lblSelected.TabIndex = 1;
+            this.lblSelected.Text = "Válassz egy projektet!";
             // 
-            // lblLatestProjects
+            // btnAdd
             // 
-            this.lblLatestProjects.AutoSize = true;
-            this.lblLatestProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblLatestProjects.Location = new System.Drawing.Point(8, 8);
-            this.lblLatestProjects.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.lblLatestProjects.Name = "lblLatestProjects";
-            this.lblLatestProjects.Size = new System.Drawing.Size(321, 44);
-            this.lblLatestProjects.TabIndex = 0;
-            this.lblLatestProjects.Text = "Legutóbbi művek:";
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAdd.Location = new System.Drawing.Point(337, 15);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(8);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Raised = true;
+            this.btnAdd.Size = new System.Drawing.Size(30, 30);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.Text = "+";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // View2Projects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.cardManageSelected);
             this.Controls.Add(this.nmiOpenFile);
             this.Controls.Add(this.flpLatest);
             this.Controls.Add(this.nmiNew);
             this.Controls.Add(this.lblLatestProjects);
             this.Name = "View2Projects";
             this.Padding = new System.Windows.Forms.Padding(0);
+            this.cardManageSelected.ResumeLayout(false);
+            this.cardManageSelected.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,5 +169,9 @@
         private IKK_controls.NavMenuItem nmiOpenFile;
         private IKK_controls.Lbl lblLatestProjects;
         private System.Windows.Forms.FlowLayoutPanel flpLatest;
+        private IKK_controls.Card cardManageSelected;
+        private IKK_controls.NavMenuItem nmiEdit;
+        private IKK_controls.Lbl lblSelected;
+        private IKK_controls.Btn btnAdd;
     }
 }

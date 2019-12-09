@@ -257,5 +257,8 @@
   <ItemGroup>
     <None Include="Resources\sharp_refresh_white_48dp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sharp_edit_white_48dp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
