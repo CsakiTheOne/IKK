@@ -27,5 +27,49 @@ namespace IKK_data
         {
             Properties.Settings.Default.Reset();
         }
+
+        public static void SetIndex(string key, string value, int index)
+        {
+            new SettingsList(key)[index] = value;
+        }
+
+        public static string GetIndex(string key, string defaultValue, int index)
+        {
+            try
+            {
+                return new SettingsList(key)[index];
+            }
+            catch
+            {
+                return defaultValue;
+            }
+        }
+
+        public static void Append(string key, string value)
+        {
+            Settings.Set(key, Settings.Get(key, "") + "|" + value);
+        }
+
+        public static bool Contains(string key, string value)
+        {
+            List<string> list = Settings.Get(key, "").Split('|').ToList();
+            return list.Contains(value);
+        }
+    }
+
+    class SettingsList
+    {
+        public string Key { get; set; }
+
+        public SettingsList(string key)
+        {
+            Key = key;
+        }
+
+        public string this[int index]
+        {
+            get => Settings.Get(Key, "").Split('|')[index];
+            set => Settings.Set(Key, Settings.Get(Key, "").Replace(this[index], value));
+        }
     }
 }
