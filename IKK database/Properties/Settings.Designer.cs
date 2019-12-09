@@ -22,5 +22,17 @@ namespace IKK_data.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string latestFiles {
+            get {
+                return ((string)(this["latestFiles"]));
+            }
+            set {
+                this["latestFiles"] = value;
+            }
+        }
     }
 }

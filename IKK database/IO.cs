@@ -13,6 +13,30 @@ namespace IKK_data
         public static string PROJECT_FILTER { get => "Összes fájl mutatása|*.*|Bináris fájl (csak ezzel olvasható)|*.ikk|Szöveg|*.txt|Markdown|*.md"; }
         public static string[] PROJECT_FORMATS { get => new string[] { "txt", "md", "ikk" }; }
 
+        #region LoadProjects
+        public static List<Project> LatestProjects()
+        {
+            List<Project> projects = new List<Project>();
+            Project project;
+            List<string> fileNames = Settings.ListGetAll("latestFiles");
+
+            foreach (string fileName in fileNames)
+            {
+                try
+                {
+                    project = ProjectOpen(fileName);
+                    projects.Add(project);
+                }
+                catch
+                {
+                    Settings.ListDelete("latestFiles", fileName);
+                }
+            }
+
+            return projects;
+        }
+        #endregion
+
         #region Open
         public static Project ProjectOpen(string fileName)
         {
@@ -140,6 +164,14 @@ namespace IKK_data
                 File.WriteAllLines(fileName, lines);
             }
             #endregion
+
+            StoreFileName(fileName);
+        }
+
+        static void StoreFileName(string fileName)
+        {
+            if (Settings.ListContains("latestFiles", fileName)) return;
+            Settings.ListAppend("latestFiles", fileName);
         }
         #endregion
 

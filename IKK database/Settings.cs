@@ -16,8 +16,14 @@ namespace IKK_data
 
         public static T Get<T>(string key, T defaultValue)
         {
-            if (Properties.Settings.Default[key] == null) return defaultValue;
-            return (T)Properties.Settings.Default[key];
+            try
+            {
+                return (T)Properties.Settings.Default[key];
+            }
+            catch
+            {
+                return defaultValue;
+            }
         }
 
         /// <summary>
@@ -45,15 +51,30 @@ namespace IKK_data
             }
         }
 
-        public static void Append(string key, string value)
+        public static void ListDelete(string key, string value)
         {
-            Settings.Set(key, Settings.Get(key, "") + "|" + value);
+            if (Get(key, "") == "" && ListContains(key, value)) return;
+            try
+            {
+                Set(key, Get(key, "").Replace(value, "").Replace("||", "|"));
+            }
+            catch { }
         }
 
-        public static bool Contains(string key, string value)
+        public static void ListAppend(string key, string value)
         {
-            List<string> list = Settings.Get(key, "").Split('|').ToList();
+            Set(key, Settings.Get(key, "") + "|" + value);
+        }
+
+        public static bool ListContains(string key, string value)
+        {
+            List<string> list = Get(key, "").Split('|').ToList();
             return list.Contains(value);
+        }
+
+        public static List<string> ListGetAll(string key)
+        {
+            return Get(key, "").Split('|').ToList();
         }
     }
 

@@ -20,6 +20,19 @@ namespace IKK
         public View2Projects()
         {
             InitializeComponent();
+            LoadLatest();
+        }
+
+        void LoadLatest()
+        {
+            List<Project> latestProjects = IO.LatestProjects();
+            ProjectCard pc;
+            foreach (Project p in latestProjects)
+            {
+                pc = new ProjectCard(p);
+                pc.Click += ProjectCard_Click;
+                flpLatest.Controls.Add(pc);
+            }
         }
 
         private void ProjectCard_Click(object sender, EventArgs e)
