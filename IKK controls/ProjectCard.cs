@@ -62,8 +62,29 @@ namespace IKK_controls
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
+            MsgBox.MsgBoxButton[] btns = {
+                new MsgBox.MsgBoxButton("Nem", true, DialogResult.Cancel),
+                new MsgBox.MsgBoxButton("Csak a listáról", false, DialogResult.No),
+                new MsgBox.MsgBoxButton("Igen, a fájlt is", false, DialogResult.Yes)
+            };
+            DialogResult result = MsgBox.Show("Projekt törlése", "Biztos ki szeretnéd törölni ezt a projektet?", btns);
+
+            if (result == DialogResult.Cancel) return;
+
             Settings.ListDelete("latestFiles", Project.FileName);
             Parent.Controls.Remove(this);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    IO.Delete(Project.FileName);
+                }
+                catch (Exception ex)
+                {
+                    MsgBox.Show("Törlés", ex.Message);
+                }
+            }
         }
     }
 }

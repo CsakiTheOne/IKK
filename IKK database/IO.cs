@@ -198,5 +198,18 @@ namespace IKK_data
             File.WriteAllLines(fileName, lines);
         }
         #endregion
+
+        public static void Delete(string fileName)
+        {
+            try
+            {
+                File.Delete(fileName);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

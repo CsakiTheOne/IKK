@@ -31,11 +31,11 @@
             this.flpLatest = new System.Windows.Forms.FlowLayoutPanel();
             this.lblLatestProjects = new IKK_controls.Lbl();
             this.cardManageSelected = new IKK_controls.Card();
-            this.nmiEdit = new IKK_controls.NavMenuItem();
             this.nmiOpenFile = new IKK_controls.NavMenuItem();
             this.nmiNew = new IKK_controls.NavMenuItem();
             this.lblSelected = new IKK_controls.Lbl();
             this.btnAdd = new IKK_controls.Btn();
+            this.btnEdit = new IKK_controls.Btn();
             this.cardManageSelected.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,8 +65,8 @@
             // 
             this.cardManageSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cardManageSelected.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cardManageSelected.Controls.Add(this.btnEdit);
             this.cardManageSelected.Controls.Add(this.lblSelected);
-            this.cardManageSelected.Controls.Add(this.nmiEdit);
             this.cardManageSelected.Location = new System.Drawing.Point(650, 60);
             this.cardManageSelected.Margin = new System.Windows.Forms.Padding(0);
             this.cardManageSelected.Name = "cardManageSelected";
@@ -74,21 +74,6 @@
             this.cardManageSelected.Size = new System.Drawing.Size(250, 96);
             this.cardManageSelected.TabIndex = 2;
             this.cardManageSelected.Visible = false;
-            // 
-            // nmiEdit
-            // 
-            this.nmiEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.nmiEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.nmiEdit.Icon = global::IKK.Properties.Resources.sharp_edit_white_48dp;
-            this.nmiEdit.Location = new System.Drawing.Point(-1, 37);
-            this.nmiEdit.Margin = new System.Windows.Forms.Padding(0);
-            this.nmiEdit.Name = "nmiEdit";
-            this.nmiEdit.Selected = false;
-            this.nmiEdit.Size = new System.Drawing.Size(250, 60);
-            this.nmiEdit.TabIndex = 0;
-            this.nmiEdit.Text = "Írás";
-            this.nmiEdit.Click += new System.EventHandler(this.nmiEdit_Click);
             // 
             // nmiOpenFile
             // 
@@ -145,6 +130,23 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnEdit.Location = new System.Drawing.Point(16, 45);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(8);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Raised = true;
+            this.btnEdit.Size = new System.Drawing.Size(216, 30);
+            this.btnEdit.TabIndex = 2;
+            this.btnEdit.Text = "Szerkesztés";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // View2Projects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,8 +172,8 @@
         private IKK_controls.Lbl lblLatestProjects;
         private System.Windows.Forms.FlowLayoutPanel flpLatest;
         private IKK_controls.Card cardManageSelected;
-        private IKK_controls.NavMenuItem nmiEdit;
         private IKK_controls.Lbl lblSelected;
         private IKK_controls.Btn btnAdd;
+        private IKK_controls.Btn btnEdit;
     }
 }

@@ -94,7 +94,7 @@ namespace IKK
             lblSelected.Text = selectedProject.Title;
         }
 
-        private void nmiEdit_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             Storage.GetMainContainer<ViewContainer>().SetView(new View1Editor(selectedProject));
         }
