@@ -79,7 +79,6 @@
     <Compile Include="Tools\Tool.cs" />
     <Compile Include="Tools\ToolDescription.cs" />
     <Compile Include="Tools\ToolLineCounter.cs" />
-    <Compile Include="Unsafe.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
