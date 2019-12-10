@@ -41,11 +41,11 @@ A program több formátumot is támogat:
 
 | Formátum        | .    | Leírás                                                         |
 | --------------- | ---- | -------------------------------------------------------------- |
-| Egyszerű szöveg | txt  | Eszközök a fájl végén speciális karakterekkel jelölve. `{}`    |
+| Egyszerű szöveg | txt  | Eszközök a fájl végén speciális karakterekkel jelölve.         |
 | Markdown fájl   | md   | Nagy cím, sima szöveg, eszközök a jájl végén táblázatban.      |
-| Weboldal        | html | Weboldalhoz tartozó CSS-t a fő beállításokban.                 |
 | Bináris fájl    | ikk  | Csak ez a program tudja olvasni.                               |
 | Felhő           | -    | Adatbázisban tárolt projektek mindig megjelennek a programban. |
+| Weboldal        | html | CSAK EXPORTÁLÁS                                                |
 
 ### Értesítések
 
