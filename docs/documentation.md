@@ -37,6 +37,8 @@ Ha a felhasználó nem tudja a jelszavát, kérhet egy új, ideiglenes jelszót,
 
 ### Mások megtalálása
 
+`TODO`
+
 ### Értesítések
 
 A program ablak jobb alsó sarkában van egy állandó "Értesítések gomb". Itt lehet megnézni, rögzíteni, törölni az értesítéseket. Ezekek nagyrészt az eszközök küldik írás közben, de a jövőben bizonyos eseményekről is itt értesülhet a felhasználó.
@@ -54,6 +56,8 @@ Minden felhasználó naponta beküldhet 1db idézetet. Ezek az adatbázisban ker
 Ha a felhasználó befejezett egy projektet, megoszthatja azt a verses falra. Így a többi felhasználó is látja az alkotását. A mű mellett lehet egy kis szöveg is, kötelező elem pedig maga a felhasználó profilja. Alapértelmezetten a verses falon időrendi sorrendben megjelenik az összes poszt, de van lehetőség szűrésre és keresésre.
 
 ### Művek létrehozása és kezelése
+
+`TODO`
 
 ### Szövegszerkesztő
 
@@ -89,6 +93,8 @@ A program nagyon testreszabható és a felhasználók kedvükre állíthatják a
 
 ### Rendszer követelmények
 
+`TODO`
+
 # Fejlesztői dokumentáció
 
 ### Adatbázis szerkezete
@@ -103,16 +109,32 @@ Táblák:
 
 ### Kommunikáció az adatbázissal
 
+MySQLConnector nevű NuGet csomagot használja a program. Ez az Oracle SQL-es NuGet csomagjának egy nyílt forráskódú fork-ja.
+
 ### Munkamenet
+
+Miután a felhasználó bejelentkezett, a program eltárolja, hogy ki is ő. Egy azonosítót kap, ami alapján meg lehet találni. Ezt használja a program sok művelethez. Pl. a verses fal funkcióihoz. (Megosztás, kedvelés.)
 
 ### Kapcsolat teszt és offline mód
 
+`TODO`
+
 ### Eszközök működése
+
+`TODO`
 
 ### Támogatott formátumok
 
+`TODO`
+
 ### Exportálás és feltöltés
+
+`TODO`
 
 ### Verses fal (és like-ok)
 
+`TODO`
+
 ### Fejlesztési tervek
+
+`TODO`
