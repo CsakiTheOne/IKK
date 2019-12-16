@@ -3,6 +3,7 @@
 - Bevezetés
   - Specifikáció
   - A szoftver használata
+  - Fejlesztéshez használt eszközök
 - Felhasználói dokumentáció
   - Profilok
   - Saját profil szerkesztése
@@ -43,6 +44,16 @@ Belépéskor a felhasználó két dolgot láthat. Ha minden rendben, megjelenik 
 A főoldalon jelenig meg a napi idézet, a legfrissebb poszt, stb.. A profil menüpont alatt lehet megtekinteni és szerkeszteni a profilt, amivel épp be vagyunk jelentkezve. A verses fal hasonló lesz a közösségi oldalakhoz. A műveknél pedig az adatbázisban tárolt és legutóbbi műveket találjuk. Innen tudunk projektet kezdeni, megnyitni, szinkronizálni, stb..
 
 Miközben a felhasználó a projekten dolgozik, oldalt látja és szerkesztheti a fő információkat és az eszközöket, középen a legnagyobb részt pedig a szöveg tölti ki.
+
+## Fejlesztéshez használt eszközök
+
+#### Visual Studio 2019 (C#)
+
+A Visual Studio a Microsoft több programozási nyelvet tartalmazó fejlesztőkörnyezete, amely az évek során egyre több új programnyelvvel bővült. Jelenleg a F#, C++, C# (ejtsd: Szí-sárp) és Visual Basic programozási nyelveket, valamint az XML-t támogatja. A csomag része még a MASM (Microsoft Macro Assembler) is, ami részleges assembly támogatást biztosít. A Visual Studio-hoz sok kiegészítő készült, melyekkel más programnyelvek támogatását is megoldották.
+
+#### dbForge Studio (MySQL)
+
+MySQL szerver kezelő program.
 
 # Felhasználói dokumentáció
 
@@ -158,23 +169,23 @@ Egy `Tool` osztályból származik minden eszköz, így lehet egy kategóriába 
 
 ## Támogatott formátumok
 
-##### IKK
+#### IKK
 
 Az ajánlott formatum a programhoz. Bináris fájl, ami mindent eltárol és csak ez a program tudja olvasni. Hogyan működik? A programban egy `Project` osztály található, amin egy attribútum szerepel: `System.Serializable`. Így az osztályt könnyen fájlba lehet írni és abból vissza.
 
-##### TXT
+#### TXT
 
 A legegyszerűbb formátum, amit minden program megért. Nem volt egyszerű veszteségmentesen egy sima szöveges állományba rakni mindent, de végül sikerült, az eszközökkel együtt.
 
-##### MD
+#### MD
 
 Ez a formátum szép / átlátható dokumentumok gyors és könnyű írására lett kitalálva. A fejlesztők ebben írják a dokumentációt és minden GitHub projektnek kötelező eleme. Ez az ajánlott formátum, ha a felhasználó nem szeretne bináris fájlt készíteni.
 
-##### Felhő
+#### Felhő
 
 A műveket föl lehet tölteni a program adatbázisába. Így a felhasználók vihetik magukkal, csak be kell jelentkeziük.
 
-##### Weboldal
+#### Weboldal
 
 Ebben a formátumban nem menteni, hanem csak exportálni lehet. A program tartalmaz egy egyszerű HTML kódot és annak a részeit cserélgeti a projekt elemeivel. Minden elemre rak egy id-t vagy osztályt, hogy könnyen témázható is legyen CSS-el. Azt nem generál a program.
 
