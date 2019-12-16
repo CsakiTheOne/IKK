@@ -30,6 +30,9 @@
   - Exportálás és feltöltés
   - Verses fal (és like-ok)
   - Fejlesztési tervek
+- Külső segítség
+  - Funkciók
+  - Idézetek
 
 # Bevezetés
 
@@ -175,15 +178,15 @@ Az ajánlott formatum a programhoz. Bináris fájl, ami mindent eltárol és csa
 
 #### TXT
 
-A legegyszerűbb formátum, amit minden program megért. Nem volt egyszerű veszteségmentesen egy sima szöveges állományba rakni mindent, de végül sikerült, az eszközökkel együtt.
+A legegyszerűbb formátum, amit minden program megért. Nem volt egyszerű veszteségmentesen egy sima szöveges állományba rakni mindent, de végül sikerült, az eszközökkel együtt. Ha a szöveges állományt kívülről szerkesztjük, utána nem biztos, hogy a program meg tudja nyitni. Ezért nem ajánlott.
 
 #### MD
 
-Ez a formátum szép / átlátható dokumentumok gyors és könnyű írására lett kitalálva. A fejlesztők ebben írják a dokumentációt és minden GitHub projektnek kötelező eleme. Ez az ajánlott formátum, ha a felhasználó nem szeretne bináris fájlt készíteni.
+Ez a formátum szép / átlátható dokumentumok gyors és könnyű írására lett kitalálva. A fejlesztők ebben írják a dokumentációt és minden GitHub projektnek kötelező eleme. Ez az ajánlott formátum, ha a felhasználó nem szeretne bináris fájlt készíteni. Viszont ezt sem célszerű kívülről szerkeszteni majd újra a programban megnyitni. Ez is sérülhet pont, mint a szöveges fájl.
 
 #### Felhő
 
-A műveket föl lehet tölteni a program adatbázisába. Így a felhasználók vihetik magukkal, csak be kell jelentkeziük.
+A műveket föl lehet tölteni a program adatbázisába. Így a felhasználók vihetik magukkal, csak be kell jelentkeziük. A felhőbe feltöltés nem csak erre használható. Ha meg szeretne osztani a felhasználó valamit a verses falon, ahhoz előbb a műnek az adatbázisban kell lennie.
 
 #### Weboldal
 
@@ -200,3 +203,13 @@ Bárki írhat bejegyzést a verses falra, ez lehet sim szöveg vagy egy csatolt 
 ## Fejlesztési tervek
 
 Szeretném ha a programom a lehető legjobban testreszabható lenne. Nem csak a kinézetét tekintve, hanem működés szempontjából is. A téma motor és saját profil mellett ezért is szeretném, hogy mod támogatás legyen a szoftverben. Ezekkel akár új eszközöket is lehessen a programba tenni.
+
+# Külső segítség
+
+## Funkciók
+
+Hobbi költők és a családom adtak ötleteket, amiket hasznosnak gontolnak a programomba. Innen tudom, hogy van rá igény és nem hiába készül ez a munka.
+
+## Idézetek
+
+A napi idézetekhez sok adat kell, hogy minden nap új gondolat fogadja a felhasználókat. A cél, hogy kb. 90 idézet legyen a leadási határidő előtt. Ebben rengeteg segítséget kaptam és jelenleg is elég idézet van, hogy két hónapig új idézetet kapjunk.
