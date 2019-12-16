@@ -1,3 +1,11 @@
+# Tartalomjegyzék
+
+- Bevezetés
+- Felhasználói dokumentáció
+- Fejlesztői dokumentáció
+
+`TODO`
+
 # Bevezetés
 
 ## Specifikáció
@@ -93,7 +101,7 @@ A program nagyon testreszabható és a felhasználók kedvükre állíthatják a
 
 ## Rendszer követelmények
 
-`TODO`
+dotNET framework 4.7.2 és Windows 10 operációs rendszer.
 
 # Fejlesztői dokumentáció
 
@@ -109,7 +117,7 @@ Táblák:
 
 ## Kommunikáció az adatbázissal
 
-MySQLConnector nevű NuGet csomagot használja a program. Ez az Oracle SQL-es NuGet csomagjának egy nyílt forráskódú fork-ja.
+MySQLConnector nevű NuGet csomagot használja a program. Ez az Oracle SQL-es NuGet csomagjának egy nyílt forráskódú fork-ja. Az adatbázisban tárolt eljárások találhatóak, ezeket hívja meg a program, nem pedig közvetlen SQL utasításokat küld.
 
 ## Munkamenet
 
@@ -147,11 +155,11 @@ Ebben a formátumban nem menteni, hanem csak exportálni lehet. A program tartal
 
 ## Exportálás és feltöltés
 
-`TODO`
+Az adatbázis `Project` táblája ad lehetőséget művek tárolására a felhőben.
 
 ## Verses fal (és like-ok)
 
-`TODO`
+Bárki írhat bejegyzést a verses falra, ez lehet sim szöveg vagy egy csatolt mű. Mielőtt a felhasználó csatol egy projektet, fel kell töltenie a adatbázisba. Ha onnan törlni, a posztban sem lesz a mű elérhető. Az Integrált Költészeti Környezet egy közösségi oldalként is funkcionál, szóval adni kell lehetőséget a felhasználóknak, hogy visszajelzést adjanak egymásnak. Erre szolgálnak a szívek. (Like funkció.) Minden felhasználó egy posztot csak egyszer kedvelhet. Ez egy külön táblával van megoldva az adatbázisban.
 
 ## Fejlesztési tervek
 
