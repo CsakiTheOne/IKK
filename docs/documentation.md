@@ -1,10 +1,34 @@
 # Tartalomjegyzék
 
 - Bevezetés
+  - Specifikáció
+  - A szoftver használata
 - Felhasználói dokumentáció
+  - Profilok
+  - Saját profil szerkesztése
+  - Elfelejtett jelszó
+  - Más felhasználók megtalálása
+  - Értesítések
+  - Offline mód, ha nincs internet
+  - Napi idézetek
+  - Verses fal
+  - Művek létrehozása és kezelése
+  - Szövegszerkesztő
+  - Írás: az eszközök
+  - Támogatott formátumok
+  - Szinkronizálás
+  - Témák
+  - Rendszer követelmények
 - Fejlesztői dokumentáció
-
-`TODO`
+  - Adatbázis szerkezete
+  - Kommunikáció az adatbázissal
+  - Munkamenet
+  - Kapcsolat teszt és offline mód
+  - Eszközök működése
+  - Támogatott formátumok
+  - Exportálás és feltöltés
+  - Verses fal (és like-ok)
+  - Fejlesztési tervek
 
 # Bevezetés
 
@@ -43,7 +67,7 @@ Bejelentkezés után a felhasználók átírhatják a nevüket, e-mail címűket
 
 Ha a felhasználó nem tudja a jelszavát, kérhet egy új, ideiglenes jelszót, amit meg kell változtatnia a legközelebbi sikeres bejelentkezéskor. Ezt az ideiglenes jelszót e-mailben kapja meg a felhasználó.
 
-## Mások megtalálása
+## Más felhasználók megtalálása
 
 A szoftver egy közösségi oldalként is funkcionál. Ezért fontos, hogy megtaláljunk más embereket benne. Nem csak a verses falon látjuk, hogy ki osztott meg egy művet, hanem rá is kereshetünk egy személyre.
 
@@ -101,7 +125,7 @@ A program nagyon testreszabható és a felhasználók kedvükre állíthatják a
 
 ## Rendszer követelmények
 
-dotNET framework 4.7.2 és Windows 10 operációs rendszer.
+dotNET keretrendszer 4.7.2 és Windows 10 operációs rendszer.
 
 # Fejlesztői dokumentáció
 
@@ -114,6 +138,7 @@ Táblák:
 - Eszközök
 - (Napi) Idézetek
 - Posztok (verses fal)
+- Kedvelések
 
 ## Kommunikáció az adatbázissal
 
@@ -155,7 +180,7 @@ Ebben a formátumban nem menteni, hanem csak exportálni lehet. A program tartal
 
 ## Exportálás és feltöltés
 
-Az adatbázis `Project` táblája ad lehetőséget művek tárolására a felhőben.
+Az adatbázis `Project` táblája ad lehetőséget művek tárolására a felhőben. A projektet magát és a hozzá tartozó eszközöket külön tábla tárolja.
 
 ## Verses fal (és like-ok)
 
@@ -163,4 +188,4 @@ Bárki írhat bejegyzést a verses falra, ez lehet sim szöveg vagy egy csatolt 
 
 ## Fejlesztési tervek
 
-`TODO`
+Szeretném ha a programom a lehető legjobban testreszabható lenne. Nem csak a kinézetét tekintve, hanem működés szempontjából is. A téma motor és saját profil mellett ezért is szeretném, hogy mod támogatás legyen a szoftverben. Ezekkel akár új eszközöket is lehessen a programba tenni.
