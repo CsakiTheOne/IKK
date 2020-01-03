@@ -131,7 +131,14 @@ namespace IKK_data
         }
         public static int GetLikeCount(int postID)
         {
-            return (int)GetData($"SELECT COUNT(id) FROM post_like WHERE post = {postID}").Rows[0].ItemArray[0];
+            try
+            {
+                return (int)GetData($"SELECT COUNT(id) FROM post_like WHERE post = {postID}").Rows[0].ItemArray[0];
+            }
+            catch
+            {
+                return 0;
+            }
         }
         public static void SetLike(int postID, int userID)
         {
