@@ -31,11 +31,12 @@
             this.flpLatest = new System.Windows.Forms.FlowLayoutPanel();
             this.lblLatestProjects = new IKK_controls.Lbl();
             this.cardManageSelected = new IKK_controls.Card();
+            this.btnEdit = new IKK_controls.Btn();
+            this.lblSelected = new IKK_controls.Lbl();
             this.nmiOpenFile = new IKK_controls.NavMenuItem();
             this.nmiNew = new IKK_controls.NavMenuItem();
-            this.lblSelected = new IKK_controls.Lbl();
             this.btnAdd = new IKK_controls.Btn();
-            this.btnEdit = new IKK_controls.Btn();
+            this.btnSync = new IKK_controls.Btn();
             this.cardManageSelected.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,15 +66,43 @@
             // 
             this.cardManageSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cardManageSelected.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cardManageSelected.Controls.Add(this.btnSync);
             this.cardManageSelected.Controls.Add(this.btnEdit);
             this.cardManageSelected.Controls.Add(this.lblSelected);
             this.cardManageSelected.Location = new System.Drawing.Point(650, 60);
             this.cardManageSelected.Margin = new System.Windows.Forms.Padding(0);
             this.cardManageSelected.Name = "cardManageSelected";
             this.cardManageSelected.Padding = new System.Windows.Forms.Padding(8);
-            this.cardManageSelected.Size = new System.Drawing.Size(250, 96);
+            this.cardManageSelected.Size = new System.Drawing.Size(250, 140);
             this.cardManageSelected.TabIndex = 2;
             this.cardManageSelected.Visible = false;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnEdit.Location = new System.Drawing.Point(16, 45);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(8);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Raised = true;
+            this.btnEdit.Size = new System.Drawing.Size(216, 30);
+            this.btnEdit.TabIndex = 2;
+            this.btnEdit.Text = "Szerkesztés";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // lblSelected
+            // 
+            this.lblSelected.AutoSize = true;
+            this.lblSelected.Location = new System.Drawing.Point(16, 16);
+            this.lblSelected.Margin = new System.Windows.Forms.Padding(8, 8, 0, 8);
+            this.lblSelected.Name = "lblSelected";
+            this.lblSelected.Size = new System.Drawing.Size(110, 13);
+            this.lblSelected.TabIndex = 1;
+            this.lblSelected.Text = "Válassz egy projektet!";
             // 
             // nmiOpenFile
             // 
@@ -103,16 +132,6 @@
             this.nmiNew.Text = "Új projekt";
             this.nmiNew.Click += new System.EventHandler(this.nmiNew_Click);
             // 
-            // lblSelected
-            // 
-            this.lblSelected.AutoSize = true;
-            this.lblSelected.Location = new System.Drawing.Point(16, 16);
-            this.lblSelected.Margin = new System.Windows.Forms.Padding(8, 8, 0, 8);
-            this.lblSelected.Name = "lblSelected";
-            this.lblSelected.Size = new System.Drawing.Size(110, 13);
-            this.lblSelected.TabIndex = 1;
-            this.lblSelected.Text = "Válassz egy projektet!";
-            // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
@@ -130,22 +149,22 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnEdit
+            // btnSync
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnEdit.Location = new System.Drawing.Point(16, 45);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(8);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Raised = true;
-            this.btnEdit.Size = new System.Drawing.Size(216, 30);
-            this.btnEdit.TabIndex = 2;
-            this.btnEdit.Text = "Szerkesztés";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnSync.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
+            this.btnSync.FlatAppearance.BorderSize = 0;
+            this.btnSync.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSync.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSync.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSync.Location = new System.Drawing.Point(16, 91);
+            this.btnSync.Margin = new System.Windows.Forms.Padding(8);
+            this.btnSync.Name = "btnSync";
+            this.btnSync.Raised = true;
+            this.btnSync.Size = new System.Drawing.Size(216, 30);
+            this.btnSync.TabIndex = 2;
+            this.btnSync.Text = "Feltöltés";
+            this.btnSync.UseVisualStyleBackColor = false;
+            this.btnSync.Click += new System.EventHandler(this.btnSync_Click);
             // 
             // View2Projects
             // 
@@ -175,5 +194,6 @@
         private IKK_controls.Lbl lblSelected;
         private IKK_controls.Btn btnAdd;
         private IKK_controls.Btn btnEdit;
+        private IKK_controls.Btn btnSync;
     }
 }

@@ -196,5 +196,21 @@ namespace IKK_data
             return $"PROFILE;{cols[0]};{email};{cols[1]};{cols[2]}";
         }
         #endregion
+
+        #region Projects
+        public static int UploadProject(Project project)
+        {
+            GetData($"INSERT INTO project (author, title, content, type, createdate) VALUES ('{project.Author}', '{project.Title}', '{project.Content}', 'v{project.Label}', '{ConvertToSqlDate(project.CreateTime)}')");
+            
+            project.ID = (int)GetData($"SELECT id FROM project WHERE author = {project.Author} AND title LIKE '{project.Title}' AND content LIKE '{project.Content}'").Rows[0].ItemArray[0];
+
+            foreach (Tool tool in project.Tools)
+            {
+                GetData($"INSERT INTO tool (project, name, settings) VALUES ('{project.ID}', '{tool.Name}', '{tool.Settings}')");
+            }
+
+            return project.ID;
+        }
+        #endregion
     }
 }

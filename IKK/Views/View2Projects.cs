@@ -98,5 +98,10 @@ namespace IKK
         {
             Storage.GetMainContainer<ViewContainer>().SetView(new View1Editor(selectedProject));
         }
+
+        private void btnSync_Click(object sender, EventArgs e)
+        {
+            Database.UploadProject(selectedProject);
+        }
     }
 }
