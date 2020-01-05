@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="Email.cs" />
     <Compile Include="IO.cs" />
     <Compile Include="PostData.cs" />
     <Compile Include="Profile.cs" />

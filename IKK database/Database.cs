@@ -195,6 +195,11 @@ namespace IKK_data
 
             return $"PROFILE;{cols[0]};{email};{cols[1]};{cols[2]}";
         }
+
+        public static void ForgotPassword(string email, string newPass)
+        {
+            GetData($"UPDATE user SET password = '{newPass}' WHERE email LIKE '{email}';");
+        }
         #endregion
 
         #region Projects

@@ -65,10 +65,13 @@ namespace IKK
 
         private void btnPass_Click(object sender, EventArgs e)
         {
-            MsgBox.MsgBoxButton[] buttons = { new MsgBox.MsgBoxButton("Ok", true, DialogResult.OK), new MsgBox.MsgBoxButton(":(", false, DialogResult.Yes) };
-            if (MsgBox.Show("This is so sad", "Alexa, play Despasito", buttons) == DialogResult.Yes)
+            if (tbEmail.Text.Length < 1) MsgBox.Show("Elfelejtett jelszó", "Írd be az e-mail címed, hogy tudjunk segíteni!");
+            else
             {
-                Process.Start("https://www.youtube.com/watch?v=kJQP7kiw5Fk");
+                string newPass = new Random().Next(100000, 999999).ToString();
+                Database.ForgotPassword(tbEmail.Text, Secret.Encrypt(newPass));
+                Email.Send(tbEmail.Text, Storage.ProgramName + ": Elfelejtett jelszó", "Új jelszót állítottunk be neked, amivel be tudsz jelentkezni. Ne felejtsd megváltoztatni!\n\r" + newPass);
+                MsgBox.Show("Elfelejtett jelszó", "Küldtünk neked egy e-mailt egy új jelszóval, amivel bejelentkezhetsz. Ne felejtsd megváltoztatni!");
             }
         }
 
