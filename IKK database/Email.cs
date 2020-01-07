@@ -22,7 +22,7 @@ namespace IKK_data
                 mail.Body = body;
 
                 SmtpServer.Port = 587;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("jockahun@gmail.com", "kctuolkaolnkbgej");
+                SmtpServer.Credentials = new System.Net.NetworkCredential("jockahun@gmail.com", SECRET.ApplicationPassword);
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
