@@ -100,7 +100,7 @@ namespace IKK
             InitModeChanger();
             btnModeNet.Raised = true;
 
-            Database.DB = "Server=remotemysql.com;User ID=BwbvoshEex;Password=LJtxlTZdiF;Database=BwbvoshEex";
+            Database.DB = IKK_data.SECRET.OnlineDatabase;
             Storage.TestConnection(ConnectionTestFinnished);
         }
         private void btnModeDebug_Click(object sender, EventArgs e)
