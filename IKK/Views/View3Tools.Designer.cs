@@ -70,6 +70,7 @@
             this.Name = "View3Tools";
             this.Padding = new System.Windows.Forms.Padding(0);
             this.Size = new System.Drawing.Size(300, 500);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.View3Tools_Paint);
             this.ResumeLayout(false);
 
         }

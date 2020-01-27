@@ -29,14 +29,15 @@ namespace IKK
 
             ToolCard tc;
 
-            foreach (IKK_data.Tool tool in Storage.CurrentProject.Tools)
+            foreach (Tool tool in Storage.CurrentProject.Tools)
             {
                 tc = new ToolCard(tool);
-                tc.Width = flp.Width;
                 tc.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right);
                 tc.ToolRemoveClicked += Tc_ToolRemoveClicked;
                 flp.Controls.Add(tc);
             }
+
+            Refresh();
         }
 
         private void Tc_ToolRemoveClicked(IKK_data.Tool tool)
@@ -47,7 +48,7 @@ namespace IKK
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            IKK_data.Tool tool = MsgBox.ShowToolDialog();
+            Tool tool = MsgBox.ShowToolDialog();
             if (tool == null) return;
 
             if (Storage.CurrentProject.Tools == null || Storage.CurrentProject.Tools.Count(r => r.Name == tool.Name) < 1)
@@ -62,6 +63,12 @@ namespace IKK
             }
         }
 
-
+        private void View3Tools_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (Control item in flp.Controls)
+            {
+                item.Width = flp.Width;
+            }
+        }
     }
 }

@@ -31,5 +31,10 @@ namespace IKK_controls
         {
             lblErrors.Text = text;
         }
+
+        public string GetText()
+        {
+            return lblErrors.Text;
+        }
     }
 }

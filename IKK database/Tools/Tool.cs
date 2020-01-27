@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IKK_data.Tools;
 
 namespace IKK_data
 {
@@ -30,7 +31,7 @@ namespace IKK_data
     {
         public static List<Tool> Tools
         {
-            get => new List<Tool>() { new ToolDescription(), new ToolLineCounter() };
+            get => new List<Tool>() { new ToolDescription(), new ToolLineCounter(), new ToolRhyme() };
         }
     }
 }

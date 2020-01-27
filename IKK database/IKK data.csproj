@@ -81,6 +81,7 @@
     <Compile Include="Tools\Tool.cs" />
     <Compile Include="Tools\ToolDescription.cs" />
     <Compile Include="Tools\ToolLineCounter.cs" />
+    <Compile Include="Tools\ToolRhyme.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

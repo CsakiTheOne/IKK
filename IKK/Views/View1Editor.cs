@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using IKK_controls;
 using IKK_data;
 using IKK_storage;
+using IKK_notif;
 
 namespace IKK
 {
@@ -17,6 +18,7 @@ namespace IKK
     {
         TextBoxMenu formTbMenu = new TextBoxMenu();
 
+        #region Setup
         public View1Editor()
         {
             InitializeComponent();
@@ -62,16 +64,24 @@ namespace IKK
                 tool.OnLoad(tb.Text);
             }
 
-            IKK_notif.NotifManager.Notified += NotifManager_Notified;
+            ErrorManager.ErrorsChanged += ErrorsChanged;
         }
+        #endregion
 
-        private void NotifManager_Notified(IKK_notif.Notification sender)
+        private void ErrorsChanged(List<Error> errors)
         {
-            if (sender.Sender == "Eszköz")
+            formTbMenu.SetText("");
+            if (errors.Count < 1)
             {
-                formTbMenu.SetText($"{sender.Title}\n\r{sender.Desc}");
-                IKK_notif.NotifManager.Dismiss(sender);
+                formTbMenu.Hide();
+                return;
             }
+            foreach (Error err in errors)
+            {
+                formTbMenu.SetText(formTbMenu.GetText() + Environment.NewLine + (err.Line == -1 ? "--" : err.Line + ".") + $" [{err.Sender}] {err.Message}");
+            }
+            formTbMenu.Show();
+            ParentForm.Focus();
         }
 
         private void navMenu1_SelectedItemChanged(object sender, EventArgs e)
@@ -200,7 +210,7 @@ namespace IKK
 
         private void tb_Update()
         {
-            Point atChar = tb.GetPositionFromCharIndex(tb.SelectionStart);
+            Point atChar = tb.GetPositionFromCharIndex(tb.SelectionStart > tb.Text.Length - 2 ? tb.SelectionStart -1 : tb.SelectionStart);
             Point point = new Point(64 + split.SplitterDistance + atChar.X, 70 + atChar.Y);
             formTbMenu.Location = point;
         }

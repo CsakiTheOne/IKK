@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Error.cs" />
+    <Compile Include="ErrorManager.cs" />
     <Compile Include="Notification.cs" />
     <Compile Include="NotifManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
