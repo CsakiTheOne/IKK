@@ -33,6 +33,7 @@
             this.lblLabel = new IKK_controls.Lbl();
             this.lblTitle = new IKK_controls.Lbl();
             this.btnRemove = new IKK_controls.Btn();
+            this.lblOnline = new IKK_controls.Lbl();
             ((System.ComponentModel.ISupportInitialize)(this.pbLabel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +69,7 @@
             this.lblLabel.Location = new System.Drawing.Point(26, 97);
             this.lblLabel.Margin = new System.Windows.Forms.Padding(0, 8, 8, 0);
             this.lblLabel.Name = "lblLabel";
-            this.lblLabel.Size = new System.Drawing.Size(216, 20);
+            this.lblLabel.Size = new System.Drawing.Size(153, 20);
             this.lblLabel.TabIndex = 2;
             this.lblLabel.Text = "címke";
             this.lblLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -91,6 +92,7 @@
             this.btnRemove.FlatAppearance.BorderSize = 0;
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRemove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(44)))), ((int)(((byte)(0)))));
             this.btnRemove.Location = new System.Drawing.Point(225, 8);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(8);
             this.btnRemove.Name = "btnRemove";
@@ -102,9 +104,21 @@
             this.btnRemove.Visible = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
+            // lblOnline
+            // 
+            this.lblOnline.AutoSize = true;
+            this.lblOnline.Location = new System.Drawing.Point(195, 101);
+            this.lblOnline.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.lblOnline.Name = "lblOnline";
+            this.lblOnline.Size = new System.Drawing.Size(47, 13);
+            this.lblOnline.TabIndex = 5;
+            this.lblOnline.Text = "ONLINE";
+            this.lblOnline.Visible = false;
+            // 
             // ProjectCard
             // 
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.lblOnline);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.lblLabel);
@@ -126,5 +140,6 @@
         private Lbl lblLabel;
         private Lbl lblDesc;
         private Btn btnRemove;
+        private Lbl lblOnline;
     }
 }

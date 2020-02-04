@@ -18,6 +18,7 @@ namespace IKK_controls
         public Project Project { get; private set; }
         public bool Removable { get => btnRemove.Visible; set => btnRemove.Visible = value; }
         public bool Selected { get => selected; set { selected = value; Refresh(); } }
+        public bool Online { get => lblOnline.Visible; set => lblOnline.Visible = value; }
 
         bool selected = false;
 

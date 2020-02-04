@@ -216,6 +216,43 @@ namespace IKK_data
 
             return project.ID;
         }
+        public static List<Project> GetProjects(int userID)
+        {
+            List<Project> projects = new List<Project>();
+            
+            DataTable dt = GetData($"SELECT project.*, tool.* FROM project INNER JOIN user ON project.author = user.id INNER JOIN tool ON tool.project = project.id WHERE user.id = {userID};");
+
+            foreach (DataRow row in dt.Rows)
+            {
+                if (!projects.Any(r => r.ID == (int)row[0]))
+                {
+                    projects.Add(MapProject(row));
+                }
+                projects.First(r => r.ID == (int)row[0]).Tools.Add(MapTool(row));
+            }
+
+            return projects;
+        }
+        static Tool MapTool(DataRow row)
+        {
+            Tool tool = ToolStorage.Tools.First(r => r.Name == row["name"].ToString());
+            tool.ID = (int)row[6];
+            tool.Settings = row["settings"].ToString();
+            return tool;
+        }
+        static Project MapProject(DataRow row)
+        {
+            Project project = new Project(
+                (int)row[0],
+                (int)row["author"],
+                row["title"].ToString(),
+                row["content"].ToString(),
+                row["type"].ToString(),
+                DateTime.Parse(row["createdate"].ToString()),
+                new List<Tool>(),
+                null);
+            return project;
+        }
         #endregion
     }
 }

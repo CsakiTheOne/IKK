@@ -36,6 +36,15 @@ namespace IKK
                 pc.Click += ProjectCard_Click;
                 flpLatest.Controls.Add(pc);
             }
+            latestProjects = Database.GetProjects(Storage.LocalUser.ID);
+            foreach (Project p in latestProjects)
+            {
+                pc = new ProjectCard(p);
+                pc.Removable = true;
+                pc.Online = true;
+                pc.Click += ProjectCardOnline_Click;
+                flpLatest.Controls.Add(pc);
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -92,6 +101,19 @@ namespace IKK
             selectedProject = ((ProjectCard)sender).Project;
             cardManageSelected.Visible = true;
             lblSelected.Text = selectedProject.Title;
+        }
+        private void ProjectCardOnline_Click(object sender, EventArgs e)
+        {
+            foreach (ProjectCard item in flpLatest.Controls)
+            {
+                item.Selected = false;
+            }
+            ((ProjectCard)sender).Selected = true;
+            selectedProject = ((ProjectCard)sender).Project;
+            cardManageSelected.Visible = false;
+            lblSelected.Text = selectedProject.Title;
+
+            // TODO options for online project
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
