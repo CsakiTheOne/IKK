@@ -19,6 +19,13 @@ namespace IKK_controls
             return new MsgBoxDialog(title, text, buttons).ShowDialog();
         }
 
+        public static Project ShowProjectSelectorDialog(List<Project> projects)
+        {
+            ProjectSelectorDialog psd = new ProjectSelectorDialog(projects);
+            if (psd.ShowDialog() == DialogResult.OK) return psd.SelectedProject;
+            else return null;
+        }
+
         public static Tool ShowToolDialog()
         {
             ToolDialog dialog = new ToolDialog();

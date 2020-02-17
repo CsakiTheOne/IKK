@@ -37,6 +37,7 @@
             this.nmiOpenFile = new IKK_controls.NavMenuItem();
             this.nmiNew = new IKK_controls.NavMenuItem();
             this.btnAdd = new IKK_controls.Btn();
+            this.nmiDownload = new IKK_controls.NavMenuItem();
             this.cardManageSelected.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,12 +167,27 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // nmiDownload
+            // 
+            this.nmiDownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.nmiDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.nmiDownload.Icon = null;
+            this.nmiDownload.Location = new System.Drawing.Point(650, 320);
+            this.nmiDownload.Margin = new System.Windows.Forms.Padding(0);
+            this.nmiDownload.Name = "nmiDownload";
+            this.nmiDownload.Selected = false;
+            this.nmiDownload.Size = new System.Drawing.Size(250, 60);
+            this.nmiDownload.TabIndex = 1;
+            this.nmiDownload.Text = "Letöltés";
+            this.nmiDownload.Click += new System.EventHandler(this.nmiDownload_Click);
+            // 
             // View2Projects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.cardManageSelected);
+            this.Controls.Add(this.nmiDownload);
             this.Controls.Add(this.nmiOpenFile);
             this.Controls.Add(this.flpLatest);
             this.Controls.Add(this.nmiNew);
@@ -195,5 +211,6 @@
         private IKK_controls.Btn btnAdd;
         private IKK_controls.Btn btnEdit;
         private IKK_controls.Btn btnSync;
+        private IKK_controls.NavMenuItem nmiDownload;
     }
 }

@@ -78,6 +78,12 @@
       <DependentUpon>MsgBoxDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="MsgBox\MsgBox.cs" />
+    <Compile Include="MsgBox\ProjectSelectorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsgBox\ProjectSelectorDialog.Designer.cs">
+      <DependentUpon>ProjectSelectorDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="MsgBox\TextBoxMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MsgBox\MsgBoxDialog.resx">
       <DependentUpon>MsgBoxDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsgBox\ProjectSelectorDialog.resx">
+      <DependentUpon>ProjectSelectorDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MsgBox\TextBoxMenu.resx">
       <DependentUpon>TextBoxMenu.cs</DependentUpon>
