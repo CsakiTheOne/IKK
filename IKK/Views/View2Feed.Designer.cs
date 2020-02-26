@@ -36,6 +36,7 @@
             this.btnShare = new IKK_controls.Btn();
             this.tbShare = new IKK_controls.Tb();
             this.nmiRefresh = new IKK_controls.NavMenuItem();
+            this.lblProjectToShare = new IKK_controls.Lbl();
             this.tableLayoutPanel.SuspendLayout();
             this.panel.SuspendLayout();
             this.cardShare.SuspendLayout();
@@ -84,6 +85,7 @@
             this.cardShare.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cardShare.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cardShare.Controls.Add(this.lblProjectToShare);
             this.cardShare.Controls.Add(this.btnShareProject);
             this.cardShare.Controls.Add(this.btnShare);
             this.cardShare.Controls.Add(this.tbShare);
@@ -109,6 +111,7 @@
             this.btnShareProject.TabIndex = 2;
             this.btnShareProject.Text = "Mű csatolása";
             this.btnShareProject.UseVisualStyleBackColor = true;
+            this.btnShareProject.Click += new System.EventHandler(this.btnShareProject_Click);
             // 
             // btnShare
             // 
@@ -158,6 +161,17 @@
             this.nmiRefresh.Text = "Frissítés";
             this.nmiRefresh.Click += new System.EventHandler(this.nmiRefresh_Click);
             // 
+            // lblProjectToShare
+            // 
+            this.lblProjectToShare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblProjectToShare.AutoSize = true;
+            this.lblProjectToShare.Location = new System.Drawing.Point(16, 101);
+            this.lblProjectToShare.Margin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.lblProjectToShare.Name = "lblProjectToShare";
+            this.lblProjectToShare.Size = new System.Drawing.Size(10, 13);
+            this.lblProjectToShare.TabIndex = 3;
+            this.lblProjectToShare.Text = "-";
+            // 
             // View2Feed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,5 +197,6 @@
         private IKK_controls.Tb tbShare;
         private IKK_controls.Btn btnShareProject;
         private System.Windows.Forms.FlowLayoutPanel flpPosts;
+        private IKK_controls.Lbl lblProjectToShare;
     }
 }

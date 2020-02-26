@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.flp = new System.Windows.Forms.FlowLayoutPanel();
-            this.pBtns = new System.Windows.Forms.Panel();
-            this.lblTime = new IKK_controls.Lbl();
             this.lblText = new IKK_controls.Lbl();
+            this.pBtns = new System.Windows.Forms.Panel();
             this.btnOpen = new IKK_controls.Btn();
             this.btnLike = new IKK_controls.Btn();
+            this.lblTime = new IKK_controls.Lbl();
             this.lblUsername = new IKK_controls.Lbl();
             this.flp.SuspendLayout();
             this.pBtns.SuspendLayout();
@@ -52,27 +52,6 @@
             this.flp.Size = new System.Drawing.Size(430, 66);
             this.flp.TabIndex = 2;
             // 
-            // pBtns
-            // 
-            this.pBtns.Controls.Add(this.btnOpen);
-            this.pBtns.Controls.Add(this.btnLike);
-            this.pBtns.Location = new System.Drawing.Point(0, 36);
-            this.pBtns.Margin = new System.Windows.Forms.Padding(0);
-            this.pBtns.Name = "pBtns";
-            this.pBtns.Size = new System.Drawing.Size(430, 30);
-            this.pBtns.TabIndex = 3;
-            // 
-            // lblTime
-            // 
-            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTime.Location = new System.Drawing.Point(191, 8);
-            this.lblTime.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(189, 24);
-            this.lblTime.TabIndex = 3;
-            this.lblTime.Text = "time";
-            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // lblText
             // 
             this.lblText.AutoSize = true;
@@ -83,6 +62,16 @@
             this.lblText.Size = new System.Drawing.Size(62, 20);
             this.lblText.TabIndex = 1;
             this.lblText.Text = "Szöveg";
+            // 
+            // pBtns
+            // 
+            this.pBtns.Controls.Add(this.btnOpen);
+            this.pBtns.Controls.Add(this.btnLike);
+            this.pBtns.Location = new System.Drawing.Point(0, 36);
+            this.pBtns.Margin = new System.Windows.Forms.Padding(0);
+            this.pBtns.Name = "pBtns";
+            this.pBtns.Size = new System.Drawing.Size(430, 30);
+            this.pBtns.TabIndex = 3;
             // 
             // btnOpen
             // 
@@ -101,6 +90,7 @@
             this.btnOpen.Text = "Mű megnyitása";
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Visible = false;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // btnLike
             // 
@@ -119,6 +109,17 @@
             this.btnLike.Text = "0 ♥";
             this.btnLike.UseVisualStyleBackColor = true;
             this.btnLike.Click += new System.EventHandler(this.btnLike_Click);
+            // 
+            // lblTime
+            // 
+            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTime.Location = new System.Drawing.Point(191, 8);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(189, 24);
+            this.lblTime.TabIndex = 3;
+            this.lblTime.Text = "time";
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblUsername
             // 

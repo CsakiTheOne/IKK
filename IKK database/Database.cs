@@ -100,25 +100,32 @@ namespace IKK_data
         #endregion
 
         #region Posts
-        public static void CreatePost(int userID, string text)
+        public static void CreatePost(int userID, string text, Project project)
         {
-            GetData($"INSERT INTO `post` (`time`, `author`, `text`) VALUES ('{Database.ConvertToSqlDate(DateTime.Now)}', '{userID}', '{text}');");
+            if (project == null)
+            {
+                GetData($"INSERT INTO post (time, author, text) VALUES ('{Database.ConvertToSqlDate(DateTime.Now)}', '{userID}', '{text}');");
+            }
+            else
+            {
+                GetData($"INSERT INTO post (time, author, text, project) VALUES ('{Database.ConvertToSqlDate(DateTime.Now)}', '{userID}', '{text}', '{project.ID}');");
+            }
         }
         public static List<PostData> GetPosts()
         {
             List<PostData> posts = new List<PostData>();
 
-            DataTable dtPosts = GetData("SELECT `post`.`id`, `post`.`time`, `post`.`text`, `post`.`author`, " +
-                "`user`.`name`, `post`.`project`, `project`.`title`, `project`.`type`, " +
-                "(SELECT COUNT(`id`) FROM `post_like` WHERE `post_like`.`post` = `post`.`id`) " +
-                "FROM `post` LEFT JOIN `project` ON `project`.`id` = `post`.`project` " +
-                "INNER JOIN `user` ON `post`.`author` = `user`.`id`ORDER BY `post`.`time` DESC");
+            DataTable dtPosts = GetData("SELECT post.*, user.name, project.title, project.type, " +
+                "(SELECT COUNT(id) FROM post_like WHERE post_like.post = post.id) " +
+                "FROM post LEFT JOIN project ON project.id = post.project " +
+                "INNER JOIN user ON post.author = user.id ORDER BY post.time DESC");
 
             foreach (DataRow row in dtPosts.Rows)
             {
                 posts.Add(
-                    new PostData(row.ItemArray[0], row.ItemArray[1], row.ItemArray[2],
-                    row.ItemArray[3], row.ItemArray[4], row.ItemArray[5], row.ItemArray[6],
+                    new PostData(row.ItemArray[0], row.ItemArray[1],
+                    row.ItemArray[2], row.ItemArray[3], row.ItemArray[4],
+                    row.ItemArray[5], row.ItemArray[6],
                     row.ItemArray[7], row.ItemArray[8])
                 );
             }
@@ -220,7 +227,7 @@ namespace IKK_data
         {
             List<Project> projects = new List<Project>();
             
-            DataTable dt = GetData($"SELECT project.*, tool.* FROM project INNER JOIN user ON project.author = user.id INNER JOIN tool ON tool.project = project.id WHERE user.id = {userID};");
+            DataTable dt = GetData($"SELECT project.*, tool.* FROM tool RIGHT JOIN project ON tool.project = project.id WHERE project.author = {userID};");
 
             foreach (DataRow row in dt.Rows)
             {
@@ -228,10 +235,17 @@ namespace IKK_data
                 {
                     projects.Add(MapProject(row));
                 }
-                projects.First(r => r.ID == (int)row[0]).Tools.Add(MapTool(row));
+                if (!row.IsNull("name"))
+                {
+                    projects.First(r => r.ID == (int)row[0]).Tools.Add(MapTool(row));
+                }
             }
 
             return projects;
+        }
+        public static void DeleteProject(Project project)
+        {
+            GetData($"DELETE FROM ikk.project WHERE id = {project.ID};");
         }
         static Tool MapTool(DataRow row)
         {

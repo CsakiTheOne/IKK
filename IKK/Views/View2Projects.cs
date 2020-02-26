@@ -87,11 +87,36 @@ namespace IKK
 
             Project downloadedProject = MsgBox.ShowProjectSelectorDialog(onlineProjects);
 
-            DialogResult whatToDo = MsgBox.Show("Projekt letöltve", "Mi legyen a letöltött projekttel?", new MsgBox.MsgBoxButton[] {
-                new MsgBox.MsgBoxButton("Fájl mentése", true, DialogResult.OK),
-                new MsgBox.MsgBoxButton("Szerkesztés", false, DialogResult.Yes),
-                new MsgBox.MsgBoxButton("Elvetés", false, DialogResult.Cancel)
+            if (downloadedProject == null) return;
+
+            DialogResult whatToDo = MsgBox.Show(downloadedProject.Title, "Mi legyen a letöltött projekttel?", new MsgBox.MsgBoxButton[] {
+                new MsgBox.MsgBoxButton("Mentés", true, DialogResult.Yes),
+                new MsgBox.MsgBoxButton("Törlés felhőből", false, DialogResult.No),
+                new MsgBox.MsgBoxButton("Mégsem", false, DialogResult.Cancel)
             });
+
+            switch (whatToDo)
+            {
+                case DialogResult.Yes:
+                    SaveFileDialog sfd = new SaveFileDialog();
+                    sfd.Filter = IO.PROJECT_FILTER;
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            IO.ProjectSave(downloadedProject, sfd.FileName);
+                        }
+                        catch (Exception ex)
+                        {
+                            MsgBox.Show("Mentés", ex.Message);
+                        }
+                    }
+                    break;
+                case DialogResult.No:
+                    Database.DeleteProject(downloadedProject);
+                    MsgBox.Show("Törölve", "");
+                    break;
+            }
         }
         #endregion
 
@@ -115,6 +140,7 @@ namespace IKK
         private void btnSync_Click(object sender, EventArgs e)
         {
             Database.UploadProject(selectedProject);
+            MsgBox.Show("Feltöltve", "");
         }
     }
 }

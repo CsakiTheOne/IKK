@@ -26,7 +26,7 @@ namespace IKK_controls
             foreach (Project p in projects)
             {
                 pc = new ProjectCard(p);
-                pc.Removable = true;
+                pc.Removable = false;
                 pc.Click += ProjectCard_Click;
                 flp.Controls.Add(pc);
             }
