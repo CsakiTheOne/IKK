@@ -174,8 +174,8 @@
             // 
             this.textBoxMenuToolStripMenuItem.CheckOnClick = true;
             this.textBoxMenuToolStripMenuItem.Name = "textBoxMenuToolStripMenuItem";
-            this.textBoxMenuToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
-            this.textBoxMenuToolStripMenuItem.Text = "Segítő menü";
+            this.textBoxMenuToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
+            this.textBoxMenuToolStripMenuItem.Text = "Hiba lista (F1)";
             this.textBoxMenuToolStripMenuItem.Click += new System.EventHandler(this.textBoxMenuToolStripMenuItem_Click);
             // 
             // View1Editor

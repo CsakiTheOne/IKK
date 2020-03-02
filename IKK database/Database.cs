@@ -210,6 +210,12 @@ namespace IKK_data
         #endregion
 
         #region Projects
+        public static Project GetProject(int id)
+        {
+            DataTable dt = GetData($"SELECT project.*, tool.* FROM tool RIGHT JOIN project ON tool.project = project.id WHERE project.id = {id};");
+
+            return MapProject(dt.Rows[0]);
+        }
         public static int UploadProject(Project project)
         {
             GetData($"INSERT INTO project (author, title, content, type, createdate) VALUES ('{project.Author}', '{project.Title}', '{project.Content}', 'v{project.Label}', '{ConvertToSqlDate(project.CreateTime)}')");

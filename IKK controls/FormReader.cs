@@ -39,11 +39,37 @@ namespace IKK_controls
         {
             BackColor = Theme.ColorBackground;
             ForeColor = Theme.ColorText;
+            cardContent.BackColor = Theme.ColorPrimary;
         }
 
         void LoadProject()
         {
-            
+            Text = $"IKK olvasó - {project.Title}";
+            lblTitle.Text = project.Title;
+            lblContent.Text = project.Content;
+        }
+
+        void LoadDetails()
+        {
+            lblTitle.Text = $"Részletek erről: {project.Title}";
+
+            string content = $"Műfaj / címke: {project.Label}\n\r\n\rKészült ekkor: {project.CreateTime}";
+
+            if (project.Tools == null || project.Tools.Count < 1) content += "\n\r\n\rNincsenek eszközök.";
+            else content += "\n\r\n\rEszközök:\n\r";
+
+            foreach (Tool tool in project.Tools)
+            {
+                content += $"\n\r{tool.Name}: {tool.Settings}\n\r";
+            }
+
+            lblContent.Text = content;
+        }
+
+        private void navMenu1_SelectedItemChanged(object sender, EventArgs e)
+        {
+            if (navMenu1.SelectedItem == "Olvasás") LoadProject();
+            else LoadDetails();
         }
     }
 }

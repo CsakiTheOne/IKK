@@ -14,7 +14,7 @@ namespace IKK_controls
 {
     public partial class Post : UserControl, IThemable
     {
-        public IKK_data.PostData PostData { get; private set; }
+        public PostData PostData { get; private set; }
 
         public Post()
         {
@@ -70,8 +70,8 @@ namespace IKK_controls
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
-            // Get project by ID
-            new FormReader().Show();
+            Project projectToRead = Database.GetProject(PostData.Project);
+            new FormReader(projectToRead).Show();
         }
     }
 }
