@@ -10,7 +10,7 @@ namespace IKK_storage
     public static class Storage
     {
         public static string ProgramName { get => "IKK"; }
-        public static string ProgramVer { get => "0.1a4"; }
+        public static string ProgramVer { get => "0.1a5"; }
         public static object MainContainer { get; set; }
         public static IKK_data.Profile LocalUser { get; set; }
         public static IKK_data.Project CurrentProject { get; set; }
