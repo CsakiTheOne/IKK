@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="16.8" version="16.8" Modules="simple" RootPath="." Language="en" Id="{B2C61996-F23D-4BD9-A766-17E91F764E15}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_IKK.exe" Value="..\IKK\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_IKK.exe.config" Value="..\IKK\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_IKKcontrols.dll" Value="..\IKK controls\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_IKKdata.dll" Value="..\IKK database\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_IKKnotif.dll" Value="..\IKK notif\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_IKKstorage.dll" Value="..\IKK storage\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_MySqlConnector.dll" Value="..\packages\MySqlConnector.0.60.4\lib\net471"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Buffers.dll" Value="..\packages\System.Buffers.4.4.0\lib\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Memory.dll" Value="..\packages\System.Memory.4.5.0\lib\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Numerics.Vectors.dll" Value="..\packages\System.Numerics.Vectors.4.4.0\lib\net46"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll" Value="..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Threading.Tasks.Extensions.dll" Value="..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_IKK.exe" Value="IKK.exe"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_IKK.exe.config" Value="IKK.exe.config"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_IKKcontrols.dll" Value="IKK controls.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_IKKdata.dll" Value="IKK data.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_IKKnotif.dll" Value="IKK notif.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_IKKstorage.dll" Value="IKK storage.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_MySqlConnector.dll" Value="MySqlConnector.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Buffers.dll" Value="System.Buffers.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Memory.dll" Value="System.Memory.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Numerics.Vectors.dll" Value="System.Numerics.Vectors.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll" Value="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Threading.Tasks.Extensions.dll" Value="System.Threading.Tasks.Extensions.dll"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPCONTACT" Value="jockahun@gmail.com"/>
+    <ROW Property="Manufacturer" Value="VSZC Ipari Szakgimnáziuma"/>
+    <ROW Property="ProductCode" Value="1033:{01442C58-3EE2-4FE6-9B66-9749733F6B43} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="IKK"/>
+    <ROW Property="ProductVersion" Value="0.1.5" Type="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{0685818C-F0AE-463E-A518-8869A07C71F6}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="IKK_Dir" Directory_Parent="APPDIR" DefaultDir="IKK"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="APPDIR" ComponentId="{27D3D3D1-389E-4A05-8E73-5E323EB06A02}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="IKK_PrimaryOutput" ComponentId="{963ED31F-6128-4122-B958-BDA51A690156}" Directory_="IKK_Dir" Attributes="0" KeyPath="IKK.exe"/>
+    <ROW Component="IKK_References" ComponentId="{89E6FD81-B4B4-4E2C-AF59-C0C656625A61}" Directory_="IKK_Dir" Attributes="0" KeyPath="System.Threading.Tasks.Extensions.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{551C359F-DF7B-47C9-8861-15DBA34C0D16}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{DA781608-9703-41B8-AA45-E5D62391EB2C}" Directory_="SHORTCUTDIR" Attributes="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="IKK.exe" Component_="IKK_PrimaryOutput" FileName="[|AI_PROPPATH_FILENAME_PERBUILD_IKK.exe]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_IKK.exe&gt;" SelfReg="false" DigSign="true"/>
+    <ROW File="IKK.exe.config" Component_="IKK_PrimaryOutput" FileName="IKKEXE~2.CON|[|AI_PROPPATH_FILENAME_PERBUILD_IKK.exe.config]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_IKK.exe.config&gt;" SelfReg="false"/>
+    <ROW File="IKKcontrols.dll" Component_="IKK_References" FileName="IKKCON~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_IKKcontrols.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_IKKcontrols.dll&gt;" SelfReg="false"/>
+    <ROW File="IKKdata.dll" Component_="IKK_References" FileName="IKKDAT~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_IKKdata.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_IKKdata.dll&gt;" SelfReg="false"/>
+    <ROW File="IKKnotif.dll" Component_="IKK_References" FileName="IKKNOT~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_IKKnotif.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_IKKnotif.dll&gt;" SelfReg="false"/>
+    <ROW File="IKKstorage.dll" Component_="IKK_References" FileName="IKKSTO~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_IKKstorage.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_IKKstorage.dll&gt;" SelfReg="false"/>
+    <ROW File="MySqlConnector.dll" Component_="IKK_References" FileName="MYSQLC~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_MySqlConnector.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_MySqlConnector.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Buffers.dll" Component_="IKK_References" FileName="SYSTEM~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Buffers.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Buffers.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Memory.dll" Component_="IKK_References" FileName="SYSTEM~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Memory.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Memory.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.dll" Component_="IKK_References" FileName="SYSTEM~4.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Numerics.Vectors.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Numerics.Vectors.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="IKK_References" FileName="SYSTEM~5.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.dll" Component_="IKK_References" FileName="SYSTEM~6.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Threading.Tasks.Extensions.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Threading.Tasks.Extensions.dll&gt;" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
+    <ROW Name="AI_APPPATH_PERBUILD_IKK.exe" Path="[|AI_PROPPATH_DIR_PERBUILD_IKK.exe]\[|AI_PROPPATH_FILENAME_PERBUILD_IKK.exe]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_IKK.exe.config" Path="[|AI_PROPPATH_DIR_PERBUILD_IKK.exe.config]\[|AI_PROPPATH_FILENAME_PERBUILD_IKK.exe.config]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_IKKcontrols.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_IKKcontrols.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_IKKcontrols.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_IKKdata.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_IKKdata.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_IKKdata.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_IKKnotif.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_IKKnotif.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_IKKnotif.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_IKKstorage.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_IKKstorage.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_IKKstorage.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_MySqlConnector.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_MySqlConnector.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_MySqlConnector.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Buffers.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Buffers.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Buffers.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Memory.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Memory.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Memory.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Numerics.Vectors.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Numerics.Vectors.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Numerics.Vectors.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Threading.Tasks.Extensions.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Threading.Tasks.Extensions.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Threading.Tasks.Extensions.dll]" Type="2" Content="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="IKK_PrimaryOutput"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="MainFeature" Component_="IKK_References"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="IKK" Directory_="SHORTCUTDIR" Name="IKK" Component_="IKK_PrimaryOutput" Target="[#IKK.exe]" Hotkey="0" IconIndex="0" ShowCmd="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.VsProjectComponent">
+    <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="PrimaryOutput" OutputFile="IKK.exe" OutputFileShortcut="IKK"/>
+    <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="PrimaryOutput" OutputFile="IKK.exe.config"/>
+    <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="References" OutputFile="IKKcontrols.dll"/>
+    <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="References" OutputFile="IKKdata.dll"/>
+    <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="References" OutputFile="IKKnotif.dll"/>
+    <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="References" OutputFile="IKKstorage.dll"/>
+    <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="References" OutputFile="MySqlConnector.dll"/>
+    <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="References" OutputFile="System.Buffers.dll"/>
+    <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="References" OutputFile="System.Memory.dll"/>
+    <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="References" OutputFile="System.Numerics.Vectors.dll"/>
+    <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="References" OutputFile="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="References" OutputFile="System.Threading.Tasks.Extensions.dll"/>
+  </COMPONENT>
+</DOCUMENT>
