@@ -19,7 +19,7 @@ namespace IKK_data
         {
             try
             {
-                GetData("SELECT id FROM user;");
+                GetData("SELECT id FROM user LIMIT 1;");
                 return true;
             }
             catch

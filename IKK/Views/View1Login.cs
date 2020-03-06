@@ -133,7 +133,7 @@ namespace IKK
                 if (!connection)
                 {
                     btnModeOffline.PerformClick();
-                    NotifManager.Send(new Notification("Csatlakozás kezelő", "A választott mód nem elérhető", "A program offline módba lépett.", new NotifAction[] { new NotifAction("ÚJRA", TryReconnect) }, true));
+                    NotifManager.Send(new Notification("Csatlakozás kezelő", "Az adatbázis nem elérhető", "A program offline módba lépett.", new NotifAction[] { new NotifAction("ÚJRA", TryReconnect) }, true));
                 }
                 else
                 {
@@ -149,10 +149,11 @@ namespace IKK
         private void TryReconnect(Notification sender)
         {
             NotifManager.Dismiss("Csatlakozás kezelő");
-            Database.DB = "Server=remotemysql.com;User ID=BwbvoshEex;Password=LJtxlTZdiF;Database=BwbvoshEex";
+            Database.DB = SECRET.OnlineDatabase;
             Storage.TestConnection((connection) => {
                 Invoke(new Action(() => {
                     if (connection) NotifManager.Send(new Notification("Csatlakozás kezelő", "Van net!", "Jelentkezz ki és válts Internet módra!"));
+                    else NotifManager.Send(new Notification("Csatlakozás kezelő", "Továbbra sem érhető el az adatbázis", "A program offline módban van.", new NotifAction[] { new NotifAction("ÚJRA", TryReconnect) }, true));
                 }));
             });
         }

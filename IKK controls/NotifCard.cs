@@ -31,12 +31,12 @@ namespace IKK_controls
             flpButtons.BackColor = Theme.ColorPrimary;
             ForeColor = Theme.ColorText;
 
-
-
             lblTop.Text = $"{Notification.Sender} • {Notification.Time}";
             lblTitle.Text = Notification.Title;
             lblDesc.Text = Notification.Desc;
+            Expanded = Notification.StartExtended;
             Height = Notification.StartExtended ? 110 : 80;
+            pbResize.Image = Expanded ? Properties.Resources.sharp_expand_less_white_48dp : Properties.Resources.sharp_expand_more_white_48dp;
             pbResize.Visible = Notification.Resizable;
 
             flpButtons.Controls.Clear();
