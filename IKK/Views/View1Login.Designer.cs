@@ -108,6 +108,7 @@
             this.btnModeDebug.TabIndex = 22;
             this.btnModeDebug.Text = "Teszt mód";
             this.btnModeDebug.UseVisualStyleBackColor = true;
+            this.btnModeDebug.Visible = false;
             this.btnModeDebug.Click += new System.EventHandler(this.btnModeDebug_Click);
             // 
             // btnModeNet
@@ -156,6 +157,7 @@
             this.tbEmail.Secret = false;
             this.tbEmail.Size = new System.Drawing.Size(284, 26);
             this.tbEmail.TabIndex = 19;
+            this.tbEmail.TextChanged += new System.EventHandler(this.tbEmail_TextChanged);
             // 
             // lblPass
             // 

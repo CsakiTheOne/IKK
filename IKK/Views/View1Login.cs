@@ -84,12 +84,7 @@ namespace IKK
             btnModeNet.Raised = false;
             btnModeDebug.Raised = false;
             btnModeOffline.Raised = false;
-            tbEmail.Enabled = true;
-            tbPass.Enabled = true;
-            btnPass.Enabled = true;
-            btnReg.Enabled = true;
 
-            tbEmail.Enabled = false;
             tbPass.Enabled = false;
             btnPass.Enabled = false;
             btnReg.Enabled = false;
@@ -100,7 +95,7 @@ namespace IKK
             InitModeChanger();
             btnModeNet.Raised = true;
 
-            Database.DB = IKK_data.SECRET.OnlineDatabase;
+            Database.DB = SECRET.OnlineDatabase;
             Storage.TestConnection(ConnectionTestFinnished);
         }
         private void btnModeDebug_Click(object sender, EventArgs e)
@@ -137,7 +132,6 @@ namespace IKK
                 }
                 else
                 {
-                    tbEmail.Enabled = true;
                     tbPass.Enabled = true;
                     btnPass.Enabled = true;
                     btnReg.Enabled = true;
@@ -158,5 +152,10 @@ namespace IKK
             });
         }
         #endregion
+
+        private void tbEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (tbEmail.Text == "jockahun@gmail.com") btnModeDebug.Visible = true;
+        }
     }
 }
