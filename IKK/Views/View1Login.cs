@@ -38,7 +38,7 @@ namespace IKK
         {
             if (Storage.OfflineMode)
             {
-                Storage.LocalUser = new Profile(-1, "Nincs bejelentkezve", "Offline felhasználó", "Ez a felhasználó aktív, mikor a program offline módban van.");
+                Storage.LocalUser = new Profile(-1, tbEmail.Text, "Offline felhasználó", "Ez a felhasználó aktív, mikor a program offline módban van.");
                 Storage.GetMainContainer<ViewContainer>().SetView(new View1Main());
                 return;
             }

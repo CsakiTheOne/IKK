@@ -36,7 +36,6 @@ namespace IKK
         {
             if (Storage.OfflineMode)
             {
-                MsgBox.Show("Offline mód", "Nem vagy bejelentkezve!");
                 foreach (Control control in Controls)
                 {
                     if (control.GetType() == typeof(Tb) || control.GetType() == typeof(Btn))
@@ -44,14 +43,13 @@ namespace IKK
                         control.Enabled = false;
                     }
                 }
-                return;
             }
-
-            Profile profile = Database.GetProfileByID(Storage.LocalUser.ID);
-
-            if (profile == null) return;
-
-            Storage.LocalUser = profile;
+            else
+            {
+                Profile profile = Database.GetProfileByID(Storage.LocalUser.ID);
+                if (profile == null) return;
+                Storage.LocalUser = profile;
+            }
 
             tbEmail.Text = Storage.LocalUser.Email;
             tbName.Text = Storage.LocalUser.Name;
