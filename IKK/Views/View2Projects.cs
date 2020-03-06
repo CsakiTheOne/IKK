@@ -21,6 +21,12 @@ namespace IKK
         {
             InitializeComponent();
             LoadLatest();
+
+            if (Storage.OfflineMode)
+            {
+                btnSync.Enabled = false;
+                nmiDownload.Enabled = false;
+            }
         }
 
         #region Latest projects

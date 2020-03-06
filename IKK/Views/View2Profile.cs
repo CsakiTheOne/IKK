@@ -37,6 +37,13 @@ namespace IKK
             if (Storage.OfflineMode)
             {
                 MsgBox.Show("Offline mód", "Nem vagy bejelentkezve!");
+                foreach (Control control in Controls)
+                {
+                    if (control.GetType() == typeof(Tb) || control.GetType() == typeof(Btn))
+                    {
+                        control.Enabled = false;
+                    }
+                }
                 return;
             }
 
@@ -53,21 +60,11 @@ namespace IKK
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (Storage.OfflineMode)
-            {
-                MsgBox.Show("Offline mód", "Nem vagy bejelentkezve!");
-                return;
-            }
             Database.UpdateProfile(Storage.LocalUser.ID, tbEmail.Text, tbName.Text, tbAbout.Text);
         }
 
         private void btnPass_Click(object sender, EventArgs e)
         {
-            if (Storage.OfflineMode)
-            {
-                MsgBox.Show("Offline mód", "Nem vagy bejelentkezve!");
-                return;
-            }
             string result = Database.Login(Storage.LocalUser.Email, Secret.Encrypt(tbPassOld.Text));
             if (!result.Contains("PROFILE"))
             {

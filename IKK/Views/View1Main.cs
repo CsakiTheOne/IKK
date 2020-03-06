@@ -29,7 +29,12 @@ namespace IKK
                     viewContainer1.SetView(new View2Profile());
                     break;
                 case "Verses fal":
-                    viewContainer1.SetView(new View2Feed());
+                    if (IKK_storage.Storage.OfflineMode)
+                    {
+                        MsgBox.Show("Offline mód", "A verses fal offline nem használható.");
+                        navMenu1.SelectedItem = "Főoldal";
+                    }
+                    else viewContainer1.SetView(new View2Feed());
                     break;
                 case "Művek":
                     viewContainer1.SetView(new View2Projects());
