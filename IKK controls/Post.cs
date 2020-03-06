@@ -45,8 +45,8 @@ namespace IKK_controls
 
             btnOpen.Visible = PostData.Project > -1;
 
-            btnLike.Text = PostData.Likes + " ♥";
-            btnLike.Raised = IKK_data.Database.GetLike(PostData.ID, Storage.LocalUser.ID);
+            btnLike.Text = Database.GetLikeCount(PostData.ID) + " ♥";
+            btnLike.Raised = Database.GetLike(PostData.ID, Storage.LocalUser.ID);
         }
 
         private void btnLike_Click(object sender, EventArgs e)
@@ -55,10 +55,8 @@ namespace IKK_controls
 
             Database.SetLike(PostData.ID, Storage.LocalUser.ID);
 
-            btnLike.Text = IKK_data.Database.GetLikeCount(PostData.ID) + " ♥";
-            btnLike.Raised = IKK_data.Database.GetLike(PostData.ID, Storage.LocalUser.ID);
-
-            UpdateTheme();
+            btnLike.Text = Database.GetLikeCount(PostData.ID) + " ♥";
+            btnLike.Raised = Database.GetLike(PostData.ID, Storage.LocalUser.ID);
 
             btnLike.Enabled = true;
         }

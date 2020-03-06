@@ -136,11 +136,11 @@ namespace IKK_data
         {
             return GetData($"SELECT id FROM post_like WHERE post = {postID} AND user = {userID}").Rows.Count > 0;
         }
-        public static int GetLikeCount(int postID)
+        public static long GetLikeCount(int postID)
         {
             try
             {
-                return (int)GetData($"SELECT COUNT(id) FROM post_like WHERE post = {postID}").Rows[0].ItemArray[0];
+                return (long)GetData($"SELECT COUNT(id) FROM post_like WHERE post = {postID}").Rows[0].ItemArray[0];
             }
             catch
             {
