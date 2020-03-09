@@ -42,24 +42,31 @@ namespace IKK_data
 
         static DataTable GetData(string sql)
         {
-            DataTable dataTable = new DataTable();
-
-            using (var connection = new MySqlConnection(DB))
+            try
             {
-                connection.Open();
+                DataTable dataTable = new DataTable();
 
-                using (var command = new MySqlCommand(sql, connection))
+                using (var connection = new MySqlConnection(DB))
                 {
-                    using (var reader = command.ExecuteReader())
+                    connection.Open();
+
+                    using (var command = new MySqlCommand(sql, connection))
                     {
-                        dataTable.Load(reader);
+                        using (var reader = command.ExecuteReader())
+                        {
+                            dataTable.Load(reader);
+                        }
                     }
+
+                    connection.Close();
                 }
 
-                connection.Close();
+                return dataTable;
             }
-
-            return dataTable;
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         #region Profiles
@@ -218,7 +225,7 @@ namespace IKK_data
         }
         public static int UploadProject(Project project)
         {
-            GetData($"INSERT INTO project (author, title, content, type, createdate) VALUES ('{project.Author}', '{project.Title}', '{project.Content}', 'v{project.Label}', '{ConvertToSqlDate(project.CreateTime)}')");
+            GetData($"INSERT INTO project (author, title, content, type, createdate) VALUES ('{project.Author}', '{project.Title}', '{project.Content}', '{project.Label}', '{ConvertToSqlDate(project.CreateTime)}')");
             
             project.ID = (int)GetData($"SELECT id FROM project WHERE author = {project.Author} AND title LIKE '{project.Title}' AND content LIKE '{project.Content}'").Rows[0].ItemArray[0];
 
@@ -251,6 +258,7 @@ namespace IKK_data
         }
         public static void DeleteProject(Project project)
         {
+            GetData($"UPDATE post SET project = NULL WHERE post.project = {project.ID};");
             GetData($"DELETE FROM ikk.project WHERE id = {project.ID};");
         }
         static Tool MapTool(DataRow row)

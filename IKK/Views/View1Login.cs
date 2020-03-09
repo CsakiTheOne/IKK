@@ -29,7 +29,6 @@ namespace IKK
         {
             if (e.KeyCode != Keys.Enter) return;
 
-            e.SuppressKeyPress = false;
             e.Handled = true;
             btnLogin.PerformClick();
         }
