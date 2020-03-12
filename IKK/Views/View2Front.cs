@@ -22,10 +22,7 @@ namespace IKK
         private void View2Front_Load(object sender, EventArgs e)
         {
             if (Storage.OfflineMode) return;
-            int length = int.Parse(Database.ExecuteSQL("SELECT COUNT(id) FROM quote;").Rows[0].ItemArray[0].ToString());
-            int rdm = new Random(DateTime.Now.DayOfYear).Next(length);
-            object[] cols = Database.ExecuteSQL("SELECT quote, author FROM quote;").Rows[rdm].ItemArray;
-            lblQuote.Text = $"{cols[0]}\n\r- {cols[1]}";
+            lblQuote.Text = Database.GetQuote(DateTime.Now.DayOfYear);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

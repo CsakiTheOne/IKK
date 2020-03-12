@@ -282,5 +282,13 @@ namespace IKK_data
             return project;
         }
         #endregion
+
+        public static string GetQuote(int seed)
+        {
+            int length = int.Parse(GetData("SELECT COUNT(id) FROM quote;").Rows[0].ItemArray[0].ToString());
+            int rdm = new Random(seed).Next(length);
+            object[] cols = GetData("SELECT quote, author FROM quote;").Rows[rdm].ItemArray;
+            return $"{cols[0]}\n\r- {cols[1]}";
+        }
     }
 }
