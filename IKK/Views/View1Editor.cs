@@ -80,7 +80,15 @@ namespace IKK
             {
                 formTbMenu.SetText(formTbMenu.GetText() + Environment.NewLine + (err.Line == -1 ? "--" : err.Line + ".") + $" [{err.Sender}] {err.Message}");
             }
-            formTbMenu.Show();
+            try
+            {
+                formTbMenu.Show();
+                textBoxMenuToolStripMenuItem.Text = "Hiba lista (F1)";
+            }
+            catch
+            {
+                textBoxMenuToolStripMenuItem.Text = "Hiba lista (F1) ...";
+            }
             ParentForm.Focus();
         }
 
