@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <DOCUMENT Type="Advanced Installer" CreateVersion="16.8" version="16.8" Modules="simple" RootPath="." Language="en" Id="{B2C61996-F23D-4BD9-A766-17E91F764E15}">
   <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
-    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent"/>
+    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;FixupComponent"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
@@ -29,14 +29,18 @@
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Numerics.Vectors.dll" Value="System.Numerics.Vectors.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll" Value="System.Runtime.CompilerServices.Unsafe.dll"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Threading.Tasks.Extensions.dll" Value="System.Threading.Tasks.Extensions.dll"/>
+    <ROW Property="AI_RUN_AS_ADMIN" Value="0"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPCONTACT" Value="jockahun@gmail.com"/>
+    <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="VSZC Ipari Szakgimnáziuma"/>
     <ROW Property="ProductCode" Value="1033:{01442C58-3EE2-4FE6-9B66-9749733F6B43} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="IKK"/>
     <ROW Property="ProductVersion" Value="0.1.5" Type="32"/>
+    <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{0685818C-F0AE-463E-A518-8869A07C71F6}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -50,16 +54,17 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
     <ROW Directory="IKK_Dir" Directory_Parent="APPDIR" DefaultDir="IKK"/>
     <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="APPDIR" ComponentId="{27D3D3D1-389E-4A05-8E73-5E323EB06A02}" Directory_="APPDIR" Attributes="0"/>
-    <ROW Component="IKK_PrimaryOutput" ComponentId="{963ED31F-6128-4122-B958-BDA51A690156}" Directory_="IKK_Dir" Attributes="0" KeyPath="IKK.exe"/>
-    <ROW Component="IKK_References" ComponentId="{89E6FD81-B4B4-4E2C-AF59-C0C656625A61}" Directory_="IKK_Dir" Attributes="0" KeyPath="System.Threading.Tasks.Extensions.dll"/>
+    <ROW Component="IKK_PrimaryOutput" ComponentId="{E6421983-D85A-43FE-813A-13F564E193D3}" Directory_="IKK_Dir" Attributes="0" KeyPath="IKK.exe"/>
+    <ROW Component="IKK_References" ComponentId="{9E0CBEF4-95DF-4D14-9CBC-C15101EDD81D}" Directory_="IKK_Dir" Attributes="0" KeyPath="System.Threading.Tasks.Extensions.dll"/>
     <ROW Component="ProductInformation" ComponentId="{551C359F-DF7B-47C9-8861-15DBA34C0D16}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
-    <ROW Component="SHORTCUTDIR" ComponentId="{DA781608-9703-41B8-AA45-E5D62391EB2C}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{52182AD8-7CF1-41B7-9F45-1F998E951907}" Directory_="SHORTCUTDIR" Attributes="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
@@ -153,6 +158,7 @@
     <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
     <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
     <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_LaunchApp" Type="1" Source="aicustact.dll" Target="[#IKK.exe]"/>
     <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
     <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
     <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
@@ -194,6 +200,7 @@
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="AI_PROPPATH_FILENAME_PERBUILD_IKK.e" Directory_="DesktopFolder" Name="[|AI_PROPPATH_FILENAME_PERBUILD_IKK.exe]" Component_="IKK_PrimaryOutput" Target="[#IKK.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="IKK_Dir"/>
     <ROW Shortcut="IKK" Directory_="SHORTCUTDIR" Name="IKK" Component_="IKK_PrimaryOutput" Target="[#IKK.exe]" Hotkey="0" IconIndex="0" ShowCmd="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
@@ -204,7 +211,7 @@
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.VsProjectComponent">
-    <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="PrimaryOutput" OutputFile="IKK.exe" OutputFileShortcut="IKK"/>
+    <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="PrimaryOutput" OutputFile="IKK.exe" OutputFileShortcut="AI_PROPPATH_FILENAME_PERBUILD_IKK.e"/>
     <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="PrimaryOutput" OutputFile="IKK.exe.config"/>
     <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="References" OutputFile="IKKcontrols.dll"/>
     <ROW ProjectId="{f6079e53-a2d1-4baa-9ded-7f0112a0c98c}" ProjectName="IKK" OutputGroup="References" OutputFile="IKKdata.dll"/>
